@@ -1,0 +1,47 @@
+export const paddingHelper = (number: number) => {
+    let padding = "";
+    if (number === 1) padding = "p-[1px]";
+    else if (number === 1.1) padding = "p-[1.1px]";
+    else if (number === 1.2) padding = "p-[1.2px]";
+    else if (number === 1.3) padding = "p-[1.3px]";
+    else if (number === 1.4) padding = "p-[1.4px]";
+    else if (number === 1.5) padding = "p-[1.5px]";
+    else if (number === 1.6) padding = "p-[1.6px]";
+    else if (number === 1.7) padding = "p-[1.7px]";
+    else if (number === 1.8) padding = "p-[1.8px]";
+    else if (number === 1.9) padding = "p-[1.9px]";
+    else if (number === 2) padding = "p-[2px]";
+    else if (number === 2.1) padding = "p-[2.1px]";
+    else if (number === 2.2) padding = "p-[2.2px]";
+    else if (number === 2.3) padding = "p-[2.3px]";
+    else if (number === 2.4) padding = "p-[2.4px]";
+    else if (number === 2.5) padding = "p-[2.5px]";
+    else if (number === 2.6) padding = "p-[2.6px]";
+    else if (number === 2.7) padding = "p-[2.7px]";
+    else if (number === 2.8) padding = "p-[2.8px]";
+    else if (number === 2.9) padding = "p-[2.9px]";
+    else if (number === 3) padding = "p-[3px]";
+    else if (number === 3.1) padding = "p-[3.1px]";
+    else if (number === 3.2) padding = "p-[3.2px]";
+    else if (number === 3.3) padding = "p-[3.3px]";
+    else if (number === 3.4) padding = "p-[3.4px]";
+    else if (number === 3.5) padding = "p-[3.5px]";
+    else if (number === 3.6) padding = "p-[3.6px]";
+    else if (number === 3.7) padding = "p-[3.7px]";
+    else if (number === 3.8) padding = "p-[3.8px]";
+    else if (number === 3.9) padding = "p-[3.9px]";
+    else if (number === 4) padding = "p-[4px]";
+    else if (number === 4.1) padding = "p-[4.1px]";
+    else if (number === 4.2) padding = "p-[4.2px]";
+    else if (number === 4.3) padding = "p-[4.3px]";
+    else if (number === 4.4) padding = "p-[4.4px]";
+    else if (number === 4.5) padding = "p-[4.5px]";
+    else if (number === 4.6) padding = "p-[4.6px]";
+    else if (number === 4.7) padding = "p-[4.7px]";
+    else if (number === 4.8) padding = "p-[4.8px]";
+    else if (number === 4.9) padding = "p-[4.9px]";
+    else if (number === 5) padding = "p-[5px]";
+    else padding = "p-[1.5px]";
+    return padding;
+
+}

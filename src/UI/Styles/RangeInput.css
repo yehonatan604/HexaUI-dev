@@ -1,0 +1,85 @@
+.range input[type="range"] {
+  -webkit-appearance: none;
+  height: 10px;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, azure, skyblue);
+  padding: 0;
+  margin: 0;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: lightBlue;
+    cursor: ew-resize;
+    border: 1px solid white;
+
+    &:hover {
+      border: 1px solid silver;
+    }
+  }
+}
+
+.range.standard input[type="range"] {
+  background-image: linear-gradient(to right, lightgray, gray);
+  &::-webkit-slider-thumb {
+    background: darkgray;
+  }
+}
+
+.range.info input[type="range"] {
+  background-image: linear-gradient(to right, azure, skyblue);
+  &::-webkit-slider-thumb {
+    background: lightBlue;
+  }
+}
+
+.range.success input[type="range"] {
+  background-image: linear-gradient(to right, lightgreen, green);
+  &::-webkit-slider-thumb {
+    background: darkgreen;
+  }
+}
+
+.range.warning input[type="range"] {
+  background-image: linear-gradient(to right, lightyellow, yellow);
+  &::-webkit-slider-thumb {
+    background: orange;
+  }
+}
+
+.range.failure input[type="range"] {
+  background-image: linear-gradient(to right, lightcoral, red);
+  &::-webkit-slider-thumb {
+    background: brown;
+  }
+}
+
+.range.lime input[type="range"] {
+  background-image: linear-gradient(to right, white, lime);
+  &::-webkit-slider-thumb {
+    background: green;
+  }
+}
+
+.range.purple input[type="range"] {
+  background-image: linear-gradient(to right, lightpink, purple);
+  &::-webkit-slider-thumb {
+    background: darkviolet;
+  }
+}
+
+.range.pink input[type="range"] {
+  background-image: linear-gradient(to right, lightpink, pink);
+  &::-webkit-slider-thumb {
+    background: hotpink;
+  }
+}
+
+.range.cyan input[type="range"] {
+  background-image: linear-gradient(to right, lightcyan, cyan);
+  &::-webkit-slider-thumb {
+    background: darkcyan;
+  }
+}
