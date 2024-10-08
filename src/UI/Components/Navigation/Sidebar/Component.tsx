@@ -1,28 +1,24 @@
 import { useState } from "react";
-import { SideMenuProps } from "./Props";
 import { FiChevronsRight } from "react-icons/fi";
 import SidebarSeperator from "./Sidebar.Seperator/Component";
 import SidebarItem from "./Sidebar.Item/Component";
 import SidebarHeader from "./Sidebar.Header/Component";
 import useColorPalette from "../../../..//Core/Hooks/useColorPallete";
-import useTheme from "../../../..//Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
-import { Variants } from "../../../../Data/Constants/Variants";
 import Flex from "../../Layout/Flex/Component";
+import { TSidebar } from "../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
 
-const Sidebar = (props: SideMenuProps) => {
-  const { children, maxWidth = "w-[280px]", ...componentProps } = props;
+const Sidebar = (props: TSidebar) => {
+  const { children, options, ...componentProps } = props;
 
   // Hooks
   const [isOpen, setIsOpen] = useState(true);
-  const mode = useTheme().mode;
+  const { palette } = useColorPalette();
 
-  // Color Palette
-  const { light, dark } = useColorPalette().getColor(Variants.Standard)!;
-
-  // Variables
-  const chevronColor = mode === "light" ? `text-${light}` : `text-${dark}`;
+  // Options
+  const chevronColor = options?.textVariant || palette.standradLight;
   const transition = "transition-all duration-1000";
+  const maxWidth = options?.maxWidth || "w-[280px]";
 
   // Functions
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -31,7 +27,9 @@ const Sidebar = (props: SideMenuProps) => {
   return (
     <Flex>
       <Flex
-        direction={FlexDir.Col}
+        options={{
+          direction: FlexDir.Col,
+        }}
         {...componentProps}
         className={`${
           isOpen ? `${maxWidth} max-md:w-[95vw]` : "w-[0.5px]"

@@ -1,4 +1,4 @@
-import { TComponent } from "../../../../../Data/Types/TComponent";
+import { TComponent } from "../../../../../Data/Types/ComponentTypes/TComponent";
 
 export type NavbarBrandProps = TComponent<"a"> & {
     as?: React.ElementType;

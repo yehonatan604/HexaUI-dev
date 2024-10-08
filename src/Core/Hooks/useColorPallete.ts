@@ -8,11 +8,8 @@ const useColorPalette = () => {
     }
 
     return {
-        colors: context.colors,
-        addColor: context.addColor,
-        removeColor: context.removeColor,
-        updateColor: context.updateColor,
-        getColor: context.getColor
+        palette: context.palette,
+        addColor: context.setColors,
     }
 };
 export default useColorPalette;

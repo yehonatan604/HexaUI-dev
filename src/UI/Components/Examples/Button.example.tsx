@@ -1,51 +1,61 @@
+import useColorPalette from "../../../Core/Hooks/useColorPallete";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import { Sizes } from "../../../Data/Constants/Sizes";
-import { Variants } from "../../../Data/Constants/Variants";
 import Button from "../Common/Button/Component";
 import Flex from "../Layout/Flex/Component";
 
 const ButtonExamples = () => {
-  const { Info, Success, Warning, Failure, Lime, Cyan, Purple, Pink } = Variants;
   const { Sm, Md, Lg, Xl } = Sizes;
+  const { palette: pallete } = useColorPalette();
 
   return (
     <Flex
-      align={FlexTypes.Center}
-      justify={FlexTypes.Center}
-      wrap={FlexWrap.Wrap}
-      className="m-auto my-5 gap-4"
+      options={{
+        justify: FlexTypes.Center,
+        align: FlexTypes.Center,
+        wrap: FlexWrap.Wrap,
+      }}
+      className="m-auto py-5 gap-4"
     >
-      <Button variant={Info} size={Sm}>
-        {Info}
+      <Button
+        options={{
+          size: Sm,
+          bgVariant: pallete.success,
+          textVariant: pallete.info,
+        }}
+      >
+        submit
       </Button>
 
-      <Button variant={Success} size={Md}>
-        {Success}
+      <Button
+        options={{
+          size: Lg,
+          bgVariant: pallete.failure,
+          textVariant: pallete.approveDark,
+        }}
+      >
+        submit
       </Button>
 
-      <Button variant={Warning} size={Lg}>
-        {Warning}
+      <Button
+        options={{
+          size: Xl,
+          bgVariant: pallete.warning,
+          textVariant: pallete.select,
+        }}
+      >
+        submit
       </Button>
 
-      <Button variant={Failure} size={Xl}>
-        {Failure}
-      </Button>
-
-      <Button variant={Lime} size={Sm}>
-        {Lime}
-      </Button>
-
-      <Button variant={Cyan} size={Md}>
-        {Cyan}
-      </Button>
-
-      <Button variant={Purple} size={Lg} className="text-blue-300">
-        {Purple}
-      </Button>
-
-      <Button variant={Pink} size={Xl}>
-        {Pink}
+      <Button
+        options={{
+          size: Md,
+          bgVariant: pallete.primary,
+          textVariant: pallete.standradDark,
+        }}
+      >
+        submit
       </Button>
     </Flex>
   );

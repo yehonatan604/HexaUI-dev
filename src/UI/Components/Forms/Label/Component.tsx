@@ -1,14 +1,22 @@
+import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../../Core/Hooks/useTheme";
-import { LabelProps } from "./Props";
+import { TLabel } from "../../../../Data/Types/ComponentTypes/Forms/Label/TLabel";
 
-const Label = (props: LabelProps) => {
-  const { text, ...componentProps } = props;
-  const mode = useTheme().mode;
+const Label = (props: TLabel) => {
+  const { text, options, ...componentProps } = props;
 
-  const textColor = mode === "light" ? "text-gray-800" : "text-slate-200";
+  // Hooks
+  const { palette } = useColorPalette();
+  const { mode } = useTheme();
 
+  // Options
+  const textColor =
+    options?.textVariant ||
+    (mode === "dark" ? palette.standradLight : palette.standradDark);
+
+  // JSX
   return (
-    <label className={`block text-sm font-medium ${textColor}`} {...componentProps}>
+    <label className={`block text-sm font-medium text-${textColor}`} {...componentProps}>
       {text}
     </label>
   );

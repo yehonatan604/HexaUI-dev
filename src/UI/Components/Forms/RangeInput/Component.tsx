@@ -4,42 +4,57 @@ import Flex from "../../../../UI/Components/Layout/Flex/Component";
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
-import { Variants } from "../../../../Data/Constants/Variants";
-import { RangeInputProps } from "./Props";
+import { TRangeInput } from "../../../../Data/Types/ComponentTypes/Forms/RangeInput/TRangeInput";
+import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 
-const RangeInput = (props: RangeInputProps) => {
-  const { label, variant = Variants.Standard, ...componentProps } = props;
+const RangeInput = (props: TRangeInput) => {
+  const { label, options, ...componentProps } = props;
+
+  // Hooks
   const [val, setVal] = useState(0);
   const mode = useTheme().mode;
-  const textColor = mode === "light" ? "text-zinc-900" : "text-zinc-200";
+  const { palette } = useColorPalette();
 
+  // Options
+  const textColor =
+    options?.textVariant ||
+    (mode === "dark" ? palette.standradLight : palette.standradDark);
+
+  // Events
   componentProps.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setVal(parseInt(e.target.value));
   };
 
   const rangeColor =
-    variant === Variants.Info
+    options?.rangeVariant === palette.info
       ? "info"
-      : variant === Variants.Success
+      : options?.rangeVariant === palette.success
       ? "success"
-      : variant === Variants.Warning
+      : options?.rangeVariant === palette.warning
       ? "warning"
-      : variant === Variants.Failure
+      : options?.rangeVariant === palette.failure
       ? "failure"
-      : variant === Variants.Cyan
+      : options?.rangeVariant === palette.info
       ? "cyan"
-      : variant === Variants.Purple
+      : options?.rangeVariant === palette.select
       ? "purple"
-      : variant === Variants.Pink
+      : options?.rangeVariant === palette.cancel
       ? "pink"
-      : variant === Variants.Lime
-      ? "lime"
+      : options?.rangeVariant === palette.primary
+      ? "primary"
+      : options?.rangeVariant === palette.secondary
+      ? "secondary"
       : "standard";
 
   return (
-    <Flex direction={FlexDir.Col} className="gap-1">
+    <Flex options={{ direction: FlexDir.Col }} className="gap-1">
       <Label text={label} htmlFor="input" />
-      <Flex className={`range ${rangeColor} gap-2`} align={FlexTypes.Center}>
+      <Flex
+        className={`range ${rangeColor} gap-2`}
+        options={{
+          align: FlexTypes.Center,
+        }}
+      >
         <input
           type="range"
           id="input"

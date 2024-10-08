@@ -1,4 +1,4 @@
-import { TComponent } from "../../../../Data/Types/TComponent";
+import { TComponent } from "../../../../Data/Types/ComponentTypes/TComponent";
 
 export type FooterProps = TComponent<"div"> & {
     reserved?: string;

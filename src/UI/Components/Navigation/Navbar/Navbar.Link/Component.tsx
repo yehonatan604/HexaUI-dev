@@ -1,26 +1,27 @@
 import { Link, useLocation } from "react-router-dom";
-import { NavbarLinkProps } from "./Props";
 import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
+import { TNavbarLink } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarLink";
 
-const NavbarLink = (props: NavbarLinkProps) => {
-  const { children, to, activeColor, ...componentProps } = props;
+const NavbarLink = (props: TNavbarLink) => {
+  const { children, options, to, ...componentProps } = props;
 
   // Color Palette
-  const { active: activeLinkColor, dark: normalLinkColor } =
-    useColorPalette().getColor("navbarLink")!;
+  const { palette } = useColorPalette();
 
-  // Variables
+  // Options
   const path = useLocation().pathname.split("/")[1];
   const isActive = path === to.split("/")[1];
-  const linkColor = isActive
-    ? `text-${activeLinkColor}`
-    : isActive && activeColor
-    ? activeColor
-    : `text-${normalLinkColor}`;
+  const textColor = options?.textVariant || palette.secondary;
+  const activeLinkColor = options?.activeVariant || palette.primary;
+  const linkColor = isActive ? activeLinkColor : textColor;
 
   // JSX
   return (
-    <Link className={`text-lg ${linkColor} font-semibold`} {...componentProps} to={to}>
+    <Link
+      className={`text-lg text-${linkColor} font-semibold`}
+      {...componentProps}
+      to={to}
+    >
       {children}
     </Link>
   );

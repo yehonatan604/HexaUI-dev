@@ -1,17 +1,21 @@
 import { FlexDir } from "../../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
+import { TNavbarCollapse } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarCollapse";
 import Flex from "../../../../../UI/Components/Layout/Flex/Component";
-import { NavbarCollapseProps } from "./Props";
 
-const NavbarCollapse = (props: NavbarCollapseProps) => {
-  const { children, isMobileMenuOpen, ...componentProps } = props;
+const NavbarCollapse = (props: TNavbarCollapse) => {
+  const { children, className, isMobileMenuOpen, ...componentProps } = props;
 
   // JSX
   return (
     <Flex
-      direction={isMobileMenuOpen ? FlexDir.Col : FlexDir.Row}
-      align={FlexTypes.Center}
-      className={` ${isMobileMenuOpen ? "flex md:flex-row" : "max-md:hidden"} gap-4`}
+      options={{
+        direction: isMobileMenuOpen ? FlexDir.Col : FlexDir.Row,
+        align: FlexTypes.Center,
+      }}
+      className={`flex ${
+        isMobileMenuOpen ? "md:flex-row" : "max-md:hidden"
+      } gap-4 ${className}`}
       {...componentProps}
     >
       {children}

@@ -35,6 +35,20 @@
   }
 }
 
+.range.primary input[type="range"] {
+  background-image: linear-gradient(to right, azure, blue);
+  &::-webkit-slider-thumb {
+    background: #2727bc;
+  }
+}
+
+.range.secondary input[type="range"] {
+  background-image: linear-gradient(to right, azure, coral);
+  &::-webkit-slider-thumb {
+    background: coral;
+  }
+}
+
 .range.success input[type="range"] {
   background-image: linear-gradient(to right, lightgreen, green);
   &::-webkit-slider-thumb {

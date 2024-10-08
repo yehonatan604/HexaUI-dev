@@ -1,24 +1,49 @@
-import useTheme from "../../../../Core/Hooks/useTheme";
+import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import { FlexDir } from "../../../../Data/Constants/FlexDirection";
+import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
+import { TCard } from "../../../../Data/Types/ComponentTypes/Common/Card/TCard";
+import Flex from "../../Layout/Flex/Component";
 import CardFooter from "./Card.Footer/Component";
 import CardHeader from "./Card.Header/Component";
-import { CardProps } from "./Props";
 
-const Card = (props: CardProps) => {
-  const { children, shadow = true, className, ...componentProps } = props;
-  const mode = useTheme().mode;
+const Card = (props: TCard) => {
+  const { children, options, className, ...componentProps } = props;
+  const { palette } = useColorPalette();
 
-  const bgColor = mode === "light" ? "bg-stone-100" : "bg-stone-900";
-  const textColor = mode === "light" ? "text-gray-900" : "text-slate-200";
-  const cardShadow = shadow ? "shadow-lg" : "";
-  const shadowColor = mode === "light" ? "shadow-slate-800" : "shadow-stone-400";
+  // Options
+  const bgColor = options?.bgVariant || palette.standradLight;
+  const textColor = options?.textVariant || palette.standradDark;
+  const padding = options?.padding || 2;
+  const rounded = options?.rounded || "md";
+  const gap = options?.gap || 4;
+  const borderColor = options.border?.variant || palette.standrad;
+  const borderRadius = options.border?.radius || "md";
 
+  // Border Options
+  const border = options.border?.show
+    ? `border-2 border-${borderColor} rounded-${borderRadius}`
+    : "";
+
+  // Shadow Options
+  const shadow =
+    options?.shadow &&
+    `shadow-${options?.shadow?.size || "md"} shadow-${
+      options?.shadow?.color || palette.white
+    }`;
+
+  // JSX
   return (
-    <div
-      className={`p-2 rounded-lg ${cardShadow} ${shadowColor} ${className} ${bgColor} ${textColor}`}
+    <Flex
+      options={{
+        direction: FlexDir.Col,
+        justify: FlexTypes.Start,
+        align: FlexTypes.Start,
+      }}
+      className={`gap-${gap} text-${textColor} p-${padding} rounded-${rounded} bg-${bgColor} ${shadow} ${border} ${className}`}
       {...componentProps}
     >
       {children}
-    </div>
+    </Flex>
   );
 };
 

@@ -1,8 +1,8 @@
-import { TComponent } from "../../../../Data/Types/TComponent";
-import { TOption } from "../../../../Data/Types/TOption";
+import { TComponent } from "../../../../Data/Types/ComponentTypes/TComponent";
+import { TSelectOption } from "../../../../Data/Types/ComponentTypes/Forms/Select/TSelectOption";
 
 export type SelectProps = TComponent<"select"> & {
-    options: TOption[];
+    options: TSelectOption[];
     variant?: string;
     listItemsVariant?: string;
 };

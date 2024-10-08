@@ -1,42 +1,43 @@
 import useColorPalette from "../../../../Core/Hooks/useColorPallete";
-import useTheme from "../../../../Core/Hooks/useTheme";
+import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { Sizes } from "../../../../Data/Constants/Sizes";
-import { Variants } from "../../../../Data/Constants/Variants";
+import { TTitle } from "../../../../Data/Types/ComponentTypes/Typography/Title/TTitle";
 import Flex from "../../Layout/Flex/Component";
-import { TitleProps } from "./Props";
 
-const Title = (props: TitleProps) => {
-  const { children, size = Sizes.Md, color, ...componentProps } = props;
+const Title = (props: TTitle) => {
+  const { children, options, ...componentProps } = props;
 
   // Hooks
-  const mode = useTheme().mode;
+  const { palette: pallete } = useColorPalette();
 
-  // Color Palette
-  const { light, dark } = useColorPalette().getColor(Variants.Standard)!;
-
-  // Colors
-  const textColor = !color
-    ? mode === "light"
-      ? `text-${light}`
-      : `text-${dark}`
-    : color;
+  // Options
+  const size = options?.size || Sizes.Md;
+  const textColor = options?.textVariant || pallete.standradLight;
+  const bgColor = options?.bgVariant || pallete.standrad;
+  const padding = options?.padding || "p-5";
+  const align = options?.align || FlexTypes.Center;
 
   // Text Size
-  const textSize =
-    size === Sizes.Sm
-      ? "text-lg"
-      : size === Sizes.Md
-      ? "text-xl"
-      : size === Sizes.Lg
-      ? "text-2xl"
-      : size === Sizes.Xl
-      ? "text-3xl"
-      : "text-xl";
+  let textSize = "xl";
+  if (size === Sizes.Sm) {
+    textSize = "2xl";
+  } else if (size === Sizes.Md) {
+    textSize = "3l";
+  } else if (size === Sizes.Lg) {
+    textSize = "4xl";
+  } else if (size === Sizes.Xl) {
+    textSize = "5xl";
+  }
 
   // JSX
   return (
-    <Flex className="m-auto">
-      <h1 className={`p-5 ${textSize} ${textColor} text-center`} {...componentProps}>
+    <Flex
+      className={`w-full ${bgColor}`}
+      options={{
+        justify: align,
+      }}
+    >
+      <h1 className={`${padding} text-${textSize} text-${textColor}`} {...componentProps}>
         {children}
       </h1>
     </Flex>

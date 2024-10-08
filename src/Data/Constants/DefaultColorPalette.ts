@@ -1,27 +1,45 @@
-import { TColor } from "../Types/TColor";
+import { TColorPalette } from "../Types/TColorPalette";
 
-const defaultColorPalette: TColor[] = [
-    // variants
-    { name: "standard", dark: "zinc-300", light: "zinc-800" },
-    { name: "failure", dark: "red-300", light: "red-800" },
-    { name: "success", dark: "green-300", light: "green-800" },
-    { name: "warning", dark: "yellow-300", light: "yellow-800" },
-    { name: "info", dark: "blue-300", light: "blue-800" },
-    { name: "lime", dark: "lime-300", light: "lime-800" },
-    { name: "cyan", dark: "cyan-300", light: "cyan-800" },
-    { name: "purple", dark: "purple-300", light: "purple-800" },
-    { name: "pink", dark: "pink-300", light: "pink-800" },
+const defaultColorPalette: TColorPalette = {
+    primary: "blue-500",
+    secondary: "netural-500",
+    standrad: "zinc-500",
+    info: "slate-500",
+    select: "sky-500",
+    cancel: "rose-500",
+    approve: "indigo-500",
+    success: "green-500",
+    warning: "yellow-500",
+    failure: "red-500",
+    black: "stone-800",
+    white: "zinc-300",
 
-    // component specific
-    { name: "quote", dark: "zinc-300", light: "zinc-900" },
-    { name: "cite", dark: "zinc-400", light: "zinc-500" },
-    { name: "citeHover", dark: "blue-300", light: "blue-600" },
-    { name: "hr", dark: "zinc-500", light: "zinc-500" },
-    { name: "navbarText", dark: "zinc-50", light: "zinc-50" },
-    { name: "navbarBackground", dark: "zinc-800", light: "zinc-800" },
-    { name: "navbarLink", dark: "zinc-200", light: "zinc-200", active: "amber-200" },
-    { name: "textInput", dark: "zinc-200", light: "zinc-900", failure: "red-500", success: "green-500", ring: "sky-500", standard: "gray-400" },
-    { name: "helperText", dark: "zinc-400", light: "zinc-500" },
-];
+    primaryLight: "blue-300",
+    secondaryLight: "netural-300",
+    standradLight: "zinc-300",
+    infoLight: "slate-300",
+    selectLight: "sky-300",
+    cancelLight: "rose-300",
+    approveLight: "indigo-300",
+    successLight: "green-300",
+    warningLight: "yellow-300",
+    failureLight: "red-300",
+    blackLight: "stone-700",
+    whiteLight: "zinc-200",
+
+    primaryDark: "blue-700",
+    secondaryDark: "netural-700",
+    standradDark: "zinc-700",
+    infoDark: "slate-700",
+    selectDark: "sky-700",
+    cancelDark: "rose-700",
+    approveDark: "indigo-700",
+    successDark: "green-700",
+    warningDark: "yellow-700",
+    failureDark: "red-700",
+    blackDark: "stone-900",
+    whiteDark: "zinc-400",
+
+}
 
 export default defaultColorPalette;

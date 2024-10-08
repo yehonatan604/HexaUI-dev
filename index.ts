@@ -2,7 +2,7 @@ import "./src/main.css";
 
 // Providers
 export { default as ThemeProvider } from "./src/UI/Providers/Theme.provider";
-export { default as ColorPaletteProvider } from "./src/UI/Providers/ColorPalette.Provider";
+export { default as ColorPaletteProvider } from "./src/UI/Providers/ColorPalette.Provider.tsx";
 
 // Hooks
 export { default as useTheme } from "./src/Core/Hooks/useTheme";
@@ -26,7 +26,7 @@ export { default as TextInput } from "./src/UI/Components/Forms/TextInput/Compon
 
 // Layout
 export { default as Flex } from "./src/UI/Components/Layout/Flex/Component";
-export { default as Grid } from "./src/UI/Components/Layout/Grid/Component";
+export { default as Grid } from "./src/UI/Components/Layout/DataGrid/Component.tsx";
 
 // Navigation
 export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Component";
@@ -53,8 +53,8 @@ export { Sizes } from "./src/Data/Constants/Sizes";
 export { Variants } from "./src/Data/Constants/Variants";
 
 // Types
-export type { TCite } from "./src/Data/Types/TCite";
+export type { TCite } from "./src/Data/Types/ComponentTypes/Typography/Quote/TCite";
 export type { TColor } from "./src/Data/Types/TColor";
-export type { TComponent } from "./src/Data/Types/TComponent";
-export type { TOption } from "./src/Data/Types/TOption";
-export type { TTitle } from "./src/Data/Types/TTitle";
+export type { TComponent } from "./src/Data/Types/ComponentTypes/TComponent";
+export type { TSelectOption as TOption } from "./src/Data/Types/ComponentTypes/Forms/Select/TSelectOption";
+export type { TTitle } from "./src/Data/Types/ComponentTypes/Typography/Title/TTitle";

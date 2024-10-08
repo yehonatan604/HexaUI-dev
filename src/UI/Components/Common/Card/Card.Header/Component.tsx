@@ -1,5 +1,5 @@
 import { FlexDir } from "../../../../../Data/Constants/FlexDirection";
-import { TComponent } from "../../../../../Data/Types/TComponent";
+import { TComponent } from "../../../../../Data/Types/ComponentTypes/TComponent";
 import Flex from "../../../../../UI/Components/Layout/Flex/Component";
 
 const CardHeader = (props: TComponent<"div">) => {

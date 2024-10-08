@@ -1,57 +1,49 @@
 import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
-import { Variants } from "../../../../Data/Constants/Variants";
+import { TTextInput } from "../../../../Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
 import Flex from "../../Layout/Flex/Component";
 import Label from "../Label/Component";
-import { TextInputProps } from "./Props";
 
-const TextInput = (props: TextInputProps) => {
-  const { label, color = Variants.Info, helperText, ...componentProps } = props;
+const TextInput = (props: TTextInput) => {
+  const { label, options, ...componentProps } = props;
 
   // Hooks
   const mode = useTheme().mode;
-  const getColor = useColorPalette().getColor;
+  const { palette } = useColorPalette();
 
-  // Color Palette
-  const { light, dark, failure, success, ring, standard } = getColor("textInput")!;
-  const { light: helperTextLight, dark: helperTextDark } = getColor("helperText")!;
+  // Options
+  const bgColor =
+    options?.bgVariant ||
+    (mode === "light" ? palette.standradLight : palette.standradDark);
+  const textColor =
+    options?.textVariant ||
+    (mode === "light" ? palette.standradDark : palette.standradLight);
+  const helperTextColor = options?.helperTextVariant || options?.textVariant;
 
-  // Variables
-  const bgColor = mode === "light" ? `bg-${dark}` : `bg-${light}`;
-  const textColor = mode === "light" ? `text-${light}` : `text-${dark}`;
+  // Border Options
+  const borderColor = options?.border?.variant || palette.standrad;
+  const borderThickness = options?.border?.thickness || 1;
+  const borderRadius = options?.border?.radius || "md";
+  const border = `border-${borderColor} border-${borderThickness} rounded-${borderRadius}`;
 
-  const helperTextColor =
-    color === Variants.Failure
-      ? `text-${failure}`
-      : mode === "light"
-      ? `text-${helperTextLight}`
-      : `text-${helperTextDark}`;
-
-  const border =
-    color === Variants.Success
-      ? `border border-${success}`
-      : color === Variants.Failure
-      ? `border border-${failure}`
-      : `border border-${standard}`;
-
-  const ringColor =
-    color === Variants.Success
-      ? `focus:ring-1 focus:ring-${success}`
-      : color === Variants.Failure
-      ? `focus:ring-1 focus:ring-${failure}`
-      : `focus:ring-1 focus:ring-${ring}`;
+  // Ring Options
+  const ringColor = options?.ring?.variant || palette.standradDark;
+  const ringThickness = options?.ring?.thickness || 1;
+  const focusRing = `focus:ring-${ringColor} focus:ring-${ringThickness}`;
 
   // JSX
   return (
-    <Flex direction={FlexDir.Col} className="gap-1">
+    <Flex options={{ direction: FlexDir.Col }} className="gap-1">
       <Label text={label} htmlFor="text" />
       <input
         id="text"
-        className={`${border} ${bgColor} ${textColor} rounded-md p-2 focus:outline-none ${ringColor}`}
+        className={`${border} bg-${bgColor} text-${textColor} p-2 focus:outline-none ${focusRing}`}
         {...componentProps}
       />
-      {helperText && <p className={`text-sm ${helperTextColor}`}>* {helperText}</p>}
+      {options?.helperText && (
+        <p className={`text-sm text-${helperTextColor}`}>* {options.helperText}</p>
+      )}
     </Flex>
   );
 };

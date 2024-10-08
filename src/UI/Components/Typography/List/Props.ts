@@ -1,5 +1,5 @@
-import { TComponent } from "../../../..//Data/Types/TComponent";
-import { TTitle } from "../../../../Data/Types/TTitle";
+import { TComponent } from "../../../../Data/Types/ComponentTypes/TComponent";
+import { TTitle } from "../../../../Data/Types/ComponentTypes/Typography/Title/TTitle";
 
 
 export type ListProps = TComponent<"ol"> & {

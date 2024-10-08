@@ -1,16 +1,27 @@
+import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
 import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
+import { TSidebarHeader } from "../../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
 import Flex from "../../../../../UI/Components/Layout/Flex/Component";
-import { SidebarHeaderProps } from "./Props";
 
-const SidebarHeader = (props: SidebarHeaderProps) => {
-  const { children, placement, ...componentProps } = props;
+const SidebarHeader = (props: TSidebarHeader) => {
+  const { children, options, ...componentProps } = props;
 
+  // Hooks
+  const { palette } = useColorPalette();
+
+  // Options
+  const bgColor = options?.bgVariant || palette.standradLight;
+  const textColor = options?.textVariant || palette.standradDark;
+
+  // JSX
   return (
     <Flex
-      justify={placement}
-      align={FlexTypes.Center}
+      options={{
+        justify: options?.placement,
+        align: FlexTypes.Center,
+      }}
       {...componentProps}
-      className={`p-4 w-full bg-zinc-600 text-zinc-200`}
+      className={`p-4 w-full bg-${bgColor} text-${textColor}`}
     >
       {children}
     </Flex>

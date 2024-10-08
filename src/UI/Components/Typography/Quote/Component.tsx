@@ -1,48 +1,40 @@
 import useColorPalette from "../../../../Core/Hooks/useColorPallete";
-import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
+import { TQuote } from "../../../../Data/Types/ComponentTypes/Typography/Quote/TQuote";
 import Flex from "../../Layout/Flex/Component";
-import { QuoteProps } from "./Props";
 
-const Quote = (props: QuoteProps) => {
-  const { children, cite, className, gap, ...componenetProps } = props;
+const Quote = (props: TQuote) => {
+  const { children, cite, options, className, ...componenetProps } = props;
 
   // Hooks
-  const mode = useTheme().mode;
-  const isLightMode = mode === "light";
-  const getColor = useColorPalette().getColor;
-
-  // Color Palette
-  const { light: lightQuote, dark: darkQuote } = getColor("quote")!;
-  const { light: lightCite, dark: darkCite } = getColor("cite")!;
-  const { light: lightCiteHover, dark: darkCiteHover } = getColor("citeHover")!;
+  const { palette } = useColorPalette();
 
   // Colors
-  const quoteColor = isLightMode ? `text-${lightQuote}` : `text-${darkQuote}`;
-  const citeColor = isLightMode ? `text-${lightCite}` : `text-${darkCite}`;
-  const citeHoverColor = isLightMode
-    ? `hover:text-${lightCiteHover}`
-    : `hover:text-${darkCiteHover}`;
-  const flexGap = gap || "gap-1";
+  const quoteColor = options?.textVariant || palette.standrad;
+  const citeColor = cite.variant || palette.standrad;
+  const flexGap = options?.gap || 4;
 
   // JSX
   return (
     <>
       <blockquote className={`${className} m-auto`} {...componenetProps}>
         <Flex
-          direction={FlexDir.Col}
-          align={
-            cite.placement === "start"
-              ? FlexTypes.Start
-              : cite.placement === "end"
-              ? FlexTypes.End
-              : FlexTypes.Center
-          }
-          className={`${flexGap} w-1/2 m-auto`}
+          options={{
+            direction: FlexDir.Col,
+            align:
+              cite.placement === "start"
+                ? FlexTypes.Start
+                : cite.placement === "end"
+                ? FlexTypes.End
+                : FlexTypes.Center,
+          }}
+          className={`gap-${flexGap} w-1/2 m-auto`}
         >
-          <p className={`${quoteColor} text-pretty font-serif italic`}>" {children} "</p>
-          <a href={cite.url} className={`text-sm ${citeColor} ${citeHoverColor}`}>
+          <p className={`text-${quoteColor} text-pretty font-serif italic`}>
+            " {children} "
+          </p>
+          <a href={cite.url} className={`text-sm text-${citeColor} hover:opacity-70`}>
             {cite.text}
           </a>
         </Flex>

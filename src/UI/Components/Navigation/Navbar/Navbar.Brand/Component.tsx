@@ -1,17 +1,19 @@
 import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
-import { NavbarBrandProps } from "./Props";
+import { TNavbarBrand } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarBrand";
 
-const NavbarBrand = (props: NavbarBrandProps) => {
-  const { children, as, to, ...componentProps } = props;
-  const { dark: brandColor } = useColorPalette().getColor("navbarLink")!;
+const NavbarBrand = (props: TNavbarBrand) => {
+  const { children, as, to, options, ...componentProps } = props;
+  const { palette } = useColorPalette();
 
-  // Variables
+  // Options
+  const brandColor = options?.textVariant || palette.primary;
+  const bgColor = options?.bgVariant || "transparent";
   const Component = as || "a";
 
   // JSX
   return (
     <Component
-      className={`text-xl font-bold text-${brandColor}`}
+      className={`text-xl font-bold text-${brandColor} bg-${bgColor}`}
       {...componentProps}
       href={to}
       to={to}

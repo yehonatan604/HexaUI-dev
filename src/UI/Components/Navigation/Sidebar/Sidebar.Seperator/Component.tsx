@@ -1,9 +1,25 @@
+import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
+import { TSidebarSeperator } from "../../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarSeperator";
 import Hr from "../../../Typography/Hr/Component";
-import { SidebarSeperatorProps } from "./Props";
 
-const SidebarSeperator = (props: SidebarSeperatorProps) => {
+const SidebarSeperator = (props: TSidebarSeperator) => {
   const { ...componentProps } = props;
-  return <Hr borderWidth="w-5/6" borderColor="border-zinc-500" {...componentProps} />;
+
+  // Hooks
+  const { palette } = useColorPalette();
+
+  // JSX
+  return (
+    <Hr
+      options={{
+        border: {
+          thickness: "5/6",
+          variant: palette.standrad,
+        },
+      }}
+      {...componentProps}
+    />
+  );
 };
 
 export default SidebarSeperator;

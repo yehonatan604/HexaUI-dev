@@ -5,22 +5,29 @@ import { FlexDir } from "../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import Flex from "../Layout/Flex/Component";
 import Footer from "../Navigation/Footer/Component";
+import useColorPalette from "../../../Core/Hooks/useColorPallete";
 
 const FooterExample = () => {
+  // Hooks
   const mode = useTheme().mode;
-  const bgColor = mode === "light" ? "bg-zinc-100" : "bg-zinc-800";
-  const textColor = mode === "light" ? "text-zinc-900" : "text-zinc-300";
-  const reservedColor = mode === "light" ? "text-zinc-500" : "text-zinc-400";
+  const { palette } = useColorPalette();
 
+  // Options
+  const bgVariant = mode === "light" ? palette.blackLight : palette.blackDark;
+  const reservedVariant = mode === "light" ? palette.standradDark : palette.standradLight;
+
+  // JSX
   return (
     <footer>
       <Footer
-        bgColor={bgColor}
-        textColor={textColor}
-        reservedColor={reservedColor}
-        childrenJustify={FlexTypes.SpaceBetween}
-        childrenAlign={FlexTypes.Center}
-        childrenDirection={FlexDir.Row}
+        options={{
+          bgVariant,
+          textVariant: palette.infoLight,
+          reservedVariant,
+          childrenJustify: FlexTypes.SpaceBetween,
+          childrenAlign: FlexTypes.Center,
+          childrenDirection: FlexDir.Row,
+        }}
         className="p-2 px-5"
       >
         <Footer.Brand className="hover:opacity-60 cursor-pointer">
@@ -42,9 +49,11 @@ const FooterExample = () => {
         </Flex>
         <Flex className="gap-10">
           <Flex
-            direction={FlexDir.Col}
-            justify={FlexTypes.End}
-            align={FlexTypes.End}
+            options={{
+              direction: FlexDir.Col,
+              justify: FlexTypes.End,
+              align: FlexTypes.End,
+            }}
             className="gap-1 text-sm"
           >
             <Link to="/home" className="hover:opacity-60">
@@ -58,9 +67,11 @@ const FooterExample = () => {
             </Link>
           </Flex>
           <Flex
-            direction={FlexDir.Col}
-            justify={FlexTypes.End}
-            align={FlexTypes.End}
+            options={{
+              direction: FlexDir.Col,
+              justify: FlexTypes.End,
+              align: FlexTypes.End,
+            }}
             className="gap-1 text-sm"
           >
             <Link to="/terms" className="hover:opacity-60">

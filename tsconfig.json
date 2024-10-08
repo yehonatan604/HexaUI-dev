@@ -1,12 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*",
-        "./dist/*",
-      ],
-    },
     "module": "ESNext",
     /* Bundler mode */
     "moduleResolution": "bundler",

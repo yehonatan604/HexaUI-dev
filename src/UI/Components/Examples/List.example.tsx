@@ -10,112 +10,112 @@ import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import { ListStyleTypes } from "../../../Data/Constants/ListStyleTypes";
 import { Sizes } from "../../../Data/Constants/Sizes";
-import { Variants } from "../../../Data/Constants/Variants";
 import Flex from "../Layout/Flex/Component";
 import List from "../Typography/List/Component";
 import Title from "../Typography/Title/Component";
+import useColorPalette from "../../../Core/Hooks/useColorPallete";
 
 const ListExample = () => {
   const mode = useTheme().mode;
-  const textColor = mode === "light" ? "text-zinc-800" : "text-zinc-300";
+  const { palette } = useColorPalette();
+  const textColor = mode === "light" ? palette.info : palette.infoLight;
 
   return (
-    <Flex
-      justify={FlexTypes.Center}
-      align={FlexTypes.Center}
-      direction={FlexDir.Col}
-      className="m-auto mb-5 w-4/5"
-    >
-      <Title size={Sizes.Xl}>Lists</Title>
+    <Flex options={{ direction: FlexDir.Col }} className="m-auto mb-5 w-4/5">
+      <Title options={{ size: "sm", textVariant: textColor }}>List Examples</Title>
       <Flex
-        justify={FlexTypes.Center}
-        align={FlexTypes.Center}
-        direction={FlexDir.Col}
+        options={{
+          direction: FlexDir.Col,
+          justify: FlexTypes.Center,
+          align: FlexTypes.Center,
+        }}
         className="m-auto gap-y-10"
       >
         <List
-          items={["item 1", "item 2", "item 3"]}
-          className={`${textColor}`}
-          flexDirection={FlexDir.Row}
-          justify={FlexTypes.Center}
-          align={FlexTypes.Center}
-          gap="gap-10"
-          listTitle={{
-            text: "horizontal list",
+          options={{
+            items: ["item 1", "item 2", "item 3"],
+            textVariant: palette.primary,
+            listStyle: ListStyleTypes.Decimal,
+            fontSize: Sizes.Sm,
+            gap: 1,
           }}
         />
 
         <Flex
-          justify={FlexTypes.Center}
-          align={FlexTypes.Baseline}
-          wrap={FlexWrap.Wrap}
-          direction={FlexDir.Row}
-          className="m-auto mb-5 gap-y-10 gap-x-20 w-3/5"
+          options={{
+            direction: FlexDir.Row,
+            justify: FlexTypes.Center,
+            align: FlexTypes.Start,
+            wrap: FlexWrap.Wrap,
+          }}
+          className="m-auto mb-5 gap-y-10 gap-x-20"
         >
           <List
-            items={["item 1", "item 2", "item 3"]}
-            className={`${textColor}`}
-            listStyle={ListStyleTypes.Decimal}
-            fontSize={Sizes.Sm}
-            gap={Sizes.Xxs}
-            variant={Variants.Success}
-            listTitle={{
-              text: "vertical list decimal style",
+            options={{
+              items: ["item 1", "item 2", "item 3"],
+              textVariant: palette.success,
+              listStyle: ListStyleTypes.Circle,
+              fontSize: Sizes.Sm,
+              gap: 2,
+              justify: FlexTypes.Start,
+              align: FlexTypes.Start,
             }}
           />
           <List
-            items={["item 1", "item 2", "item 3"]}
-            className={`${textColor}`}
-            listStyle={ListStyleTypes.Circle}
-            fontSize={Sizes.Md}
-            gap={Sizes.Xxs}
-            variant={Variants.Warning}
-            listTitle={{
-              text: "vertical list warning",
+            options={{
+              items: ["item 1", "item 2", "item 3"],
+              textVariant: palette.warning,
+              listStyle: ListStyleTypes.Square,
+              fontSize: Sizes.Md,
+              gap: 3,
+              justify: FlexTypes.End,
+              align: FlexTypes.End,
             }}
           />
           <List
-            items={["item 1", "item 2", "item 3"]}
-            className={`${textColor}`}
-            fontSize={Sizes.Lg}
-            variant={Variants.Info}
-            icons={[<GiBulletBill size={10} />]}
-            listTitle={{
-              text: "vertical list info variant with bullet icons",
-            }}
-            gap={Sizes.Xxs}
-          />
-          <List
-            items={["item 1", "item 2", "item 3"]}
-            className={`${textColor}`}
-            fontSize={Sizes.Xl}
-            gap={Sizes.Xs}
-            variant={"random"}
-            icons={[
-              <GiBulletBill size={12} />,
-              <GiAbbotMeeple size={12} />,
-              <GiAbstract004 size={12} />,
-            ]}
-            byOrder
-            listTitle={{
-              text: "vertical list with a random variant and ordered icons",
-              color: mode === "light" ? "text-zinc-800" : "text-zinc-200",
+            options={{
+              items: ["item 1", "item 2", "item 3"],
+              textVariant: palette.failure,
+              listStyle: ListStyleTypes.Disc,
+              fontSize: Sizes.Md,
+              gap: 4,
+              justify: FlexTypes.Center,
+              align: FlexTypes.Center,
+              icons: [<GiBulletBill size={10} />],
             }}
           />
           <List
-            items={["item 1", "item 2", "item 3"]}
-            className={`${textColor}`}
-            fontSize={Sizes.Xxl}
-            gap={Sizes.Md}
-            variant={"rainbow"}
-            icons={[
-              <GiBulletBill size={13} />,
-              <GiAbbotMeeple size={13} />,
-              <GiAbstract004 size={13} />,
-              <GiAbstract057 size={13} />,
-            ]}
-            listTitle={{
-              text: "vertical list rainbow variant with random icons",
+            options={{
+              items: ["item 1", "item 2", "item 3"],
+              listStyle: ListStyleTypes.Disc,
+              fontSize: Sizes.Lg,
+              gap: 5,
+              justify: FlexTypes.Center,
+              align: FlexTypes.Center,
+              icons: [
+                <GiBulletBill size={12} />,
+                <GiAbbotMeeple size={12} />,
+                <GiAbstract004 size={12} />,
+              ],
+              byOrder: true,
+            }}
+          />
+          <List
+            options={{
+              items: ["item 1", "item 2", "item 3"],
+              textVariant: "rainbow",
+              listStyle: ListStyleTypes.Disc,
+              fontSize: Sizes.Xl,
+              gap: 6,
+              justify: FlexTypes.Center,
+              align: FlexTypes.Center,
+              icons: [
+                <GiBulletBill size={13} />,
+                <GiAbbotMeeple size={13} />,
+                <GiAbstract004 size={13} />,
+                <GiAbstract057 size={13} />,
+              ],
+              byOrder: false,
             }}
           />
         </Flex>
