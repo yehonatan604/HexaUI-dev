@@ -1,4 +1,4 @@
-import defaultColorPalette from "../../../Data/Constants/DefaultColorPalette";
+import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import { Sizes } from "../../../Data/Constants/Sizes";
@@ -6,6 +6,10 @@ import RingBorder from "../Common/Border/RingBorder/Component";
 import Flex from "../Layout/Flex/Component";
 
 const RingExamples = () => {
+  // Hooks
+  const { colors } = useTheme();
+
+  // JSX
   return (
     <Flex
       options={{
@@ -24,7 +28,7 @@ const RingExamples = () => {
       </RingBorder>
       <RingBorder
         options={{
-          ringVariant: defaultColorPalette.success,
+          ringVariant: colors.success,
         }}
         className="m-auto mt-10"
       >
@@ -36,8 +40,8 @@ const RingExamples = () => {
       </RingBorder>
       <RingBorder
         options={{
-          ringVariant: defaultColorPalette.primary,
-          borderVariant: defaultColorPalette.blackLight,
+          ringVariant: colors.primary,
+          borderVariant: colors.blackLight,
         }}
         className="m-auto mt-10"
       >
@@ -49,10 +53,10 @@ const RingExamples = () => {
       </RingBorder>
       <RingBorder
         options={{
-          ringVariant: defaultColorPalette.warning,
-          borderVariant: defaultColorPalette.select,
+          ringVariant: colors.warning,
+          borderVariant: colors.select,
           shadow: {
-            color: defaultColorPalette.standrad,
+            color: colors.standrad,
             size: Sizes.Xl,
           },
         }}
@@ -66,10 +70,10 @@ const RingExamples = () => {
       </RingBorder>
       <RingBorder
         options={{
-          ringVariant: defaultColorPalette.cancel,
-          borderVariant: defaultColorPalette.standradDark,
+          ringVariant: colors.cancel,
+          borderVariant: colors.standradDark,
           shadow: {
-            color: defaultColorPalette.standrad,
+            color: colors.standrad,
             size: Sizes.Lg,
           },
           padding: 1,
@@ -84,13 +88,13 @@ const RingExamples = () => {
       </RingBorder>
       <RingBorder
         options={{
-          ringVariant: defaultColorPalette.blackDark,
-          borderVariant: defaultColorPalette.approve,
+          ringVariant: colors.blackDark,
+          borderVariant: colors.approve,
           shadow: {
-            color: defaultColorPalette.selectLight,
+            color: colors.selectLight,
             size: Sizes.Lg,
           },
-          textVariant: defaultColorPalette.standrad,
+          textVariant: colors.standrad,
           padding: 4,
         }}
         className="m-auto"
@@ -99,14 +103,14 @@ const RingExamples = () => {
       </RingBorder>
       <RingBorder
         options={{
-          ringVariant: defaultColorPalette.cancel,
-          borderVariant: defaultColorPalette.approve,
+          ringVariant: colors.cancel,
+          borderVariant: colors.approve,
           bgVariant: "lime-500",
           shadow: {
-            color: defaultColorPalette.successLight,
+            color: colors.successLight,
             size: Sizes.Lg,
           },
-          textVariant: defaultColorPalette.standrad,
+          textVariant: colors.standrad,
           padding: 4,
           rounded: "full",
         }}
