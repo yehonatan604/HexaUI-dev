@@ -1,10 +1,10 @@
 import { TColorPalette } from "../../Data/Types/TColorPalette";
 
 const defaultColorPalette: TColorPalette = {
-    backgroundLight: "white-d",
+    backgroundLight: "standard-d",
     backgroundDark: "black",
     textLight: "standard-d",
-    textDark: "white",
+    textDark: "white-l",
 
     primary: "primary",
     secondary: "secondary",

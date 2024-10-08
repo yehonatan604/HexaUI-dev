@@ -15,7 +15,8 @@ const NavbarExample = () => {
   const { mode, colors } = useTheme();
 
   // Options
-  const bgVariant = mode === "light" ? colors.blackLight : colors.blackDark;
+  const bgVariant = mode === "light" ? colors.primary : colors.blackDark;
+  const textVariant = colors.standrad;
 
   // JSX
   return (
@@ -23,7 +24,7 @@ const NavbarExample = () => {
       <Navbar
         options={{
           bgVariant: bgVariant,
-          textVariant: colors.infoLight,
+          textVariant: textVariant,
           shadow: {
             color: "black",
             size: "md",

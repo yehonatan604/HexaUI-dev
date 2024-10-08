@@ -6,7 +6,7 @@ import Button from "../Common/Button/Component";
 import Flex from "../Layout/Flex/Component";
 
 const ButtonExamples = () => {
-  const { Sm, Md, Lg, Xl } = Sizes;
+  const { Sm, Lg, Xl } = Sizes;
   const { colors } = useTheme();
 
   return (
@@ -22,7 +22,7 @@ const ButtonExamples = () => {
         options={{
           size: Sm,
           bgVariant: colors.success,
-          textVariant: colors.info,
+          textVariant: colors.infoDark,
         }}
       >
         submit
@@ -48,15 +48,7 @@ const ButtonExamples = () => {
         submit
       </Button>
 
-      <Button
-        options={{
-          size: Md,
-          bgVariant: colors.primary,
-          textVariant: colors.standradDark,
-        }}
-      >
-        submit
-      </Button>
+      <Button>submit</Button>
     </Flex>
   );
 };

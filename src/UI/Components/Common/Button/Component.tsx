@@ -9,8 +9,8 @@ const Button = (props: TButton) => {
   const rounded = options?.rounded || false;
   const roundedS = options?.roundedS || false;
   const roundedE = options?.roundedE || false;
-  const bgColor = options?.bgVariant || colors.secondaryDark;
-  const textColor = options?.textVariant || colors.select;
+  const bgColor = options?.bgVariant || colors.info;
+  const textColor = options?.textVariant || colors.white;
 
   let buttonSize: string;
   if (size === Sizes.Sm) {
