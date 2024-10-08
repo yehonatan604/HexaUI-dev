@@ -6,20 +6,38 @@ import useColorPalette from "../../../Core/Hooks/useColorPallete";
 import { SidebarItemOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarItem";
 import { SidebarHeaderOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
 import { HiArrowCircleRight } from "react-icons/hi";
+import { SidebarOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
+import { TBorder } from "../../../Data/Types/TBorder";
 
 const SidebarExample = () => {
   // Hooks
   const { palette } = useColorPalette();
 
   // Options
+  const borderOptions = {
+    variant: palette.standradDark,
+    thickness: "2",
+  } as TBorder;
+
+  // Sidebar 1 Options
+  const sidebar1Options = {
+    border: borderOptions,
+  };
+
   const sidebar1ItemOptions = {
     textVariant: palette.whiteLight,
     hoverBgVariant: palette.info,
     hoverTextVariant: palette.infoLight,
     disableOpacityOnHover: true,
     labelBgVariant: "slate-800",
-    labelVariant: "slate-200",
+    labelVariant: palette.warning,
   } as SidebarItemOptions;
+
+  // Sidebar 2 Options
+  const sidebar2Options = {
+    bgVariant: palette.blackLight,
+    border: borderOptions,
+  } as SidebarOptions;
 
   const sidebar2ItemOptions = {
     textVariant: palette.white,
@@ -29,6 +47,18 @@ const SidebarExample = () => {
     labelVariant: "slate-200",
   } as SidebarItemOptions;
 
+  const sidebar2HeaderOptions = {
+    bgVariant: palette.infoDark,
+    textVariant: palette.infoLight,
+    placement: FlexTypes.Center,
+  } as SidebarHeaderOptions;
+
+  // Sidebar 3 Options
+  const sidebar3Options = {
+    bgVariant: palette.white,
+    border: borderOptions,
+  } as SidebarOptions;
+
   const sidebar3ItemOptions = {
     textVariant: palette.blackLight,
     hoverBgVariant: palette.primaryLight,
@@ -37,27 +67,28 @@ const SidebarExample = () => {
     labelVariant: palette.black,
   } as SidebarItemOptions;
 
-  const sidebar4ItemOptions = {
-    textVariant: palette.blackLight,
-    labelBgVariant: palette.info,
-    labelVariant: palette.black,
-  } as SidebarItemOptions;
-
-  const sidebar2HeaderOptions = {
-    bgVariant: palette.infoDark,
-    textVariant: palette.infoLight,
-    placement: FlexTypes.Start,
-  } as SidebarHeaderOptions;
-
   const sidebar3HeaderOptions = {
     bgVariant: palette.primaryLight,
     textVariant: palette.blackLight,
     placement: FlexTypes.Start,
   } as SidebarHeaderOptions;
 
+  // Sidebar 4 Options
+  const sidebar4Options = {
+    bgVariant: palette.standradLight,
+    disableClose: true,
+  } as SidebarOptions;
+
+  const sidebar4ItemOptions = {
+    textVariant: palette.blackLight,
+    labelBgVariant: palette.primaryDark,
+    labelVariant: palette.warning,
+  } as SidebarItemOptions;
+
   const sidebar4HeaderOptions = {
     bgVariant: palette.blackLight,
     textVariant: palette.infoLight,
+    placement: FlexTypes.Center,
   } as SidebarHeaderOptions;
 
   //Constants
@@ -70,10 +101,10 @@ const SidebarExample = () => {
         justify: FlexTypes.Center,
         align: FlexTypes.Start,
       }}
-      className="w-[99vw] gap-4 mb-10 mt-5"
+      className="w-5/6 gap-10 mb-10 mt-5"
     >
       {/* Sidebar 1 */}
-      <Sidebar>
+      <Sidebar options={sidebar1Options}>
         <Sidebar.Header options={{ placement: FlexTypes.Start }}>
           <h1 className="text-xl font-serif">Menu</h1>
         </Sidebar.Header>
@@ -110,7 +141,7 @@ const SidebarExample = () => {
       </Sidebar>
 
       {/* Sidebar 2 */}
-      <Sidebar options={{ bgVariant: palette.blackLight }}>
+      <Sidebar options={sidebar2Options}>
         <Sidebar.Header options={sidebar2HeaderOptions}>
           <h1 className="text-xl font-serif">Menu</h1>
         </Sidebar.Header>
@@ -147,7 +178,7 @@ const SidebarExample = () => {
       </Sidebar>
 
       {/* Sidebar 3 */}
-      <Sidebar chevron={HiArrowCircleRight} options={{ bgVariant: palette.white }}>
+      <Sidebar chevron={HiArrowCircleRight} options={sidebar3Options}>
         <Sidebar.Header options={sidebar3HeaderOptions}>
           <h1 className="text-xl font-serif">Menu</h1>
         </Sidebar.Header>
@@ -184,7 +215,7 @@ const SidebarExample = () => {
       </Sidebar>
 
       {/* Sidebar 4 */}
-      <Sidebar options={{ bgVariant: palette.infoLight, disableClose: true }}>
+      <Sidebar options={sidebar4Options}>
         <Sidebar.Header options={sidebar4HeaderOptions}>
           <h1 className="text-xl font-serif">Menu</h1>
         </Sidebar.Header>

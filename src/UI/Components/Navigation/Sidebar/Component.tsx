@@ -9,7 +9,7 @@ import Flex from "../../Layout/Flex/Component";
 import { TSidebar } from "../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
 
 const Sidebar = (props: TSidebar) => {
-  const { children, options, chevron: icon, ...componentProps } = props;
+  const { children, options, className, chevron: icon, ...componentProps } = props;
 
   // Hooks
   const [isOpen, setIsOpen] = useState(true);
@@ -20,6 +20,9 @@ const Sidebar = (props: TSidebar) => {
   const transition = "transition-all duration-1000";
   const maxWidth = options?.maxWidth || "w-[280px]";
   const bgColor = options?.bgVariant || palette.standradDark;
+  const borderColor = options?.border?.variant || palette.standradDark;
+  const borderThickness = options?.border?.thickness || 4;
+  const border = `border-r-${borderThickness} border-${borderColor}`;
 
   // Functions
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -36,7 +39,9 @@ const Sidebar = (props: TSidebar) => {
         {...componentProps}
         className={`${isOpen ? `${maxWidth} max-md:w-[95vw]` : "w-[0px]"} bg-${bgColor} ${
           !isOpen && "opacity-5"
-        } ${transition} duration-1000 overflow-hidden text-nowrap text-ellipsis gap-4 pb-4`}
+        } ${transition} duration-1000 overflow-hidden text-nowrap text-ellipsis gap-4 pb-4 ${
+          options?.border && border
+        } ${className}`}
       >
         {children}
       </Flex>
