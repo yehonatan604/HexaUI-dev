@@ -2,20 +2,20 @@ import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { Gi3dGlasses, Gi3dMeeple, GiDaisy } from "react-icons/gi";
 import Sidebar from "../Navigation/Sidebar/Component";
 import Flex from "../Layout/Flex/Component";
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
 import { SidebarItemOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarItem";
 import { SidebarHeaderOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
 import { HiArrowCircleRight } from "react-icons/hi";
 import { SidebarOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
 import { TBorder } from "../../../Data/Types/TBorder";
+import useTheme from "../../../Core/Hooks/useTheme";
 
 const SidebarExample = () => {
   // Hooks
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
   const borderOptions = {
-    variant: palette.standradDark,
+    variant: colors.standradDark,
     thickness: "2",
   } as TBorder;
 
@@ -25,69 +25,69 @@ const SidebarExample = () => {
   };
 
   const sidebar1ItemOptions = {
-    textVariant: palette.whiteLight,
-    hoverBgVariant: palette.info,
-    hoverTextVariant: palette.infoLight,
+    textVariant: colors.whiteLight,
+    hoverBgVariant: colors.info,
+    hoverTextVariant: colors.infoLight,
     disableOpacityOnHover: true,
     labelBgVariant: "slate-800",
-    labelVariant: palette.warning,
+    labelVariant: colors.warning,
   } as SidebarItemOptions;
 
   // Sidebar 2 Options
   const sidebar2Options = {
-    bgVariant: palette.blackLight,
+    bgVariant: colors.blackLight,
     border: borderOptions,
   } as SidebarOptions;
 
   const sidebar2ItemOptions = {
-    textVariant: palette.white,
-    hoverBgVariant: palette.black,
+    textVariant: colors.white,
+    hoverBgVariant: colors.black,
     disableOpacityOnHover: true,
     labelBgVariant: "slate-800",
     labelVariant: "slate-200",
   } as SidebarItemOptions;
 
   const sidebar2HeaderOptions = {
-    bgVariant: palette.infoDark,
-    textVariant: palette.infoLight,
+    bgVariant: colors.infoDark,
+    textVariant: colors.infoLight,
     placement: FlexTypes.Center,
   } as SidebarHeaderOptions;
 
   // Sidebar 3 Options
   const sidebar3Options = {
-    bgVariant: palette.white,
+    bgVariant: colors.white,
     border: borderOptions,
   } as SidebarOptions;
 
   const sidebar3ItemOptions = {
-    textVariant: palette.blackLight,
-    hoverBgVariant: palette.primaryLight,
+    textVariant: colors.blackLight,
+    hoverBgVariant: colors.primaryLight,
     disableOpacityOnHover: true,
-    labelBgVariant: palette.info,
-    labelVariant: palette.black,
+    labelBgVariant: colors.info,
+    labelVariant: colors.black,
   } as SidebarItemOptions;
 
   const sidebar3HeaderOptions = {
-    bgVariant: palette.primaryLight,
-    textVariant: palette.blackLight,
+    bgVariant: colors.primaryLight,
+    textVariant: colors.blackLight,
     placement: FlexTypes.Start,
   } as SidebarHeaderOptions;
 
   // Sidebar 4 Options
   const sidebar4Options = {
-    bgVariant: palette.standradLight,
+    bgVariant: colors.standradLight,
     disableClose: true,
   } as SidebarOptions;
 
   const sidebar4ItemOptions = {
-    textVariant: palette.blackLight,
-    labelBgVariant: palette.primaryDark,
-    labelVariant: palette.warning,
+    textVariant: colors.blackLight,
+    labelBgVariant: colors.primaryDark,
+    labelVariant: colors.warning,
   } as SidebarItemOptions;
 
   const sidebar4HeaderOptions = {
-    bgVariant: palette.blackLight,
-    textVariant: palette.infoLight,
+    bgVariant: colors.blackLight,
+    textVariant: colors.infoLight,
     placement: FlexTypes.Center,
   } as SidebarHeaderOptions;
 

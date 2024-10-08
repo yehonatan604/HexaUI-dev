@@ -1,16 +1,21 @@
+import defaultColorPalette from "../../Data/Constants/DefaultColorPalette";
+import defaultGradientPalette from "../../Data/Constants/DefaultGradientPalette";
 import { TColorPalette } from "../../Data/Types/TColorPalette";
-import ColorPaletteProvider from "./ColorPalette.Provider.tsx";
 import ThemeProvider from "./Theme.provider";
 
 export type HexaUIProps = {
   children: React.ReactNode;
-  palette?: TColorPalette;
+  colors?: TColorPalette;
+  gradients?: TColorPalette;
 };
 
-const HexaUI = ({ children, palette }: HexaUIProps) => {
+const HexaUI = ({ children, colors, gradients }: HexaUIProps) => {
   return (
-    <ThemeProvider>
-      <ColorPaletteProvider pallete={palette}>{children}</ColorPaletteProvider>
+    <ThemeProvider
+      colorsPalette={colors || defaultColorPalette}
+      gradientsPalette={gradients || defaultGradientPalette}
+    >
+      {children}
     </ThemeProvider>
   );
 };

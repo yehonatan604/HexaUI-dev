@@ -1,12 +1,12 @@
-import useColorPalette from "../../../..//Core/Hooks/useColorPallete";
+import useTheme from "../../../../Core/Hooks/useTheme";
 import { THr } from "../../../../Data/Types/ComponentTypes/Typography/Hr/THr";
 
 const Hr = (props: THr) => {
   const { options, className, ...componenetProps } = props;
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   const lineWidth = options?.width || "1/2";
-  const lineColor = options?.color || palette.standrad;
+  const lineColor = options?.color || colors.standrad;
 
   return (
     <hr

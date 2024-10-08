@@ -1,4 +1,4 @@
-import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
 import { TSidebarHeader } from "../../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
 import Flex from "../../../../../UI/Components/Layout/Flex/Component";
@@ -7,11 +7,11 @@ const SidebarHeader = (props: TSidebarHeader) => {
   const { children, options, ...componentProps } = props;
 
   // Hooks
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
-  const bgColor = options?.bgVariant || palette.standrad;
-  const textColor = options?.textVariant || palette.standradLight;
+  const bgColor = options?.bgVariant || colors.standrad;
+  const textColor = options?.textVariant || colors.standradLight;
 
   // JSX
   return (

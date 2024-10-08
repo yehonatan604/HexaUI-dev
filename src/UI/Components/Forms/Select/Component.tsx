@@ -1,18 +1,15 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { TSelect } from "../../../../Data/Types/ComponentTypes/Forms/Select/TSelect";
 
 const Select = (props: TSelect) => {
   const { options, items, ...componentProps } = props;
-  const { palette } = useColorPalette();
-  const { mode } = useTheme();
+  const { mode, colors } = useTheme();
 
-  const textColor = options?.textVariant || palette.standradLight;
+  const textColor = options?.textVariant || colors.standradLight;
   const bgColor =
-    options?.bgVariant ||
-    (mode === "light" ? palette.standradLight : palette.standradDark);
-  const borderColor = options?.borderVariant || palette.standrad;
-  const listItemColor = options?.listItemsVariant || palette.standradLight;
+    options?.bgVariant || (mode === "light" ? colors.standradLight : colors.standradDark);
+  const borderColor = options?.borderVariant || colors.standrad;
+  const listItemColor = options?.listItemsVariant || colors.standradLight;
 
   return (
     <select

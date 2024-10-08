@@ -3,12 +3,12 @@ import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import Checkbox from "../Forms/Checkbox/Component";
 import RangeInput from "../Forms/RangeInput/Component";
 import Flex from "../Layout/Flex/Component";
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
 import Label from "../Forms/Label/Component";
 import TextInput from "../Forms/TextInput/Component";
+import useTheme from "../../../Core/Hooks/useTheme";
 
 const FormInputExamples = () => {
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   return (
     <form className="w-full">
@@ -25,7 +25,7 @@ const FormInputExamples = () => {
           placeholder="Please enter name"
           options={{
             helperText: "required",
-            helperTextVariant: palette.standradLight,
+            helperTextVariant: colors.standradLight,
           }}
         />
         <TextInput label="Name" placeholder="Please enter name" defaultValue="John" />
@@ -34,9 +34,9 @@ const FormInputExamples = () => {
           type="email"
           defaultValue={"john@email.com"}
           options={{
-            textVariant: palette.success,
+            textVariant: colors.success,
             border: {
-              variant: palette.success,
+              variant: colors.success,
               thickness: "2",
             },
           }}
@@ -45,10 +45,10 @@ const FormInputExamples = () => {
           label="Password"
           type="password"
           options={{
-            textVariant: palette.failure,
+            textVariant: colors.failure,
             helperText: "Please enter a valid password",
             border: {
-              variant: palette.failure,
+              variant: colors.failure,
               thickness: "2",
             },
           }}
@@ -67,57 +67,57 @@ const FormInputExamples = () => {
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.primary,
-            rangeVariant: palette.primary,
+            textVariant: colors.primary,
+            rangeVariant: colors.primary,
           }}
         />
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.warning,
-            rangeVariant: palette.warning,
+            textVariant: colors.warning,
+            rangeVariant: colors.warning,
           }}
         />
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.failure,
-            rangeVariant: palette.failure,
+            textVariant: colors.failure,
+            rangeVariant: colors.failure,
           }}
         />
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.success,
-            rangeVariant: palette.success,
+            textVariant: colors.success,
+            rangeVariant: colors.success,
           }}
         />
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.select,
-            rangeVariant: palette.select,
+            textVariant: colors.select,
+            rangeVariant: colors.select,
           }}
         />
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.cancel,
-            rangeVariant: palette.cancel,
+            textVariant: colors.cancel,
+            rangeVariant: colors.cancel,
           }}
         />
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.info,
-            rangeVariant: palette.info,
+            textVariant: colors.info,
+            rangeVariant: colors.info,
           }}
         />
         <RangeInput
           label="Age"
           options={{
-            textVariant: palette.secondary,
-            rangeVariant: palette.secondary,
+            textVariant: colors.secondary,
+            rangeVariant: colors.secondary,
           }}
         />
       </Flex>
@@ -132,7 +132,7 @@ const FormInputExamples = () => {
         <Label
           text="Checkboxes:"
           options={{
-            textVariant: palette.primary,
+            textVariant: colors.primary,
           }}
         />
         <Checkbox label="is checked" />
@@ -143,7 +143,7 @@ const FormInputExamples = () => {
           options={{
             ring: {
               thickness: 2,
-              variant: palette.primary,
+              variant: colors.primary,
             },
           }}
         />
@@ -153,7 +153,7 @@ const FormInputExamples = () => {
           options={{
             ring: {
               thickness: 2,
-              variant: palette.warning,
+              variant: colors.warning,
             },
           }}
         />
@@ -163,7 +163,7 @@ const FormInputExamples = () => {
           options={{
             ring: {
               thickness: 2,
-              variant: palette.failure,
+              variant: colors.failure,
             },
           }}
         />
@@ -173,7 +173,7 @@ const FormInputExamples = () => {
           options={{
             ring: {
               thickness: 2,
-              variant: palette.success,
+              variant: colors.success,
             },
           }}
         />
@@ -183,7 +183,7 @@ const FormInputExamples = () => {
           options={{
             ring: {
               thickness: 2,
-              variant: palette.standrad,
+              variant: colors.standrad,
             },
           }}
         />

@@ -2,17 +2,15 @@ import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import Flex from "../Layout/Flex/Component";
 import DataGrid from "../Layout/DataGrid/Component";
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
 import { FlexDir } from "../../../Data/Constants/FlexDirection";
 import Title from "../Typography/Title/Component";
 
 const DataGridExample = () => {
   // Hooks
-  const mode = useTheme().mode;
-  const { palette } = useColorPalette();
+  const { mode, colors } = useTheme();
 
   // Options
-  const textColor = mode === "dark" ? palette.infoLight : palette.infoDark;
+  const textColor = mode === "dark" ? colors.infoLight : colors.infoDark;
 
   // JSX
   return (
@@ -24,7 +22,7 @@ const DataGridExample = () => {
       }}
       className="m-auto mb-5 gap-4 w-3/5 text-2xl"
     >
-      <Title options={{ size: "xl", textVariant: palette.secondary }}>Data Grid</Title>
+      <Title options={{ size: "xl", textVariant: colors.secondary }}>Data Grid</Title>
       <DataGrid
         cols={3}
         rowsArr={[

@@ -1,4 +1,4 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TQuote } from "../../../../Data/Types/ComponentTypes/Typography/Quote/TQuote";
@@ -8,11 +8,11 @@ const Quote = (props: TQuote) => {
   const { children, cite, options, className, ...componenetProps } = props;
 
   // Hooks
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Colors
-  const quoteColor = options?.textVariant || palette.standrad;
-  const citeColor = cite.variant || palette.standrad;
+  const quoteColor = options?.textVariant || colors.standrad;
+  const citeColor = cite.variant || colors.standrad;
   const flexGap = options?.gap || 4;
 
   // JSX

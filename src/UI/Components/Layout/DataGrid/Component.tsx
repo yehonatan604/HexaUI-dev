@@ -1,4 +1,3 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { TDataGrid } from "../../../../Data/Types/ComponentTypes/Layout/DataGrid/TDataGrid";
 
@@ -6,13 +5,11 @@ const AutoGrid = (props: TDataGrid) => {
   const { rowsArr, cols, options, ...componentProps } = props;
 
   //Hooks
-  const mode = useTheme().mode;
-  const { palette } = useColorPalette();
+  const { mode, colors } = useTheme();
 
   // Options
   const showBorder = options?.border.show || true;
-  const defaultBorderColor =
-    mode === "dark" ? palette.standradLight : palette.standradDark;
+  const defaultBorderColor = mode === "dark" ? colors.standradLight : colors.standradDark;
   const borderColor = options?.borderVariant || defaultBorderColor;
 
   // JSX

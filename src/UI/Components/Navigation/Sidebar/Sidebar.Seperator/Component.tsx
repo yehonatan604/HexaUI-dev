@@ -1,4 +1,4 @@
-import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../../Core/Hooks/useTheme";
 import { TSidebarSeperator } from "../../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarSeperator";
 import Hr from "../../../Typography/Hr/Component";
 
@@ -6,7 +6,7 @@ const SidebarSeperator = (props: TSidebarSeperator) => {
   const { ...componentProps } = props;
 
   // Hooks
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // JSX
   return (
@@ -14,7 +14,7 @@ const SidebarSeperator = (props: TSidebarSeperator) => {
       options={{
         border: {
           thickness: "5/6",
-          variant: palette.standrad,
+          variant: colors.standrad,
         },
       }}
       {...componentProps}

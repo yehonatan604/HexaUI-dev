@@ -5,16 +5,15 @@ import { FlexDir } from "../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import Flex from "../Layout/Flex/Component";
 import Footer from "../Navigation/Footer/Component";
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
 
 const FooterExample = () => {
   // Hooks
   const mode = useTheme().mode;
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
-  const bgVariant = mode === "light" ? palette.blackLight : palette.blackDark;
-  const reservedVariant = mode === "light" ? palette.standradDark : palette.standradLight;
+  const bgVariant = mode === "light" ? colors.blackLight : colors.blackDark;
+  const reservedVariant = mode === "light" ? colors.standradDark : colors.standradLight;
 
   // JSX
   return (
@@ -22,7 +21,7 @@ const FooterExample = () => {
       <Footer
         options={{
           bgVariant,
-          textVariant: palette.infoLight,
+          textVariant: colors.infoLight,
           reservedVariant,
           childrenJustify: FlexTypes.SpaceBetween,
           childrenAlign: FlexTypes.Center,

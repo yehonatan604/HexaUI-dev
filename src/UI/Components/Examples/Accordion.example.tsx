@@ -1,11 +1,11 @@
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import Accordion from "../Common/Accordion/Component";
 import Flex from "../Layout/Flex/Component";
 
 const AccordionExamples = () => {
-  const { palette: pallete } = useColorPalette();
+  const { colors } = useTheme();
 
   return (
     <Flex
@@ -19,10 +19,10 @@ const AccordionExamples = () => {
       <Accordion
         options={{
           title: "Accordion Standard",
-          titleVariant: pallete.cancel,
-          textVariant: pallete.success,
+          titleVariant: colors.cancel,
+          textVariant: colors.success,
           border: {
-            variant: pallete.approve,
+            variant: colors.approve,
             show: true,
           },
         }}
@@ -37,10 +37,10 @@ const AccordionExamples = () => {
       <Accordion
         options={{
           title: "Accordion Primary",
-          textVariant: pallete.select,
-          titleVariant: pallete.primary,
+          textVariant: colors.select,
+          titleVariant: colors.primary,
           border: {
-            variant: pallete.primaryDark,
+            variant: colors.primaryDark,
             show: true,
             radius: "0",
           },
@@ -56,8 +56,8 @@ const AccordionExamples = () => {
       <Accordion
         options={{
           title: "Accordion Primary",
-          titleVariant: pallete.standradLight,
-          textVariant: pallete.cancel,
+          titleVariant: colors.standradLight,
+          textVariant: colors.cancel,
         }}
       >
         <p>

@@ -1,4 +1,3 @@
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
@@ -7,11 +6,10 @@ import Flex from "../Layout/Flex/Component";
 
 const SelectExamples = () => {
   // Hooks
-  const mode = useTheme().mode;
-  const { palette } = useColorPalette();
+  const { mode, colors } = useTheme();
 
   // Options
-  const textColor = mode === "light" ? palette.standradLight : palette.standradDark;
+  const textColor = mode === "light" ? colors.standradLight : colors.standradDark;
 
   // JSX
   return (
@@ -33,7 +31,7 @@ const SelectExamples = () => {
       />
       <Select
         options={{
-          textVariant: palette.primary,
+          textVariant: colors.primary,
         }}
         items={[
           { value: "1", label: "Option 1" },
@@ -44,8 +42,8 @@ const SelectExamples = () => {
       />
       <Select
         options={{
-          textVariant: palette.success,
-          listItemsVariant: palette.success,
+          textVariant: colors.success,
+          listItemsVariant: colors.success,
         }}
         items={[
           { value: "1", label: "Option 1" },
@@ -56,8 +54,8 @@ const SelectExamples = () => {
       />
       <Select
         options={{
-          textVariant: palette.secondary,
-          listItemsVariant: palette.warning,
+          textVariant: colors.secondary,
+          listItemsVariant: colors.warning,
         }}
         items={[
           { value: "1", label: "Option 1" },

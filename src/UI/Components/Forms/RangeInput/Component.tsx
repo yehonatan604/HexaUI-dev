@@ -5,7 +5,6 @@ import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TRangeInput } from "../../../../Data/Types/ComponentTypes/Forms/RangeInput/TRangeInput";
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 import generateRandomId from "../../../../Core/Helpers/IdHelper";
 
 const RangeInput = (props: TRangeInput) => {
@@ -13,13 +12,12 @@ const RangeInput = (props: TRangeInput) => {
 
   // Hooks
   const [val, setVal] = useState(0);
-  const mode = useTheme().mode;
-  const { palette } = useColorPalette();
+  const { mode, colors } = useTheme();
 
   // Options
   const textColor =
     options?.textVariant ||
-    (mode === "dark" ? palette.standradLight : palette.standradDark);
+    (mode === "dark" ? colors.standradLight : colors.standradDark);
 
   // Constants
   const randomId = generateRandomId();
@@ -30,23 +28,23 @@ const RangeInput = (props: TRangeInput) => {
   };
 
   const rangeColor =
-    options?.rangeVariant === palette.info
+    options?.rangeVariant === colors.info
       ? "info"
-      : options?.rangeVariant === palette.success
+      : options?.rangeVariant === colors.success
       ? "success"
-      : options?.rangeVariant === palette.warning
+      : options?.rangeVariant === colors.warning
       ? "warning"
-      : options?.rangeVariant === palette.failure
+      : options?.rangeVariant === colors.failure
       ? "failure"
-      : options?.rangeVariant === palette.info
+      : options?.rangeVariant === colors.info
       ? "cyan"
-      : options?.rangeVariant === palette.select
+      : options?.rangeVariant === colors.select
       ? "purple"
-      : options?.rangeVariant === palette.cancel
+      : options?.rangeVariant === colors.cancel
       ? "pink"
-      : options?.rangeVariant === palette.primary
+      : options?.rangeVariant === colors.primary
       ? "primary"
-      : options?.rangeVariant === palette.secondary
+      : options?.rangeVariant === colors.secondary
       ? "secondary"
       : "standard";
 

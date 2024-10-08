@@ -1,12 +1,12 @@
-import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../../Core/Hooks/useTheme";
 import { TNavbarBrand } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarBrand";
 
 const NavbarBrand = (props: TNavbarBrand) => {
   const { children, as, to, options, ...componentProps } = props;
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
-  const brandColor = options?.textVariant || palette.primary;
+  const brandColor = options?.textVariant || colors.primary;
   const bgColor = options?.bgVariant || "transparent";
   const Component = as || "a";
 

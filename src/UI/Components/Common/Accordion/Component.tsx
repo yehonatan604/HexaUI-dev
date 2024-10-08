@@ -4,12 +4,12 @@ import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import Flex from "../../Layout/Flex/Component";
 import { TAccordion } from "../../../../Data/Types/ComponentTypes/Common/Accordion/TAccordion";
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../Core/Hooks/useTheme";
 
 const Accordion = (props: TAccordion) => {
   const { options, children, ...componentProps } = props;
   const [isContentOpen, setIsContentOpen] = useState(false);
-  const { palette: pallete } = useColorPalette();
+  const { colors } = useTheme();
 
   const bgColor = options.bgVariant || "transparent";
   const textColor = options?.textVariant || "gray-800";
@@ -18,15 +18,20 @@ const Accordion = (props: TAccordion) => {
   const border = options.border?.show
     ? `border-2 border-${borderColor} rounded-${borderRadius}`
     : "";
-  const titleColor = options.titleVariant || pallete.secondaryLight;
-
-  console.log(border);
+  const titleColor = options.titleVariant || colors.secondaryLight;
 
   return (
-    <Flex direction={FlexDir.Col} className={`w-full ${border} p-4 gap-4`}>
+    <Flex
+      options={{
+        direction: FlexDir.Col,
+      }}
+      className={`w-full ${border} p-4 gap-4`}
+    >
       <Flex
-        justify={FlexTypes.SpaceBetween}
-        align={FlexTypes.Center}
+        options={{
+          justify: FlexTypes.SpaceBetween,
+          align: FlexTypes.Center,
+        }}
         className={`gap-4 ${bgColor} cursor-pointer w-full`}
         {...componentProps}
         onClick={() => setIsContentOpen(!isContentOpen)}

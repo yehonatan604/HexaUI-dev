@@ -13,12 +13,10 @@ import { Sizes } from "../../../Data/Constants/Sizes";
 import Flex from "../Layout/Flex/Component";
 import List from "../Typography/List/Component";
 import Title from "../Typography/Title/Component";
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
 
 const ListExample = () => {
-  const mode = useTheme().mode;
-  const { palette } = useColorPalette();
-  const textColor = mode === "light" ? palette.info : palette.infoLight;
+  const { mode, colors } = useTheme();
+  const textColor = mode === "light" ? colors.info : colors.infoLight;
 
   return (
     <Flex options={{ direction: FlexDir.Col }} className="m-auto mb-5 w-4/5">
@@ -34,7 +32,7 @@ const ListExample = () => {
         <List
           options={{
             items: ["item 1", "item 2", "item 3"],
-            textVariant: palette.primary,
+            textVariant: colors.primary,
             listStyle: ListStyleTypes.Decimal,
             fontSize: Sizes.Sm,
             gap: 1,
@@ -53,7 +51,7 @@ const ListExample = () => {
           <List
             options={{
               items: ["item 1", "item 2", "item 3"],
-              textVariant: palette.success,
+              textVariant: colors.success,
               listStyle: ListStyleTypes.Circle,
               fontSize: Sizes.Sm,
               gap: 2,
@@ -64,7 +62,7 @@ const ListExample = () => {
           <List
             options={{
               items: ["item 1", "item 2", "item 3"],
-              textVariant: palette.warning,
+              textVariant: colors.warning,
               listStyle: ListStyleTypes.Square,
               fontSize: Sizes.Md,
               gap: 3,
@@ -75,7 +73,7 @@ const ListExample = () => {
           <List
             options={{
               items: ["item 1", "item 2", "item 3"],
-              textVariant: palette.failure,
+              textVariant: colors.failure,
               listStyle: ListStyleTypes.Disc,
               fontSize: Sizes.Md,
               gap: 4,

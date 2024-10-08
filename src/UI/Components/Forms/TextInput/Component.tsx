@@ -1,4 +1,3 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { TTextInput } from "../../../../Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
@@ -10,26 +9,24 @@ const TextInput = (props: TTextInput) => {
   const { label, options, ...componentProps } = props;
 
   // Hooks
-  const mode = useTheme().mode;
-  const { palette } = useColorPalette();
+  const { mode, colors } = useTheme();
 
   // Options
   const bgColor =
-    options?.bgVariant ||
-    (mode === "light" ? palette.standradLight : palette.standradDark);
+    options?.bgVariant || (mode === "light" ? colors.standradLight : colors.standradDark);
   const textColor =
     options?.textVariant ||
-    (mode === "light" ? palette.standradDark : palette.standradLight);
+    (mode === "light" ? colors.standradDark : colors.standradLight);
   const helperTextColor = options?.helperTextVariant || options?.textVariant;
 
   // Border Options
-  const borderColor = options?.border?.variant || palette.standrad;
+  const borderColor = options?.border?.variant || colors.standrad;
   const borderThickness = options?.border?.thickness || 1;
   const borderRadius = options?.border?.radius || "md";
   const border = `border-${borderColor} border-${borderThickness} rounded-${borderRadius}`;
 
   // Ring Options
-  const ringColor = options?.ring?.variant || palette.standradDark;
+  const ringColor = options?.ring?.variant || colors.standradDark;
   const ringThickness = options?.ring?.thickness || 1;
   const focusRing = `focus:ring-${ringColor} focus:ring-${ringThickness}`;
 

@@ -1,6 +1,6 @@
-# Rainbow Plus UI
+# React Hexa UI
 
-**Rainbow Plus UI** is a modern, flexible, and lightweight React component library built with Vite and styled with Tailwind CSS. It offers a wide range of customizable and reusable components that simplify UI development for your React applications.
+**React Hexa UI** is a modern, flexible, and lightweight React component library built with Vite and styled with Tailwind CSS. It offers a wide range of customizable and reusable components that simplify UI development for your React applications.
 
 ## Features
 
@@ -14,17 +14,17 @@
 
 <hr/>
 
-### step 1: install **_Rainbow Plus Ui_** via **NPM**:
+### step 1: install **_React Hexa UI_** via **NPM**:
 
-To get started with Rainbow Plus UI, install the library via npm:
+To get started with React Hexa UI, install the library via npm:
 
 ```bash
-npm install rainbow-plus-ui@latest
+npm install react-hexa@latest
 ```
 
 ### step 2: Install **_Tailwind CSS_** **(Required)**
 
-Rainbow Plus UI is built with Tailwind CSS, you need to set up Tailwind in your project. Here's how to install Tailwind CSS with Vite and React:
+React Hexa UI is built with Tailwind CSS, you need to set up Tailwind in your project. Here's how to install Tailwind CSS with Vite and React:
 
 1. Install Tailwind CSS and its peer dependencies:
 
@@ -63,12 +63,12 @@ module.exports = {
 
 ### step 3: Import **_Rainbow Plus UI_**'s CSS
 
-After setting up Tailwind, ensure that you import Rainbow Plus UI’s CSS into your project. This CSS is necessary to apply the library's default styles.
+After setting up Tailwind, ensure that you import React Hexa UI’s CSS into your project. This CSS is necessary to apply the library's default styles.
 
 In your main application file **_(e.g., src/main.jsx or src/index.js)_**, add the following import:
 
 ```bash
-import "rainbow-plus-ui/dist/main.css";
+import "react-hexa/dist/main.css";
 ```
 
 ## Usage
@@ -76,13 +76,20 @@ import "rainbow-plus-ui/dist/main.css";
 Once installed, you can start using the components by importing them into your project. Here's a quick example of how to use the Button component:
 
 ```bash
-import React from 'react';
-import { Button } from 'rainbow-plus-ui/src';
+import { useColorPalette, Button } from "react-hexa/src";
 
 function App() {
+  const { palette } = useColorPalette();
+
   return (
-     <Button variant={Warning} size={Sizes.Lg}>
-        {Warning}
+     <Button
+        options={{
+          size: Lg,
+          bgVariant: pallete.warning,
+          textVariant: pallete.select,
+        }}
+      >
+        Warning
       </Button>
   );
 }
@@ -96,7 +103,7 @@ export default App;
 
 ## Customization
 
-Rainbow Plus UI components are built with Tailwind CSS at their core, offering extensive customization options to match your project’s needs:
+React Hexa UI components are built with Tailwind CSS at their core, offering extensive customization options to match your project’s needs:
 
 - Utility Classes: Override component styles on the fly by passing in your own Tailwind utility classes.
 
@@ -107,22 +114,31 @@ Rainbow Plus UI components are built with Tailwind CSS at their core, offering e
 - Component Themes: For more advanced styling, override the default component themes to enforce a cohesive design language throughout your project.
 
 ```bash
-<List
-  items={["item 1", "item 2", "item 3"]}
-  fontSize={Sizes.Xl}
-  gap={Sizes.Xs}
-  variant={"random"}
-  icons={[
-    <GiBulletBill size={12} />,
-    <GiAbbotMeeple size={12} />,
-    <GiAbstract004 size={12} />,
-  ]}
-  byOrder
-  listTitle={{
-    text: "vertical list witha random variant and ordered icons",
-    color: mode === "light" ? "text-zinc-800" : "text-zinc-200",
-  }}
+import { List, FlexTypes, ListStyleTypes, Sizes } from "react-hexa/src";
+import { GiAbbotMeeple, GiAbstract004, GiBulletBill} from "react-icons/gi";
+
+function App() {
+  <List
+    options={{
+      items: [
+        "item 1",
+        "item 2",
+        "item 3"
+      ],
+      listStyle: ListStyleTypes.Disc,
+      fontSize: Sizes.Lg,
+      gap: 5,
+      justify: FlexTypes.Center,
+      align: FlexTypes.Center,
+      icons: [
+        <GiBulletBill size={12} />,
+        <GiAbbotMeeple size={12} />,
+        <GiAbstract004 size={12} />,
+      ],
+      byOrder: true,
+    }}
   />
+}
 ```
 
 <p align="center">

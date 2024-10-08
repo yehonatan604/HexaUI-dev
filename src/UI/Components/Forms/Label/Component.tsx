@@ -1,4 +1,3 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { TLabel } from "../../../../Data/Types/ComponentTypes/Forms/Label/TLabel";
 
@@ -6,13 +5,12 @@ const Label = (props: TLabel) => {
   const { text, options, ...componentProps } = props;
 
   // Hooks
-  const { palette } = useColorPalette();
-  const { mode } = useTheme();
+  const { mode, colors } = useTheme();
 
   // Options
   const textColor =
     options?.textVariant ||
-    (mode === "dark" ? palette.standradLight : palette.standradDark);
+    (mode === "dark" ? colors.standradLight : colors.standradDark);
 
   // JSX
   return (

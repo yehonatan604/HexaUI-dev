@@ -1,4 +1,4 @@
-import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
 import { TSidebarItem } from "../../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarItem";
 import Flex from "../../../../../UI/Components/Layout/Flex/Component";
@@ -8,14 +8,14 @@ const SidebarItem = (props: TSidebarItem) => {
     props;
 
   // Hooks
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
-  const labelBgColor = options?.labelBgVariant || palette.standradLight;
-  const labelTextColor = options?.labelVariant || palette.standradDark;
-  const hoverBgVariant = options?.hoverBgVariant || palette.standradLight;
-  const hoverTextVariant = options?.hoverTextVariant || palette.standradLight;
-  const textColor = options?.textVariant || palette.primary;
+  const labelBgColor = options?.labelBgVariant || colors.standradLight;
+  const labelTextColor = options?.labelVariant || colors.standradDark;
+  const hoverBgVariant = options?.hoverBgVariant || colors.standradLight;
+  const hoverTextVariant = options?.hoverTextVariant || colors.standradLight;
+  const textColor = options?.textVariant || colors.primary;
   const hover = `hover:bg-${options?.hoverBgVariant && hoverBgVariant} hover:text-${
     options?.hoverTextVariant && hoverTextVariant
   }`;

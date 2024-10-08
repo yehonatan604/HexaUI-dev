@@ -3,24 +3,24 @@ import { FiChevronsRight } from "react-icons/fi";
 import SidebarSeperator from "./Sidebar.Seperator/Component";
 import SidebarItem from "./Sidebar.Item/Component";
 import SidebarHeader from "./Sidebar.Header/Component";
-import useColorPalette from "../../../..//Core/Hooks/useColorPallete";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import Flex from "../../Layout/Flex/Component";
 import { TSidebar } from "../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
+import useTheme from "../../../../Core/Hooks/useTheme";
 
 const Sidebar = (props: TSidebar) => {
   const { children, options, className, chevron: icon, ...componentProps } = props;
 
   // Hooks
   const [isOpen, setIsOpen] = useState(true);
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
-  const chevronColor = options?.textVariant || palette.standradLight;
+  const chevronColor = options?.textVariant || colors.standradLight;
   const transition = "transition-all duration-1000";
   const maxWidth = options?.maxWidth || "w-[280px]";
-  const bgColor = options?.bgVariant || palette.standradDark;
-  const borderColor = options?.border?.variant || palette.standradDark;
+  const bgColor = options?.bgVariant || colors.standradDark;
+  const borderColor = options?.border?.variant || colors.standradDark;
   const borderThickness = options?.border?.thickness || 4;
   const border = `border-r-${borderThickness} border-${borderColor}`;
 

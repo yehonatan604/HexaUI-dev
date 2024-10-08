@@ -1,4 +1,4 @@
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import { Sizes } from "../../../Data/Constants/Sizes";
@@ -7,7 +7,7 @@ import Flex from "../Layout/Flex/Component";
 
 const ButtonExamples = () => {
   const { Sm, Md, Lg, Xl } = Sizes;
-  const { palette: pallete } = useColorPalette();
+  const { colors } = useTheme();
 
   return (
     <Flex
@@ -21,8 +21,8 @@ const ButtonExamples = () => {
       <Button
         options={{
           size: Sm,
-          bgVariant: pallete.success,
-          textVariant: pallete.info,
+          bgVariant: colors.success,
+          textVariant: colors.info,
         }}
       >
         submit
@@ -31,8 +31,8 @@ const ButtonExamples = () => {
       <Button
         options={{
           size: Lg,
-          bgVariant: pallete.failure,
-          textVariant: pallete.approveDark,
+          bgVariant: colors.failure,
+          textVariant: colors.approveDark,
         }}
       >
         submit
@@ -41,8 +41,8 @@ const ButtonExamples = () => {
       <Button
         options={{
           size: Xl,
-          bgVariant: pallete.warning,
-          textVariant: pallete.select,
+          bgVariant: colors.warning,
+          textVariant: colors.select,
         }}
       >
         submit
@@ -51,8 +51,8 @@ const ButtonExamples = () => {
       <Button
         options={{
           size: Md,
-          bgVariant: pallete.primary,
-          textVariant: pallete.standradDark,
+          bgVariant: colors.primary,
+          textVariant: colors.standradDark,
         }}
       >
         submit

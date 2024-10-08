@@ -7,17 +7,15 @@ import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import ThemeToggler from "../Common/ThemeToggler/Component";
 import Flex from "../Layout/Flex/Component";
 import Navbar from "../Navigation/Navbar/Component";
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
 import useTheme from "../../../Core/Hooks/useTheme";
 
 const NavbarExample = () => {
   // Hooks
   const [isMobileMenuOpen, toggle] = useState(false);
-  const mode = useTheme().mode;
-  const { palette } = useColorPalette();
+  const { mode, colors } = useTheme();
 
   // Options
-  const bgVariant = mode === "light" ? palette.blackLight : palette.blackDark;
+  const bgVariant = mode === "light" ? colors.blackLight : colors.blackDark;
 
   // JSX
   return (
@@ -25,7 +23,7 @@ const NavbarExample = () => {
       <Navbar
         options={{
           bgVariant: bgVariant,
-          textVariant: palette.infoLight,
+          textVariant: colors.infoLight,
           shadow: {
             color: "black",
             size: "md",

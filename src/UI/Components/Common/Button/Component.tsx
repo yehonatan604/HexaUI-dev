@@ -1,16 +1,16 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../Core/Hooks/useTheme";
 import { Sizes } from "../../../../Data/Constants/Sizes";
 import { TButton } from "../../../../Data/Types/ComponentTypes/Common/Button/TButton";
 
 const Button = (props: TButton) => {
   const { options, children, className, ...componentProps } = props;
-  const { palette: pallete } = useColorPalette();
+  const { colors } = useTheme();
   const size = options?.size;
   const rounded = options?.rounded || false;
   const roundedS = options?.roundedS || false;
   const roundedE = options?.roundedE || false;
-  const bgColor = options?.bgVariant || pallete.secondaryDark;
-  const textColor = options?.textVariant || pallete.select;
+  const bgColor = options?.bgVariant || colors.secondaryDark;
+  const textColor = options?.textVariant || colors.select;
 
   let buttonSize: string;
   if (size === Sizes.Sm) {

@@ -1,4 +1,4 @@
-import useColorPalette from "../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import Button from "../Common/Button/Component";
@@ -7,7 +7,7 @@ import Flex from "../Layout/Flex/Component";
 import Title from "../Typography/Title/Component";
 
 const CardExamples = () => {
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   return (
     <Flex
@@ -20,15 +20,15 @@ const CardExamples = () => {
     >
       <Card
         options={{
-          bgVariant: palette.standradDark,
-          textVariant: palette.standradLight,
+          bgVariant: colors.standradDark,
+          textVariant: colors.standradLight,
           shadow: {
-            color: palette.standrad,
+            color: colors.standrad,
             size: "xl",
           },
           border: {
             show: true,
-            variant: palette.info,
+            variant: colors.info,
           },
         }}
         className="w-[250px]"
@@ -51,8 +51,8 @@ const CardExamples = () => {
         <Card.Footer>
           <Button
             options={{
-              bgVariant: palette.approve,
-              textVariant: palette.standradLight,
+              bgVariant: colors.approve,
+              textVariant: colors.standradLight,
             }}
           >
             +
@@ -61,10 +61,10 @@ const CardExamples = () => {
       </Card>
       <Card
         options={{
-          bgVariant: palette.standradDark,
-          textVariant: palette.standradLight,
+          bgVariant: colors.standradDark,
+          textVariant: colors.standradLight,
           shadow: {
-            color: palette.standrad,
+            color: colors.standrad,
             size: "xl",
           },
           border: {
@@ -91,8 +91,8 @@ const CardExamples = () => {
         <Card.Footer>
           <Button
             options={{
-              bgVariant: palette.approve,
-              textVariant: palette.standradLight,
+              bgVariant: colors.approve,
+              textVariant: colors.standradLight,
             }}
           >
             +

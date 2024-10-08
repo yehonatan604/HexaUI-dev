@@ -7,10 +7,8 @@ import FormInputExamples from "./UI/Components/Examples/FormInput.example";
 import { TCite } from "./Data/Types/ComponentTypes/Typography/Quote/TCite";
 import Quote from "./UI/Components/Typography/Quote/Component";
 import { BrowserRouter } from "react-router-dom";
-import useTheme from "./Core/Hooks/useTheme";
 import ButtonExamples from "./UI/Components/Examples/Button.example";
 import AccordionExamples from "./UI/Components/Examples/Accordion.example";
-import useColorPalette from "./Core/Hooks/useColorPallete";
 import ThemeToggler from "./UI/Components/Common/ThemeToggler/Component";
 import Flex from "./UI/Components/Layout/Flex/Component";
 import { FlexDir } from "./Data/Constants/FlexDirection";
@@ -22,19 +20,19 @@ import RingExamples from "./UI/Components/Examples/Ring.example";
 import CardExamples from "./UI/Components/Examples/Card.example";
 import Hr from "./UI/Components/Typography/Hr/Component";
 import ListExample from "./UI/Components/Examples/List.example";
+import useTheme from "./Core/Hooks/useTheme";
 
 function App() {
-  const mode = useTheme().mode;
-  const { palette: pallete } = useColorPalette();
+  const { mode, colors } = useTheme();
 
-  const bgColor = mode === "light" ? pallete.standradLight : pallete.black;
-  const textColor = mode === "light" ? pallete.primaryDark : pallete.primaryLight;
+  const bgColor = mode === "light" ? colors.standradLight : colors.black;
+  const textColor = mode === "light" ? colors.primaryDark : colors.primaryLight;
 
   const cite: TCite = {
     url: "http://www.worldwildlife.org/who/index.html",
     text: "www.worldwildlife.org",
     placement: "start",
-    variant: pallete.secondary,
+    variant: colors.secondary,
   };
 
   return (
@@ -59,7 +57,7 @@ function App() {
           <Title
             options={{
               size: Sizes.Xl as never,
-              textVariant: pallete.secondary,
+              textVariant: colors.secondary,
               align: "center",
             }}
           >
@@ -73,21 +71,21 @@ function App() {
           <RainbowBordersExample />
           <Hr
             options={{
-              color: pallete.primaryDark,
+              color: colors.primaryDark,
               width: "1/3",
             }}
           />
           <RingExamples />
           <Hr
             options={{
-              color: pallete.primaryDark,
+              color: colors.primaryDark,
               width: "1/3",
             }}
           />
           <ListExample />
           <Hr
             options={{
-              color: pallete.primaryDark,
+              color: colors.primaryDark,
               width: "1/3",
             }}
           />
@@ -95,7 +93,7 @@ function App() {
           <SelectExamples />
           <Hr
             options={{
-              color: pallete.primaryDark,
+              color: colors.primaryDark,
               width: "1/3",
             }}
           />
@@ -104,7 +102,7 @@ function App() {
           <Title
             options={{
               size: Sizes.Lg as never,
-              textVariant: pallete.secondary,
+              textVariant: colors.secondary,
               align: "center",
             }}
           >
@@ -116,7 +114,7 @@ function App() {
             cite={cite as string & TCite}
             options={{
               gap: 4,
-              textVariant: pallete.infoLight,
+              textVariant: colors.infoLight,
             }}
           >
             For 50 years, WWF has been protecting the future of nature. The world's

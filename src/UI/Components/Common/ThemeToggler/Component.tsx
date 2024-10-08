@@ -5,9 +5,7 @@ import { ThemeTogglerProps } from "./Props";
 const ThemeToggler = (props: ThemeTogglerProps) => {
   const { darkIcon, lightIcon, ...componentProps } = props;
   const [icon, setIcon] = useState<React.ReactNode>(darkIcon);
-  const themeContext = useTheme();
-  const mode = themeContext.mode;
-  const toggleTheme = themeContext.toggleTheme;
+  const { mode, toggleTheme } = useTheme();
 
   useEffect(() => {
     if (lightIcon && darkIcon) setIcon(mode === "light" ? darkIcon : lightIcon);

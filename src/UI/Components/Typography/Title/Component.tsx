@@ -1,4 +1,4 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { Sizes } from "../../../../Data/Constants/Sizes";
 import { TTitle } from "../../../../Data/Types/ComponentTypes/Typography/Title/TTitle";
@@ -8,12 +8,12 @@ const Title = (props: TTitle) => {
   const { children, options, ...componentProps } = props;
 
   // Hooks
-  const { palette: pallete } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
   const size = options?.size || Sizes.Md;
-  const textColor = options?.textVariant || pallete.standradLight;
-  const bgColor = options?.bgVariant || pallete.standrad;
+  const textColor = options?.textVariant || colors.standradLight;
+  const bgColor = options?.bgVariant || colors.standrad;
   const padding = options?.padding || "p-5";
   const align = options?.align || FlexTypes.Center;
 

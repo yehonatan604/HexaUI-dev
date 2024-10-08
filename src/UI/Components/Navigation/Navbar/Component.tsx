@@ -1,4 +1,4 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TNavbar } from "../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbar";
 import Flex from "../../Layout/Flex/Component";
@@ -11,11 +11,11 @@ const Navbar = (props: TNavbar) => {
   const { children, options, className, ...componentProps } = props;
 
   // Hooks
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
-  const bgColor = options?.bgVariant || palette.primary;
-  const textColor = options?.textVariant || palette.white;
+  const bgColor = options?.bgVariant || colors.primary;
+  const textColor = options?.textVariant || colors.white;
 
   // JSX
   return (

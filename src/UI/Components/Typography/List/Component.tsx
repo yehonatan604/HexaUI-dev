@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { getRandomColor } from "../../../..//Core/Helpers/Color.helper";
 import { getRandomIcon } from "../../../..//Core/Helpers/Icons.helper";
-import useColorPalette from "../../../..//Core/Hooks/useColorPallete";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { Sizes } from "../../../../Data/Constants/Sizes";
 import Flex from "../../Layout/Flex/Component";
 import { TList } from "../../../../Data/Types/ComponentTypes/Typography/List/TList";
+import useTheme from "../../../../Core/Hooks/useTheme";
 
 const List = (props: TList) => {
   const { options, ...componentProps } = props;
 
   // Hooks
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
   const [isByOrder, setIsByOrder] = useState<boolean>(options?.byOrder || true);
 
   // Options
-  const textColor = options?.textVariant || palette.standradLight;
+  const textColor = options?.textVariant || colors.standradLight;
   const textSize = options?.fontSize || Sizes.Xs;
   const gap = options?.gap || Sizes.Sm;
   const flexDirection = options?.flexDirection || FlexDir.Col;

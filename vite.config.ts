@@ -5,8 +5,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      entry: 'src/main.tsx', // The entry point of your library
-      name: 'rainbow-plus-ui', // Global variable name for UMD/IIFE builds
+      entry: 'src/index.ts', // The entry point of your library
+      name: 'react-hexa', // Global variable name for UMD/IIFE builds
       formats: ['es', 'umd'],  // Output formats
       fileName: (format) => `rainbow-plus-ui.${format}.js`, // Output file naming
     },

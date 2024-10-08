@@ -1,18 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
-import useColorPalette from "../../../../../Core/Hooks/useColorPallete";
 import { TNavbarLink } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarLink";
+import useTheme from "../../../../../Core/Hooks/useTheme";
 
 const NavbarLink = (props: TNavbarLink) => {
   const { children, options, to, ...componentProps } = props;
 
   // Color Palette
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
   const path = useLocation().pathname.split("/")[1];
   const isActive = path === to.split("/")[1];
-  const textColor = options?.textVariant || palette.secondary;
-  const activeLinkColor = options?.activeVariant || palette.primary;
+  const textColor = options?.textVariant || colors.secondary;
+  const activeLinkColor = options?.activeVariant || colors.primary;
   const linkColor = isActive ? activeLinkColor : textColor;
 
   // JSX

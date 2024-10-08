@@ -1,4 +1,4 @@
-import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TCard } from "../../../../Data/Types/ComponentTypes/Common/Card/TCard";
@@ -8,15 +8,15 @@ import CardHeader from "./Card.Header/Component";
 
 const Card = (props: TCard) => {
   const { children, options, className, ...componentProps } = props;
-  const { palette } = useColorPalette();
+  const { colors } = useTheme();
 
   // Options
-  const bgColor = options?.bgVariant || palette.standradLight;
-  const textColor = options?.textVariant || palette.standradDark;
+  const bgColor = options?.bgVariant || colors.standradLight;
+  const textColor = options?.textVariant || colors.standradDark;
   const padding = options?.padding || 2;
   const rounded = options?.rounded || "md";
   const gap = options?.gap || 4;
-  const borderColor = options.border?.variant || palette.standrad;
+  const borderColor = options.border?.variant || colors.standrad;
   const borderRadius = options.border?.radius || "md";
 
   // Border Options
@@ -28,7 +28,7 @@ const Card = (props: TCard) => {
   const shadow =
     options?.shadow &&
     `shadow-${options?.shadow?.size || "md"} shadow-${
-      options?.shadow?.color || palette.white
+      options?.shadow?.color || colors.white
     }`;
 
   // JSX
