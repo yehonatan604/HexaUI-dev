@@ -1,5 +1,4 @@
 import { TComponent, ComponentOptions } from "../../TComponent";
-import { TSelectOption } from "./TSelectOption";
 
 export type TSelect = TComponent<"select"> & {
     options?: SelectOptions;
@@ -8,5 +7,10 @@ export type TSelect = TComponent<"select"> & {
 
 export type SelectOptions = ComponentOptions & {
     listItemsVariant?: string;
-    borderVariant?: string;
+    listItemsBgVariant?: string;
 }
+
+export type TSelectOption = {
+    value: string;
+    label: string;
+};

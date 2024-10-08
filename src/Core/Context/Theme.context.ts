@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { TColorPalette } from "../../Data/Types/TColorPalette";
-import defaultColorPalette from "../../Data/Constants/DefaultColorPalette";
-import defaultGradientPalette from "../../Data/Constants/DefaultGradientPalette";
+import defaultColorPalette from "../../UI/Themes/DefaultColorPalettes";
+import defaultGradientPalette from "../../UI/Themes/DefaultGradients";
 
 export type ThemeContextType = {
   mode: string;

@@ -1,5 +1,5 @@
-import defaultColorPalette from "../../Data/Constants/DefaultColorPalette";
-import defaultGradientPalette from "../../Data/Constants/DefaultGradientPalette";
+import defaultColorPalette from "../Themes/DefaultColorPalettes";
+import defaultGradientPalette from "../Themes/DefaultGradients";
 import { TColorPalette } from "../../Data/Types/TColorPalette";
 import ThemeProvider from "./Theme.provider";
 

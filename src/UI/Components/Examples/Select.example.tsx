@@ -44,6 +44,9 @@ const SelectExamples = () => {
         options={{
           textVariant: colors.success,
           listItemsVariant: colors.success,
+          border: {
+            variant: colors.approve,
+          },
         }}
         items={[
           { value: "1", label: "Option 1" },
@@ -56,6 +59,9 @@ const SelectExamples = () => {
         options={{
           textVariant: colors.secondary,
           listItemsVariant: colors.warning,
+          border: {
+            variant: colors.primary,
+          },
         }}
         items={[
           { value: "1", label: "Option 1" },

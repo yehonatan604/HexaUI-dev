@@ -1,3 +1,4 @@
+import { GiAlliedStar } from "react-icons/gi";
 import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
@@ -6,7 +7,7 @@ import Flex from "../Layout/Flex/Component";
 
 const RainbowBordersExample = () => {
   // Hooks
-  const { mode, colors } = useTheme();
+  const { mode, colors, gradients } = useTheme();
 
   // Options
   const bgColor = mode === "light" ? colors.whiteLight : colors.standradDark;
@@ -21,63 +22,49 @@ const RainbowBordersExample = () => {
       }}
       className="m-auto my-10 gap-4 w-3/4"
     >
-      <RainbowBorder options={{ thickness: 1, gradient: colors.failure }}>
+      <RainbowBorder options={{ thickness: "xxs", gradient: gradients.failure }}>
         <div className={`p-5 rounded ${bgColor} ${textColor}`}>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
         </div>
       </RainbowBorder>
-      <RainbowBorder options={{ thickness: 1, gradient: colors.primary }}>
+      <RainbowBorder options={{ thickness: "xs", gradient: gradients.primary }}>
         <div className={`p-5 rounded ${bgColor} ${textColor}`}>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
         </div>
       </RainbowBorder>
-      <RainbowBorder options={{ thickness: 1.5, gradient: colors.secondary }}>
-        <div className={`p-5 rounded ${bgColor} ${textColor}`}>
-          <p className="text-center">Hello</p>
-          <p className="text-center">Hello</p>
-          <p className="text-center">Hello</p>{" "}
-        </div>
-      </RainbowBorder>
-      <RainbowBorder options={{ thickness: 2, gradient: colors.standrad }}>
+      <RainbowBorder options={{ thickness: "sm", gradient: gradients.secondary }}>
         <div className={`p-5 rounded ${bgColor} ${textColor}`}>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
         </div>
       </RainbowBorder>
-      <RainbowBorder options={{ thickness: 2.5, gradient: colors.info }}>
-        <div className={`p-5 rounded ${bgColor} ${textColor}`}>
-          <p className="text-center">Hello</p>
-          <p className="text-center">Hello</p>
-          <p className="text-center">Hello</p>{" "}
-        </div>
-      </RainbowBorder>
-      <RainbowBorder options={{ thickness: 3, gradient: colors.select }}>
+      <RainbowBorder options={{ thickness: "md", gradient: gradients.standrad }}>
         <div className={`p-5 rounded ${bgColor} ${textColor}`}>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
         </div>
       </RainbowBorder>
-      <RainbowBorder options={{ thickness: 3.5, gradient: colors.cancel }}>
+      <RainbowBorder options={{ thickness: "lg", gradient: gradients.info }}>
         <div className={`p-5 rounded ${bgColor} ${textColor}`}>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
         </div>
       </RainbowBorder>
-      <RainbowBorder options={{ thickness: 4, gradient: colors.approve }}>
+      <RainbowBorder options={{ thickness: "xl", gradient: gradients.select }}>
         <div className={`p-5 rounded ${bgColor} ${textColor}`}>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
         </div>
       </RainbowBorder>
-      <RainbowBorder options={{ thickness: 4.5, gradient: colors.success }}>
+      <RainbowBorder options={{ thickness: "2xl", gradient: gradients.cancel }}>
         <div className={`p-5 rounded ${bgColor} ${textColor}`}>
           <p className="text-center">Hello</p>
           <p className="text-center">Hello</p>
@@ -86,14 +73,15 @@ const RainbowBordersExample = () => {
       </RainbowBorder>
       <RainbowBorder
         options={{
-          thickness: 5,
-          gradient: colors.warning,
+          thickness: "3xl",
+          gradient: gradients.primary,
+          rounded: "full",
+          innerBgVariant: colors.successDark,
+          innerTextVariant: colors.white,
         }}
       >
-        <div className={`p-5 rounded ${bgColor} ${textColor}`}>
-          <p className="text-center">Hello</p>
-          <p className="text-center">Hello</p>
-          <p className="text-center">Hello</p>
+        <div className={`rounded-full ${textColor}`}>
+          <GiAlliedStar size={100} />
         </div>
       </RainbowBorder>
     </Flex>

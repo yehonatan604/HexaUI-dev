@@ -12,8 +12,7 @@ const TextInput = (props: TTextInput) => {
   const { mode, colors } = useTheme();
 
   // Options
-  const bgColor =
-    options?.bgVariant || (mode === "light" ? colors.standradLight : colors.standradDark);
+  const bgColor = options?.bgVariant || "transparent";
   const textColor =
     options?.textVariant ||
     (mode === "light" ? colors.standradDark : colors.standradLight);

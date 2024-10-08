@@ -1,4 +1,4 @@
-import { TColorPalette } from "../Types/TColorPalette";
+import { TColorPalette } from "../../Data/Types/TColorPalette";
 
 const defaultGradientPalette: TColorPalette = {
     primary: "from-blue-400 via-blue-600 via-blue-800 via-green-500 via-green-800 to-cyan-400",

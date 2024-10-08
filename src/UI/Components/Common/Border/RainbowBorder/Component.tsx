@@ -1,4 +1,3 @@
-import { paddingHelper } from "../../../../../Core/Helpers/Padding.helper";
 import useTheme from "../../../../../Core/Hooks/useTheme";
 import { TRainbowBorder } from "../../../../../Data/Types/ComponentTypes/Common/Rainbow-border/TRainbowBorder";
 
@@ -6,19 +5,33 @@ const RainbowBorder = (props: TRainbowBorder) => {
   const { children, options, ...componentProps } = props;
 
   //Hooks
-  const { gradients } = useTheme();
+  const { gradients, colors } = useTheme();
 
   // Options
-  const borderThickness = paddingHelper(options.thickness ?? 1.5);
-  const gradient = options.gradient ?? gradients.primary;
+  const borderThickness = options?.thickness || "[1.5px]";
+  const gradient = options?.gradient || gradients.primary;
+  const rounded = `${options?.rounded ? "rounded-" + options?.rounded : "rounded"}`;
+
+  // Inner Options
+  const innerBgColor = options?.innerBgVariant || colors.black;
+  const innerTextColor = options?.innerTextVariant || colors.white;
+  const innerRounded = `${
+    options?.innerRounded
+      ? "rounded-" + options?.innerRounded
+      : options?.rounded
+      ? "rounded-" + options?.rounded
+      : "rounded"
+  }`;
 
   // JSX
   return (
     <div
-      className={`${borderThickness} rounded bg-gradient-to-br ${gradient}`}
+      className={`p-${borderThickness} ${rounded} bg-gradient-to-br ${gradient}`}
       {...componentProps}
     >
-      {children}
+      <div className={`text-${innerTextColor} bg-${innerBgColor} ${innerRounded}`}>
+        {children}
+      </div>
     </div>
   );
 };

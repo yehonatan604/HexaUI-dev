@@ -32,7 +32,7 @@ const ButtonExamples = () => {
         options={{
           size: Lg,
           bgVariant: colors.failure,
-          textVariant: colors.approveDark,
+          textVariant: colors.warning,
         }}
       >
         submit
