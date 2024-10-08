@@ -18,6 +18,14 @@ const ListExample = () => {
   const { mode, colors } = useTheme();
   const textColor = mode === "light" ? colors.info : colors.infoLight;
 
+  const listOptions = {
+    items: ["item 1", "item 2", "item 3"],
+    textVariant: colors.primary,
+    listStyle: ListStyleTypes.Decimal,
+    fontSize: Sizes.Sm,
+    gap: 1,
+  };
+
   return (
     <Flex options={{ direction: FlexDir.Col }} className="m-auto mb-5 w-4/5">
       <Title options={{ size: "sm", textVariant: textColor }}>List Examples</Title>
@@ -29,15 +37,7 @@ const ListExample = () => {
         }}
         className="m-auto gap-y-10"
       >
-        <List
-          options={{
-            items: ["item 1", "item 2", "item 3"],
-            textVariant: colors.primary,
-            listStyle: ListStyleTypes.Decimal,
-            fontSize: Sizes.Sm,
-            gap: 1,
-          }}
-        />
+        <List options={listOptions} />
 
         <Flex
           options={{

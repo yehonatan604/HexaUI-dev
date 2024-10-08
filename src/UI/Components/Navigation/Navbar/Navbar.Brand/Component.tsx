@@ -15,7 +15,7 @@ const NavbarBrand = (props: TNavbarBrand) => {
   // JSX
   return (
     <Component
-      className={`text-xl font-bold text-${brandColor} bg-${bgColor} hover:opacity-70`}
+      className={`text-xl font-bold text-${brandColor} bg-${bgColor}`}
       {...componentProps}
       href={to}
       to={to}

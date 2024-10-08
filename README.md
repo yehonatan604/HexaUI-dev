@@ -40,12 +40,9 @@ npx tailwindcss init -p
 
 3. Configure **_tailwind.config.js_** to include all of your React files and components by adding this content:
 
-```bash
+```js
 module.exports = {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },
@@ -53,9 +50,9 @@ module.exports = {
 };
 ```
 
-4. Add the Tailwind directives to your CSS file **_(e.g., src/index.css)_**:
+4. Add the Tailwind directives to your CSS file **_(e.g., src/main.css)_**:
 
-```bash
+```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,33 +62,21 @@ module.exports = {
 
 After setting up Tailwind, ensure that you import React Hexa UI’s CSS into your project. This CSS is necessary to apply the library's default styles.
 
-In your main application file **_(e.g., src/main.jsx or src/index.js)_**, add the following import:
+In your main application file **_(e.g., src/main.jsx or src/main.tsx)_**, add the following import:
 
-```bash
-import "react-hexa/dist/main.css";
+```js
+import "react-hexa/dist/index.css";
 ```
 
 ## Usage
 
 Once installed, you can start using the components by importing them into your project. Here's a quick example of how to use the Button component:
 
-```bash
-import { useColorPalette, Button } from "react-hexa/src";
+```js
+import { Button } from "react-hexa/src";
 
 function App() {
-  const { palette } = useColorPalette();
-
-  return (
-     <Button
-        options={{
-          size: Lg,
-          bgVariant: pallete.warning,
-          textVariant: pallete.select,
-        }}
-      >
-        Warning
-      </Button>
-  );
+  return <Button>Submit</Button>;
 }
 
 export default App;
@@ -113,32 +98,24 @@ React Hexa UI components are built with Tailwind CSS at their core, offering ext
 
 - Component Themes: For more advanced styling, override the default component themes to enforce a cohesive design language throughout your project.
 
-```bash
-import { List, FlexTypes, ListStyleTypes, Sizes } from "react-hexa/src";
-import { GiAbbotMeeple, GiAbstract004, GiBulletBill} from "react-icons/gi";
+```js
+import { useTheme, List } from "react-hexa/src";
 
 function App() {
-  <List
-    options={{
-      items: [
-        "item 1",
-        "item 2",
-        "item 3"
-      ],
-      listStyle: ListStyleTypes.Disc,
-      fontSize: Sizes.Lg,
-      gap: 5,
-      justify: FlexTypes.Center,
-      align: FlexTypes.Center,
-      icons: [
-        <GiBulletBill size={12} />,
-        <GiAbbotMeeple size={12} />,
-        <GiAbstract004 size={12} />,
-      ],
-      byOrder: true,
-    }}
-  />
+  const { colors, sizes } = useTheme();
+
+  const listOptions = {
+    items: ["item 1", "item 2", "item 3"],
+    textVariant: colors.primary,
+    listStyle: ListStyleTypes.Decimal,
+    fontSize: sizes.Sm,
+    gap: 1,
+  };
+
+  return <List options={listOptions} />;
 }
+
+export default App;
 ```
 
 <p align="center">

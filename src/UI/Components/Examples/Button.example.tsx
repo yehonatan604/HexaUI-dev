@@ -22,7 +22,7 @@ const ButtonExamples = () => {
         options={{
           size: Sm,
           bgVariant: colors.success,
-          textVariant: colors.infoDark,
+          textVariant: colors.black,
         }}
       >
         submit

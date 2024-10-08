@@ -49,7 +49,6 @@ export { Variants } from "./Data/Constants/Variants";
 export type { TCite } from "./Data/Types/ComponentTypes/Typography/Quote/TCite";
 export type { TColor } from "./Data/Types/TColor";
 export type { TComponent } from "./Data/Types/ComponentTypes/TComponent";
-export type { TSelectOption } from "./Data/Types/ComponentTypes/Forms/Select/TSelectOption";
 export type { TTitle } from "./Data/Types/ComponentTypes/Typography/Title/TTitle";
 
 // Providers
