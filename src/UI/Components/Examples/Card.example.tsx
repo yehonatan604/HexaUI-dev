@@ -16,8 +16,9 @@ const CardExamples = () => {
         align: FlexTypes.Center,
         wrap: FlexWrap.Wrap,
       }}
-      className="w-3/5 m-auto gap-4 mt-5"
+      className="w-3/5 m-auto gap-10 mt-5"
     >
+      {/* Card 1 */}
       <Card
         options={{
           bgVariant: colors.standradDark,
@@ -25,10 +26,6 @@ const CardExamples = () => {
           shadow: {
             color: colors.standrad,
             size: "xl",
-          },
-          border: {
-            show: true,
-            variant: colors.info,
           },
         }}
         className="w-[250px]"
@@ -59,16 +56,19 @@ const CardExamples = () => {
           </Button>
         </Card.Footer>
       </Card>
+
+      {/* Card 2 */}
       <Card
         options={{
-          bgVariant: colors.standradDark,
-          textVariant: colors.standradLight,
+          bgVariant: colors.standradLight,
+          textVariant: colors.standradDark,
           shadow: {
             color: colors.standrad,
             size: "xl",
           },
           border: {
             show: true,
+            variant: colors.info,
           },
         }}
         className="w-[250px]"
@@ -81,8 +81,15 @@ const CardExamples = () => {
           />
         </Card.Header>
 
-        <Title options={{ padding: "p-1", size: "sm", align: FlexTypes.Start }}>
-          Card 1
+        <Title
+          options={{
+            padding: "p-1",
+            size: "sm",
+            align: FlexTypes.Start,
+            textVariant: colors.standradDark,
+          }}
+        >
+          Card 2
         </Title>
         <p className="px-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, expedita

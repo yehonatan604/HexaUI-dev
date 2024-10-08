@@ -18,7 +18,7 @@ const AccordionExamples = () => {
     >
       <Accordion
         options={{
-          title: "Accordion Standard",
+          title: "Accordion",
           titleVariant: colors.cancel,
           textVariant: colors.success,
           border: {
@@ -36,7 +36,7 @@ const AccordionExamples = () => {
       </Accordion>
       <Accordion
         options={{
-          title: "Accordion Primary",
+          title: "Accordion",
           textVariant: colors.select,
           titleVariant: colors.primary,
           border: {
@@ -55,7 +55,7 @@ const AccordionExamples = () => {
       </Accordion>
       <Accordion
         options={{
-          title: "Accordion Primary",
+          title: "Accordion",
           titleVariant: colors.standradLight,
           textVariant: colors.cancel,
         }}
