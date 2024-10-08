@@ -8,11 +8,12 @@ export default {
   safelist: [
     {
       pattern: /bg-.*/,
+      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
       standard: true,
-
     },
     {
       pattern: /text-.*/,
+      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
       standard: true,
     },
     {
@@ -22,6 +23,7 @@ export default {
     {
       pattern: /ring-.*/,
       standard: true,
+      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
     },
     {
       pattern: /shadow-.*/,
@@ -41,6 +43,18 @@ export default {
     },
     {
       pattern: /h-.*/,
+      standard: true,
+    },
+    {
+      pattern: /flex-.*/,
+      standard: true,
+    },
+    {
+      pattern: /justify-.*/,
+      standard: true,
+    },
+    {
+      pattern: /items-.*/,
       standard: true,
     },
   ],

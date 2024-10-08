@@ -128,11 +128,9 @@ const FormInputExamples = () => {
           wrap: FlexWrap.Wrap,
         }}
         className="m-auto my-5 gap-4 w-3/4"
-        id="checkboxes"
       >
         <Label
           text="Checkboxes:"
-          htmlFor="checkboxes"
           options={{
             textVariant: palette.primary,
           }}

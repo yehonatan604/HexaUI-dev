@@ -4,6 +4,7 @@ import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { TTextInput } from "../../../../Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
 import Flex from "../../Layout/Flex/Component";
 import Label from "../Label/Component";
+import generateRandomId from "../../../../Core/Helpers/IdHelper";
 
 const TextInput = (props: TTextInput) => {
   const { label, options, ...componentProps } = props;
@@ -32,12 +33,15 @@ const TextInput = (props: TTextInput) => {
   const ringThickness = options?.ring?.thickness || 1;
   const focusRing = `focus:ring-${ringColor} focus:ring-${ringThickness}`;
 
+  // Constants
+  const randomId = generateRandomId();
+
   // JSX
   return (
     <Flex options={{ direction: FlexDir.Col }} className="gap-1">
-      <Label text={label} htmlFor="text" />
+      <Label text={label} htmlFor={randomId} />
       <input
-        id="text"
+        id={randomId}
         className={`${border} bg-${bgColor} text-${textColor} p-2 focus:outline-none ${focusRing}`}
         {...componentProps}
       />

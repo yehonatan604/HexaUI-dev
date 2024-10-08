@@ -6,6 +6,7 @@ import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TRangeInput } from "../../../../Data/Types/ComponentTypes/Forms/RangeInput/TRangeInput";
 import useColorPalette from "../../../../Core/Hooks/useColorPallete";
+import generateRandomId from "../../../../Core/Helpers/IdHelper";
 
 const RangeInput = (props: TRangeInput) => {
   const { label, options, ...componentProps } = props;
@@ -19,6 +20,9 @@ const RangeInput = (props: TRangeInput) => {
   const textColor =
     options?.textVariant ||
     (mode === "dark" ? palette.standradLight : palette.standradDark);
+
+  // Constants
+  const randomId = generateRandomId();
 
   // Events
   componentProps.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,7 +52,7 @@ const RangeInput = (props: TRangeInput) => {
 
   return (
     <Flex options={{ direction: FlexDir.Col }} className="gap-1">
-      <Label text={label} htmlFor="input" />
+      <Label text={label} htmlFor={randomId} />
       <Flex
         className={`range ${rangeColor} gap-2`}
         options={{
@@ -57,7 +61,7 @@ const RangeInput = (props: TRangeInput) => {
       >
         <input
           type="range"
-          id="input"
+          id={randomId}
           className="border-0 rounded-md p-2"
           {...componentProps}
           defaultValue={val}

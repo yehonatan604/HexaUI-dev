@@ -101,25 +101,16 @@ function App() {
           />
           <DataGridExample />
           <Hr className="mb-4" />
-          <Flex
+          <Title
             options={{
-              direction: FlexDir.Col,
-              justify: FlexTypes.Start,
-              align: FlexTypes.Start,
+              size: Sizes.Lg as never,
+              textVariant: pallete.secondary,
+              align: "center",
             }}
-            className="w-[99vw] gap-4"
           >
-            <Title
-              options={{
-                size: Sizes.Lg as never,
-                textVariant: pallete.secondary,
-                align: "center",
-              }}
-            >
-              Sidebar
-            </Title>
-            <SidebarExample />
-          </Flex>
+            Sidebar
+          </Title>
+          <SidebarExample />
           <Hr className="mb-4" />
           <Quote
             cite={cite as string & TCite}
@@ -135,7 +126,6 @@ function App() {
           <Hr className="mt-4" />
         </Flex>
       </Flex>
-
       <FooterExample />
     </BrowserRouter>
   );

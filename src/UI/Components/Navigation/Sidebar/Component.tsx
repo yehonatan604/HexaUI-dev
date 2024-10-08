@@ -9,7 +9,7 @@ import Flex from "../../Layout/Flex/Component";
 import { TSidebar } from "../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
 
 const Sidebar = (props: TSidebar) => {
-  const { children, options, ...componentProps } = props;
+  const { children, options, chevron: icon, ...componentProps } = props;
 
   // Hooks
   const [isOpen, setIsOpen] = useState(true);
@@ -19,11 +19,14 @@ const Sidebar = (props: TSidebar) => {
   const chevronColor = options?.textVariant || palette.standradLight;
   const transition = "transition-all duration-1000";
   const maxWidth = options?.maxWidth || "w-[280px]";
+  const bgColor = options?.bgVariant || palette.standradDark;
 
   // Functions
   const toggleMenu = () => setIsOpen(!isOpen);
 
   // JSX
+  const Chevron = icon ? icon : FiChevronsRight;
+
   return (
     <Flex>
       <Flex
@@ -31,20 +34,20 @@ const Sidebar = (props: TSidebar) => {
           direction: FlexDir.Col,
         }}
         {...componentProps}
-        className={`${
-          isOpen ? `${maxWidth} max-md:w-[95vw]` : "w-[0.5px]"
-        }  bg-zinc-700 ${
+        className={`${isOpen ? `${maxWidth} max-md:w-[95vw]` : "w-[0px]"} bg-${bgColor} ${
           !isOpen && "opacity-5"
-        } ${transition} duration-1000 overflow-hidden gap-4 pb-4`}
+        } ${transition} duration-1000 overflow-hidden text-nowrap text-ellipsis gap-4 pb-4`}
       >
         {children}
       </Flex>
-      <FiChevronsRight
-        onClick={toggleMenu}
-        className={`text-2xl ${chevronColor} cursor-pointer ${
-          isOpen && "transform rotate-180"
-        } ${transition}`}
-      />
+      {!options?.disableClose && (
+        <Chevron
+          onClick={toggleMenu}
+          className={`text-2xl ${chevronColor} cursor-pointer ${
+            isOpen && "transform rotate-180"
+          } ${transition} `}
+        />
+      )}
     </Flex>
   );
 };

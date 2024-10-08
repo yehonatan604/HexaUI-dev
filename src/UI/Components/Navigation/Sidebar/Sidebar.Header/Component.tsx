@@ -10,8 +10,8 @@ const SidebarHeader = (props: TSidebarHeader) => {
   const { palette } = useColorPalette();
 
   // Options
-  const bgColor = options?.bgVariant || palette.standradLight;
-  const textColor = options?.textVariant || palette.standradDark;
+  const bgColor = options?.bgVariant || palette.standrad;
+  const textColor = options?.textVariant || palette.standradLight;
 
   // JSX
   return (
