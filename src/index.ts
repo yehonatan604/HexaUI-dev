@@ -31,7 +31,6 @@ export { default as Title } from "./UI/Components/Typography/Title/Component";
 
 // Hooks
 export { default as useTheme } from "./Core/Hooks/useTheme";
-export { default as useColorPalette } from "./Core/Hooks/useColorPallete";
 
 // Helpers
 export { getRandomColor } from "./Core/Helpers/Color.helper";

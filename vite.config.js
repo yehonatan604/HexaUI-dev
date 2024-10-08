@@ -4,10 +4,10 @@ export default defineConfig({
     plugins: [react()],
     build: {
         lib: {
-            entry: 'src/main.tsx', // The entry point of your library
-            name: 'rainbow-plus-ui', // Global variable name for UMD/IIFE builds
+            entry: 'src/index.ts', // The entry point of your library
+            name: 'react-hexa-dev', // Global variable name for UMD/IIFE builds
             formats: ['es', 'umd'], // Output formats
-            fileName: (format) => `rainbow-plus-ui.${format}.js`, // Output file naming
+            fileName: (format) => `react-hexa-dev.${format}.js`, // Output file naming
         },
         cssCodeSplit: true, // Enable code splitting for CSS. Default: true
         rollupOptions: {

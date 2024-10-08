@@ -6,9 +6,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts', // The entry point of your library
-      name: 'react-hexa', // Global variable name for UMD/IIFE builds
+      name: 'react-hexa-dev', // Global variable name for UMD/IIFE builds
       formats: ['es', 'umd'],  // Output formats
-      fileName: (format) => `rainbow-plus-ui.${format}.js`, // Output file naming
+      fileName: (format) => `react-hexa-dev.${format}.js`, // Output file naming
     },
     cssCodeSplit: true, // Enable code splitting for CSS. Default: true
     rollupOptions: {
