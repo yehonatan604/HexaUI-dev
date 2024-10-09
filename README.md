@@ -14,7 +14,7 @@
 
 <hr/>
 
-### step 1: install **_React Hexa UI_** via **NPM**:
+### Step 1: Install **_React Hexa UI_** via **NPM**:
 
 To get started with React Hexa UI, install the library via npm:
 
@@ -22,9 +22,9 @@ To get started with React Hexa UI, install the library via npm:
 npm install react-hexa@latest
 ```
 
-### step 2: Install **_Tailwind CSS_** **(Required)**
+### Step 2: Install **_Tailwind CSS_** (Optional)
 
-React Hexa UI is built with Tailwind CSS, you need to set up Tailwind in your project. Here's how to install Tailwind CSS with Vite and React:
+React Hexa UI comes with built-in Tailwind CSS styles. However, if you want to customize Tailwind or extend its configuration, you need to set up Tailwind in your project. Here's how to install Tailwind CSS with Vite and React:
 
 1. Install Tailwind CSS and its peer dependencies:
 
@@ -58,19 +58,44 @@ module.exports = {
 @tailwind utilities;
 ```
 
-### step 3: Import **_Rainbow Plus UI_**'s CSS
+### Step 3: Wrap Your App with **_HexaUI_** Provider
 
-After setting up Tailwind, ensure that you import React Hexa UI’s CSS into your project. This CSS is necessary to apply the library's default styles.
+To use React Hexa UI, you must wrap your app with the `HexaUI` provider. This is required to set up the necessary context for the components.
 
-In your main application file **_(e.g., src/main.jsx or src/main.tsx)_**, add the following import:
+In your main application file **_(e.g., src/main.jsx or src/main.tsx)_**, add the following:
 
 ```js
-import "react-hexa/css";
+import { HexaUI } from "react-hexa";
+
+function Main() {
+  return (
+    <HexaUI>
+      <App />
+    </HexaUI>
+  );
+}
+
+export default Main;
 ```
+
+#### Optional: Customize the `HexaUI` Provider
+
+You can pass optional `colors` and `gradients` to the `HexaUI` provider to override theme variant/s:
+
+```js
+<HexaUI
+  colors={{ primary: "blue-500" } as TColorPalette}
+  gradients={{ success: "from-blue-400 via-green-500 to-blue-700" } as TGradientPalette}
+>
+  <App />
+</HexaUI>
+```
+
+These props are optional, but the provider must always wrap your app for Hexa UI to function properly.
 
 ## Usage
 
-Once installed, you can start using the components by importing them into your project. Here's a quick example of how to use the Button component:
+Once installed, you can start using the components by importing them into your project. Here's a quick example of how to use the `Button` component:
 
 ```js
 import { Flex, Button } from "react-hexa";
@@ -95,13 +120,12 @@ export default App;
 
 React Hexa UI components are built with Tailwind CSS at their core, offering extensive customization options to match your project’s needs:
 
-- Utility Classes: Override component styles on the fly by passing in your own Tailwind utility classes.
+- **Utility Classes:** Override component styles on the fly by passing in your own Tailwind utility classes.
+- **Theme Extension:** Customize your entire application by extending Tailwind's configuration to introduce your own design tokens.
+- **Variants:** Use built-in component variants to apply predefined styles consistently across your app.
+- **Component Themes:** For more advanced styling, override the default component themes to enforce a cohesive design language throughout your project.
 
-- Theme Extension: Customize your entire application by extending Tailwind's configuration to introduce your own design tokens.
-
-- Variants: Use built-in component variants to apply predefined styles consistently across your app.
-
-- Component Themes: For more advanced styling, override the default component themes to enforce a cohesive design language throughout your project.
+Here’s an example of extending themes with the `List` component:
 
 ```js
 import { useTheme, List, ListStyleTypes, Sizes } from "react-hexa";
@@ -129,8 +153,8 @@ export default App;
 
 ## Documentation
 
-For detailed documentation, usage examples, and a complete list of components, please visit the Rainbow Plus UI Documentation.
+For detailed documentation, usage examples, and a complete list of components, please visit the React Hexa UI Documentation Website.
 
 ## License
 
-Rainbow Plus UI is licensed under the MIT License. See the LICENSE file for more information.
+React Hexa UI is licensed under the MIT License. See the LICENSE file for more information.
