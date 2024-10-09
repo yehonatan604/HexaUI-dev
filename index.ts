@@ -1,5 +1,4 @@
 import "./src/main.css";
-import Flex from "./src/UI/Components/Layout/Flex/Component";
 
 //Common
 export { default as Button } from "./src/UI/Components/Common/Button/Component";
@@ -17,7 +16,7 @@ export { default as RangeInput } from "./src/UI/Components/Forms/RangeInput/Comp
 export { default as TextInput } from "./src/UI/Components/Forms/TextInput/Component";
 
 // Layout
-export { Flex };
+export { default as Flex } from "./src/UI/Components/Layout/Flex/Component";
 export { default as DataGrid } from "./src/UI/Components/Layout/DataGrid/Component";
 
 // Navigation
