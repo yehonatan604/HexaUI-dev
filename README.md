@@ -22,9 +22,9 @@ To get started with React Hexa UI, install the library via npm:
 npm install react-hexa@latest
 ```
 
-### Step 2: Install **_Tailwind CSS_** (Optional)
+### Step 2: Install **_Tailwind CSS_**
 
-React Hexa UI comes with built-in Tailwind CSS styles. However, if you want to customize Tailwind or extend its configuration, you need to set up Tailwind in your project. Here's how to install Tailwind CSS with Vite and React:
+React Hexa UI comes with built-in Tailwind CSS styles. However, if you want to use Tailwind classes or extend its configuration, you need to set up Tailwind in your project. Here's how to install Tailwind CSS with Vite and React:
 
 1. Install Tailwind CSS and its peer dependencies:
 
@@ -157,13 +157,11 @@ For detailed documentation, usage examples, and a complete list of components, p
 
 ## Author
 
-Yehonatan Moravia
-yehonatan604@gmail.com
+Yehonatan Moravia - yehonatan604@gmail.com
 
 ## Collaborators
 
-Moshe Shoker
-moshe@shoker.co.il
+Moshe Shoker - moshe@shoker.co.il
 
 ## License
 
