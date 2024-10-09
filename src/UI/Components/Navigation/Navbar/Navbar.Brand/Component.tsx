@@ -1,7 +1,7 @@
 import useTheme from "../../../../../Core/Hooks/useTheme";
-import { TNavbarBrand } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarBrand";
+import { TBrand } from "../../../../../Data/Types/ComponentTypes/TBrand";
 
-const NavbarBrand = (props: TNavbarBrand) => {
+const NavbarBrand = (props: TBrand) => {
   const { children, as, to, options, ...componentProps } = props;
   const { colors, mode } = useTheme();
 

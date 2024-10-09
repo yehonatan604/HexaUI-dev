@@ -6,7 +6,7 @@ import { SidebarItemOptions } from "../../../Data/Types/ComponentTypes/Navigatio
 import { SidebarHeaderOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
 import { HiArrowCircleRight } from "react-icons/hi";
 import { SidebarOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
-import { TBorder } from "../../../Data/Types/TBorder";
+import { TBorder } from "../../../Data/Types/ComponentTypes/TBorder";
 import useTheme from "../../../Core/Hooks/useTheme";
 
 const SidebarExample = () => {

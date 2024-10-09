@@ -1,13 +1,17 @@
 {
   "name": "react-hexa-dev",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "module": "dist/react-hexa-dev.es.js",
+  "main": "dist/react-hexa-dev.cjs.js",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "require": "./dist/react-hexa-dev.cjs.js"
+    },
+    "./css": "./dist/index.css"
+  },
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

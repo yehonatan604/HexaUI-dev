@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import { TComponent, ComponentOptions } from "../../TComponent";
-import { Tsize } from "../../../TSize";
+import { TSize } from "../../../TSize";
 import { TRing } from "../../TRing";
 
 export type TButton = TComponent<"button"> & {
@@ -12,7 +12,7 @@ export type ButtonOptions = ComponentOptions & {
     icon?: JSX.Element;
     iconPosition?: string;
     label?: string;
-    size?: Tsize | string;
+    size?: TSize | string;
     rounded?: boolean;
     roundedS?: boolean;
     roundedE?: boolean;

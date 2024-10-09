@@ -3,10 +3,10 @@ import { TGradientPalette } from "./TGradientPalette";
 export type TColorPalette = TGradientPalette & {
     black?: string;
     white?: string;
-    backgroundLight: string;
-    backgroundDark: string;
-    textLight: string;
-    textDark: string;
+    backgroundLight?: string;
+    backgroundDark?: string;
+    textLight?: string;
+    textDark?: string;
 
     primaryLight?: string;
     secondaryLight?: string;

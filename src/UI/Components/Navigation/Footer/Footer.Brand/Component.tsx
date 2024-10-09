@@ -1,6 +1,6 @@
-import { FooterBrandProps } from "./Props";
+import { TBrand } from "../../../../../Data/Types/ComponentTypes/TBrand";
 
-const FooterBrand = (props: FooterBrandProps) => {
+const FooterBrand = (props: TBrand) => {
   const { children, as, to, ...componentProps } = props;
   const Component = as || "a";
 

@@ -1,6 +1,6 @@
-import { NavbarToggleProps } from "./Props";
+import { TNavbarToggle } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarToggle";
 
-const NavbarToggle = (props: NavbarToggleProps) => {
+const NavbarToggle = (props: TNavbarToggle) => {
   const { children, toggle, ...componentProps } = props;
 
   const onToggle = () => {

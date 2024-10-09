@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import useTheme from "../../../../Core/Hooks/useTheme";
-import { ThemeTogglerProps } from "./Props";
+import { TThemeToggler } from "../../../../Data/Types/ComponentTypes/Common/ThemeToggler/TThemeToggler";
 
-const ThemeToggler = (props: ThemeTogglerProps) => {
+const ThemeToggler = (props: TThemeToggler) => {
   const { darkIcon, lightIcon, ...componentProps } = props;
   const [icon, setIcon] = useState<React.ReactNode>(darkIcon);
   const { mode, toggleTheme } = useTheme();

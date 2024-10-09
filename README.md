@@ -65,7 +65,7 @@ After setting up Tailwind, ensure that you import React Hexa UI’s CSS into you
 In your main application file **_(e.g., src/main.jsx or src/main.tsx)_**, add the following import:
 
 ```js
-import "react-hexa/dist/index.css";
+import "react-hexa/css";
 ```
 
 ## Usage
@@ -73,17 +73,22 @@ import "react-hexa/dist/index.css";
 Once installed, you can start using the components by importing them into your project. Here's a quick example of how to use the Button component:
 
 ```js
-import { Button } from "react-hexa/src";
+import { Flex, Button } from "react-hexa";
 
 function App() {
-  return <Button>Submit</Button>;
+  return (
+    <Flex className="gap-4">
+      <Button options={{ bgVariant: "success" }}>Ok</Button>
+      <Button options={{ bgVariant: "failure" }}>Cancel</Button>
+    </Flex>
+  );
 }
 
 export default App;
 ```
 
 <p align="center">
-  <img src="https://i.postimg.cc/NfMx1YnL/btns.png" alt="Button Example">
+  <img src="https://i.postimg.cc/vBWQVFLC/btns-new.png" alt="Button Example">
 </p>
 
 ## Customization
@@ -99,16 +104,16 @@ React Hexa UI components are built with Tailwind CSS at their core, offering ext
 - Component Themes: For more advanced styling, override the default component themes to enforce a cohesive design language throughout your project.
 
 ```js
-import { useTheme, List } from "react-hexa/src";
+import { useTheme, List, ListStyleTypes, Sizes } from "react-hexa";
 
 function App() {
-  const { colors, sizes } = useTheme();
+  const { colors } = useTheme();
 
   const listOptions = {
     items: ["item 1", "item 2", "item 3"],
-    textVariant: colors.primary,
+    textVariant: colors.Primary,
     listStyle: ListStyleTypes.Decimal,
-    fontSize: sizes.Sm,
+    fontSize: Sizes.Sm,
     gap: 1,
   };
 

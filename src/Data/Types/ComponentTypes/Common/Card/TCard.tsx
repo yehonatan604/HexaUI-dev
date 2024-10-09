@@ -1,5 +1,5 @@
 import { TComponent, ComponentOptions } from "../../TComponent";
-import { Tsize } from "../../../TSize";
+import { TSize } from "../../../TSize";
 
 export type TCard = TComponent<"div"> & {
   options?: CardOptions;
@@ -7,6 +7,6 @@ export type TCard = TComponent<"div"> & {
 
 export type CardOptions = ComponentOptions & {
   padding?: string;
-  rounded?: Tsize | string;
+  rounded?: TSize | string;
   gap?: number;
 };

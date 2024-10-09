@@ -21,8 +21,8 @@ const ButtonExamples = () => {
       <Button
         options={{
           size: Sm,
-          bgVariant: colors.success,
-          textVariant: colors.black,
+          bgVariant: colors.successDark,
+          textVariant: colors.white,
         }}
       >
         submit
@@ -49,6 +49,10 @@ const ButtonExamples = () => {
       </Button>
 
       <Button>submit</Button>
+      <Flex className="gap-4">
+        <Button options={{ bgVariant: "success" }}>Ok</Button>
+        <Button options={{ bgVariant: "failure" }}>Cancel</Button>
+      </Flex>
     </Flex>
   );
 };

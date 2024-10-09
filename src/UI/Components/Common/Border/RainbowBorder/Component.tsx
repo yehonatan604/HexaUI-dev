@@ -2,7 +2,7 @@ import useTheme from "../../../../../Core/Hooks/useTheme";
 import { TRainbowBorder } from "../../../../../Data/Types/ComponentTypes/Common/Rainbow-border/TRainbowBorder";
 
 const RainbowBorder = (props: TRainbowBorder) => {
-  const { children, options, ...componentProps } = props;
+  const { children, options, className, innerClassName, ...componentProps } = props;
 
   //Hooks
   const { gradients, colors } = useTheme();
@@ -26,10 +26,12 @@ const RainbowBorder = (props: TRainbowBorder) => {
   // JSX
   return (
     <div
-      className={`p-${borderThickness} ${rounded} bg-gradient-to-br ${gradient}`}
+      className={`p-${borderThickness} ${rounded} bg-gradient-to-br ${gradient} ${className}`}
       {...componentProps}
     >
-      <div className={`text-${innerTextColor} bg-${innerBgColor} ${innerRounded}`}>
+      <div
+        className={`text-${innerTextColor} bg-${innerBgColor} ${innerRounded} ${innerClassName}`}
+      >
         {children}
       </div>
     </div>

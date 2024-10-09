@@ -15,7 +15,7 @@ const Accordion = (props: TAccordion) => {
   const textColor = options?.textVariant || "gray-800";
   const borderColor = options.border?.variant || "gray-300";
   const borderRadius = options.border?.radius || "md";
-  const border = options.border?.show
+  const border = options.border
     ? `border-2 border-${borderColor} rounded-${borderRadius}`
     : "";
   const titleColor = options.titleVariant || colors.secondaryLight;
