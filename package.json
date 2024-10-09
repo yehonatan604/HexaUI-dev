@@ -1,6 +1,6 @@
 {
   "name": "react-hexa-dev",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "module": "dist/react-hexa-dev.es.js",
   "main": "dist/react-hexa-dev.cjs.js",
@@ -51,5 +51,11 @@
   "author": {
     "name": "Yehonatan Moravia",
     "email": "yehonatan604@gmail.com"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Moshe Shoker",
+      "email": "moshe@shoker.co.il"
+    }
+  ]
 }
