@@ -155,6 +155,11 @@ export default App;
 
 For detailed documentation, usage examples, and a complete list of components, please visit the React Hexa UI Documentation Website.
 
+## Author
+
+Yehonatan Moravia
+Email: yehonatan604@gmail.com
+
 ## License
 
 React Hexa UI is licensed under the MIT License. See the LICENSE file for more information.
