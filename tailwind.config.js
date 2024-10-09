@@ -73,6 +73,7 @@ export default {
     },
     {
       pattern: /border-.*/,
+      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
       standard: true,
     },
     {
