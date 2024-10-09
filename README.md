@@ -158,7 +158,12 @@ For detailed documentation, usage examples, and a complete list of components, p
 ## Author
 
 Yehonatan Moravia
-Email: yehonatan604@gmail.com
+yehonatan604@gmail.com
+
+## Collaborators
+
+Moshe Shoker
+moshe@shoker.co.il
 
 ## License
 
