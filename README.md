@@ -58,14 +58,15 @@ module.exports = {
 @tailwind utilities;
 ```
 
-### Step 3: Wrap Your App with **_HexaUI_** Provider
+### Step 3: Wrap Your App with **_HexaUI_** Provider and Import Hexa UI's CSS
 
-To use React Hexa UI, you must wrap your app with the `HexaUI` provider. This is required to set up the necessary context for the components.
+To use React Hexa UI, you must import Hexa UI's CSS and wrap your app with the `HexaUI` provider. This is required to set up the necessary context for the components.
 
 In your main application file **_(e.g., src/main.jsx or src/main.tsx)_**, add the following:
 
 ```js
 import { HexaUI } from "react-hexa";
+import "react-hexa/css";
 
 function Main() {
   return (
