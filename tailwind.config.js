@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: 'jit',
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ], theme: {
@@ -62,27 +63,28 @@ export default {
   },
   safelist: [
     {
-      pattern: /bg-.*/,
-      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
+      pattern: /bg-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
+      variants: ["hover", "focus", "active", "disabled", "checked"],
       standard: true,
     },
     {
-      pattern: /text-.*/,
-      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
+      pattern: /text-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
+      variants: ["hover", "focus", "active", "disabled", "checked"],
       standard: true,
     },
     {
-      pattern: /border-.*/,
-      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
+      pattern: /border-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
+      variants: ["hover", "focus", "active", "disabled", "checked"],
       standard: true,
     },
     {
-      pattern: /ring-.*/,
+      pattern: /ring-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
+      variants: ["hover", "focus", "active", "disabled", "checked"],
       standard: true,
-      variants: ["hover", "focus", "active", "disabled", "dark", "checked"],
     },
     {
-      pattern: /shadow-.*/,
+      pattern: /shadow-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
+      variants: ["hover", "focus", "active", "disabled", "checked"],
       standard: true,
     },
     {
@@ -102,19 +104,18 @@ export default {
       standard: true,
     },
     {
-      pattern: /flex-.*/,
-      standard: true,
-    },
-    {
-      pattern: /justify-.*/,
-      standard: true,
-    },
-    {
-      pattern: /items-.*/,
-      standard: true,
-    },
-    {
       pattern: /rounded-.*/,
+      standard: true,
+    },
+    {
+      pattern: /flex-(row|col|row-reverse|col-reverse, wrap|nowrap|wrap-reverse)/,
+      standard: true,
+    },
+    {
+      pattern: /justify-(start|end|center|between|around)/,
+    },
+    {
+      pattern: /items-(start|end|center|baseline|stretch)/,
       standard: true,
     },
   ],
