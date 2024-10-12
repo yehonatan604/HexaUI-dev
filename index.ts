@@ -7,6 +7,7 @@ export { default as RainbowBorder } from "./src/UI/Components/Common/Border/Rain
 export { default as RingBorder } from "./src/UI/Components/Common/Border/RingBorder/Component";
 export { default as Card } from "./src/UI/Components/Common/Card/Component";
 export { default as ThemeToggler } from "./src/UI/Components/Common/ThemeToggler/Component";
+export { default as Alert } from "./src/UI/Components/Common/Alert/Alert";
 
 // Forms
 export { default as Checkbox } from "./src/UI/Components/Forms/Checkbox/Component";
@@ -69,6 +70,8 @@ export type { TCard } from "./src/Data/Types/ComponentTypes/Common/Card/TCard";
 export type { CardOptions } from "./src/Data/Types/ComponentTypes/Common/Card/TCard";
 
 export type { TThemeToggler } from "./src/Data/Types/ComponentTypes/Common/ThemeToggler/TThemeToggler";
+
+export type { TAlert } from "./src/Data/Types/ComponentTypes/Common/Alert/TAlert";
 
 // Form Component Types
 export type { TCheckbox } from "./src/Data/Types/ComponentTypes/Forms/Checkbox/TCheckbox";
