@@ -94,7 +94,7 @@ const Alert = ({
       style={{
         transform: show ? "translateX(0)" : "translateX(200%)",
         opacity: show ? 1 : 0,
-        transition: "transform 1.2s ease-in-out, opacity 1.2s ease-in-out",
+        transition: "transform 1s ease-out, opacity 1s ease-out",
       }}
       {...componentProps}
     >

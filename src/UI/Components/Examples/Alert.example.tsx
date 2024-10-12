@@ -26,7 +26,7 @@ const AlertExamples = () => {
         setShow={setShowTestAlert}
         options={{ title: "Test Alert" }}
       >
-        This is a Test. This is a Test. This is a Test. This is a Test. This is a Test.
+        Some imporatant info.
       </Alert>
 
       <Button
