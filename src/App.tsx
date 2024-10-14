@@ -21,7 +21,7 @@ import CardExamples from "./UI/Components/Examples/Card.example";
 import Hr from "./UI/Components/Typography/Hr/Component";
 import ListExample from "./UI/Components/Examples/List.example";
 import useTheme from "./Core/Hooks/useTheme";
-import AlertExamples from "./UI/Components/Examples/Alert.example";
+import ToastExamples from "./UI/Components/Examples/Toast.example";
 
 function App() {
   const { mode, colors } = useTheme();
@@ -111,7 +111,7 @@ function App() {
           </Title>
           <SidebarExample />
           <Hr className="mb-4" />
-          <AlertExamples />
+          <ToastExamples />
           <Hr className="mb-4" />
           <Quote
             cite={cite as string & TCite}

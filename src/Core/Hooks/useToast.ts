@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { AlertStackContext } from "../Context/AlertStack.context";
+import { ToastStackContext } from "../Context/ToasttStack.context";
 
-const useAlertStack = () => {
-    const context = useContext(AlertStackContext);
+const useToast = () => {
+    const context = useContext(ToastStackContext);
     if (context === undefined) {
         throw new Error("useTheme must be used within a ThemeProvider");
     }
@@ -10,6 +10,7 @@ const useAlertStack = () => {
         alerts: context.alerts,
         addAlert: context.addAlert,
         removeAlert: context.removeAlert,
+        toast: context.toast,
     };
 };
-export default useAlertStack;
+export default useToast;

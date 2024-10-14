@@ -63,7 +63,7 @@ export default {
   },
   safelist: [
     {
-      pattern: /bg-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
+      pattern: /bg-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white|[a-z])(-[a-z]+)?/,
       variants: ["hover", "focus", "active", "disabled", "checked"],
       standard: true,
     },
@@ -118,6 +118,30 @@ export default {
       pattern: /items-(start|end|center|baseline|stretch)/,
       standard: true,
     },
+    {
+      pattern: /top-.*/,
+      standard: true,
+    },
+    {
+      pattern: /right-.*/,
+      standard: true,
+    },
+    {
+      pattern: /bottom-.*/,
+      standard: true,
+    },
+    {
+      pattern: /left-.*/,
+      standard: true,
+    },
+    {
+      pattern: /to-.*/,
+      standard: true,
+    },
+    {
+      pattern: /from-.*/,
+      standard: true,
+    }
   ],
   plugins: [require("@tailwindcss/forms")],
 }
