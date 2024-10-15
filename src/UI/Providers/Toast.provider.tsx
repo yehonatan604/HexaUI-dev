@@ -104,20 +104,18 @@ const ToastProvider = ({ children }) => {
     );
 
     // Remove the alert after the animation is done
-    setTimeout(() => {
-      setToastStack((prevAlerts) => {
-        const updatedAlerts = prevAlerts.filter((alert) => alert.id !== id);
-        let newTop = 0;
-        return updatedAlerts.map((alert) => {
-          const updatedAlert = cloneElement(alert.alert, { top: newTop });
-          newTop += updatedAlert.props.children.clientHeight + 3;
-          return {
-            ...alert,
-            alert: updatedAlert,
-          };
-        });
+    setToastStack((prevAlerts) => {
+      const updatedAlerts = prevAlerts.filter((alert) => alert.id !== id);
+      let newTop = 0;
+      return updatedAlerts.map((alert) => {
+        const updatedAlert = cloneElement(alert.alert, { top: newTop });
+        newTop += updatedAlert.props.children.clientHeight + 3;
+        return {
+          ...alert,
+          alert: updatedAlert,
+        };
       });
-    }, 1000); // Delay matches the transition duration
+    });
   };
 
   return (

@@ -9,13 +9,13 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #888; /* Color for scrollbar thumb */
+    background: #555; /* Color for scrollbar thumb */
     border-radius: 8px;
     border: 4px solid #1a1a1a; /* To give some padding to thumb with track */
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Hover color */
+    background: #888; /* Hover color */
   }
 
   /* Adding arrow buttons */

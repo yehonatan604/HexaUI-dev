@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  mode: 'jit',
+  mode: "jit",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ], theme: {
@@ -78,7 +78,7 @@ export default {
       standard: true,
     },
     {
-      pattern: /ring-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
+      pattern: /ring-.*/,
       variants: ["hover", "focus", "active", "disabled", "checked"],
       standard: true,
     },
