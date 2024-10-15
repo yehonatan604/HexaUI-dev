@@ -22,6 +22,7 @@ import Hr from "./UI/Components/Typography/Hr/Component";
 import ListExample from "./UI/Components/Examples/List.example";
 import useTheme from "./Core/Hooks/useTheme";
 import ToastExamples from "./UI/Components/Examples/Toast.example";
+import Scrollbar from "./UI/Components/Layout/Scrollbar/Scrollbar";
 
 function App() {
   const { mode, colors } = useTheme();
@@ -40,93 +41,98 @@ function App() {
     <BrowserRouter>
       <NavbarExample />
 
-      <Flex
-        options={{
-          justify: FlexTypes.Center,
-          align: FlexTypes.Start,
-        }}
-        className={`min-h-screen bg-${bgColor} text-${textColor} pb-5`}
-      >
-        <Flex
-          options={{
-            direction: FlexDir.Col,
-            justify: FlexTypes.Center,
-            align: FlexTypes.Center,
-          }}
-          className="w-3/4"
-        >
-          <Title
+      <Scrollbar maxHeight="fit">
+        <div className="h-[83vh]">
+          <Flex
             options={{
-              size: Sizes.Xl as never,
-              textVariant: colors.secondary,
-              align: "center",
+              justify: FlexTypes.Center,
+              align: FlexTypes.Start,
             }}
+            className={`min-h-screen bg-${bgColor} text-${textColor} pb-5`}
           >
-            Hexa UI
-          </Title>
-          <ThemeToggler />
-          <ButtonExamples />
-          <AccordionExamples />
-          <CardExamples />
-          <Hr className="mt-20" />
-          <RainbowBordersExample />
-          <Hr
-            options={{
-              color: colors.primaryDark,
-              width: "1/3",
-            }}
-          />
-          <RingExamples />
-          <Hr
-            options={{
-              color: colors.primaryDark,
-              width: "1/3",
-            }}
-          />
-          <ListExample />
-          <Hr
-            options={{
-              color: colors.primaryDark,
-              width: "1/3",
-            }}
-          />
-          <FormInputExamples />
-          <SelectExamples />
-          <Hr
-            options={{
-              color: colors.primaryDark,
-              width: "1/3",
-            }}
-          />
-          <DataGridExample />
-          <Hr className="mb-4" />
-          <Title
-            options={{
-              size: Sizes.Lg as never,
-              textVariant: colors.secondary,
-              align: "center",
-            }}
-          >
-            Sidebar
-          </Title>
-          <SidebarExample />
-          <Hr className="mb-4" />
-          <ToastExamples />
-          <Hr className="mb-4" />
-          <Quote
-            cite={cite as string & TCite}
-            options={{
-              gap: 4,
-              textVariant: colors.infoLight,
-            }}
-          >
-            For 50 years, WWF has been protecting the future of nature. The world's
-            leading conservation organization, WWF works in 100 countries and is supported
-            by 1.2 million members in the United States and close to 5 million globally.
-          </Quote>
-          <Hr className="mt-4" />
-        </Flex>
-      </Flex>
+            <Flex
+              options={{
+                direction: FlexDir.Col,
+                justify: FlexTypes.Center,
+                align: FlexTypes.Center,
+              }}
+              className="w-3/4"
+            >
+              <Title
+                options={{
+                  size: Sizes.Xl as never,
+                  textVariant: colors.secondary,
+                  align: "center",
+                }}
+              >
+                Hexa UI
+              </Title>
+              <ThemeToggler />
+              <ButtonExamples />
+              <AccordionExamples />
+              <CardExamples />
+              <Hr className="mt-20" />
+              <RainbowBordersExample />
+              <Hr
+                options={{
+                  color: colors.primaryDark,
+                  width: "1/3",
+                }}
+              />
+              <RingExamples />
+              <Hr
+                options={{
+                  color: colors.primaryDark,
+                  width: "1/3",
+                }}
+              />
+              <ListExample />
+              <Hr
+                options={{
+                  color: colors.primaryDark,
+                  width: "1/3",
+                }}
+              />
+              <FormInputExamples />
+              <SelectExamples />
+              <Hr
+                options={{
+                  color: colors.primaryDark,
+                  width: "1/3",
+                }}
+              />
+              <DataGridExample />
+              <Hr className="mb-4" />
+              <Title
+                options={{
+                  size: Sizes.Lg as never,
+                  textVariant: colors.secondary,
+                  align: "center",
+                }}
+              >
+                Sidebar
+              </Title>
+              <SidebarExample />
+              <Hr className="mb-4" />
+              <ToastExamples />
+              <Hr className="mb-4" />
+              <Quote
+                cite={cite as string & TCite}
+                options={{
+                  gap: 4,
+                  textVariant: colors.infoLight,
+                }}
+              >
+                For 50 years, WWF has been protecting the future of nature. The world's
+                leading conservation organization, WWF works in 100 countries and is
+                supported by 1.2 million members in the United States and close to 5
+                million globally.
+              </Quote>
+              <Hr className="mt-4" />
+            </Flex>
+          </Flex>
+        </div>
+      </Scrollbar>
       <FooterExample />
     </BrowserRouter>
   );

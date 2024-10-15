@@ -1,0 +1,37 @@
+.scrollbar-dark {
+  /* Add custom scrollbar for webkit browsers */
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Dark background for scrollbar track */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888; /* Color for scrollbar thumb */
+    border-radius: 8px;
+    border: 4px solid #1a1a1a; /* To give some padding to thumb with track */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Hover color */
+  }
+
+  /* Adding arrow buttons */
+  &::-webkit-scrollbar-button {
+    background: url("chevron-down.png") no-repeat center center;
+    background-size: 20px;
+    background-color: #1a1a1a;
+    width: 20px;
+    height: 20px;
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background: url("chevron-up.png") no-repeat center center;
+    background-size: 20px;
+    background-color: #1a1a1a;
+    width: 20px;
+    height: 20px;
+  }
+}

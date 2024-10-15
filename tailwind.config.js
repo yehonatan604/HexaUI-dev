@@ -100,7 +100,7 @@ export default {
       standard: true,
     },
     {
-      pattern: /h-.*/,
+      pattern: /h-([0-9]|full|screen|[[0-9]+[a-z]])/,
       standard: true,
     },
     {
