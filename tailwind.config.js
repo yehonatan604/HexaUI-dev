@@ -64,84 +64,39 @@ export default {
   },
   safelist: [
     {
-      pattern: /bg-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white|[a-z])(-[a-z]+)?/,
-      variants: ["hover", "focus", "active", "disabled", "checked"],
-      standard: true,
+      pattern: /^(bg|text|border|shadow|ring)-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[ld])?$/,
+      variants: ["hover", "focus", "active", "disabled", "checked", "dark"],
     },
     {
-      pattern: /text-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
-      variants: ["hover", "focus", "active", "disabled", "checked"],
-      standard: true,
+      pattern: /^border-(t|r|b|l)-([1-9])/,
+      variants: ["hover", "focus", "active", "disabled", "checked", "dark"],
     },
     {
-      pattern: /border-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
-      variants: ["hover", "focus", "active", "disabled", "checked"],
-      standard: true,
+      pattern: /^(p|m)(t|r|b|l|x|y)?-/,
     },
     {
-      pattern: /ring-.*/,
-      variants: ["hover", "focus", "active", "disabled", "checked"],
-      standard: true,
+      pattern: /^(w|h)-/,
     },
     {
-      pattern: /shadow-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[a-z]+)?/,
-      variants: ["hover", "focus", "active", "disabled", "checked"],
-      standard: true,
+      pattern: /^rounded(-|$)/,
     },
     {
-      pattern: /p-.*/,
-      standard: true,
+      pattern: /^flex-(row|col)(-reverse)?$/,
     },
     {
-      pattern: /m-.*/,
-      standard: true,
+      pattern: /^flex-wrap(-reverse)?$/,
     },
     {
-      pattern: /w-.*/,
-      standard: true,
+      pattern: /^justify-(start|end|center|between|around|evenly)$/,
     },
     {
-      pattern: /h-([0-9]|full|screen|[[0-9]+[a-z]])/,
-      standard: true,
+      pattern: /^items-(start|end|center|baseline|stretch)$/,
     },
     {
-      pattern: /rounded-.*/,
-      standard: true,
+      pattern: /^(top|right|bottom|left)-/,
     },
     {
-      pattern: /flex-(row|col|row-reverse|col-reverse, wrap|nowrap|wrap-reverse)/,
-      standard: true,
-    },
-    {
-      pattern: /justify-(start|end|center|between|around)/,
-    },
-    {
-      pattern: /items-(start|end|center|baseline|stretch)/,
-      standard: true,
-    },
-    {
-      pattern: /top-.*/,
-      standard: true,
-    },
-    {
-      pattern: /right-.*/,
-      standard: true,
-    },
-    {
-      pattern: /bottom-.*/,
-      standard: true,
-    },
-    {
-      pattern: /left-.*/,
-      standard: true,
-    },
-    {
-      pattern: /to-.*/,
-      standard: true,
-    },
-    {
-      pattern: /from-.*/,
-      standard: true,
+      pattern: /^(to|from)-/,
     }
   ],
   plugins: [require("@tailwindcss/forms")],

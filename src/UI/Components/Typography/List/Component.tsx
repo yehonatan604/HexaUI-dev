@@ -9,7 +9,7 @@ import { TList } from "../../../../Data/Types/ComponentTypes/Typography/List/TLi
 import useTheme from "../../../../Core/Hooks/useTheme";
 
 const List = (props: TList) => {
-  const { options, ...componentProps } = props;
+  const { options, className, ...componentProps } = props;
 
   // Hooks
   const { colors } = useTheme();
@@ -44,8 +44,8 @@ const List = (props: TList) => {
     <Flex
       options={{
         direction: FlexDir.Col,
-        justify: FlexTypes.Center,
-        align: FlexTypes.Center,
+        justify: justify,
+        align: align,
       }}
       className="gap-2 text-center"
     >
@@ -54,7 +54,7 @@ const List = (props: TList) => {
         style={{
           listStyleType: !options?.icons?.length ? options?.listStyle : "none",
         }}
-        className={`flex flex-${flexDirection} justify-${justify} items-${align} gap-${gap}`}
+        className={`flex flex-${flexDirection} justify-${justify} items-${align} gap-${gap} ${className}`}
       >
         {options?.items.map((item, index) => (
           <li
@@ -79,7 +79,7 @@ const List = (props: TList) => {
                     : getRandomIcon(options?.icons)}
                 </>
               )}
-              {item}
+              <div className="overflow-hidden">{item}</div>
             </Flex>
           </li>
         ))}
