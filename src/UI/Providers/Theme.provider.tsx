@@ -47,7 +47,12 @@ const ThemeProvider = ({
     if (localTheme) {
       setMode(localTheme);
     }
-  }, []);
+    if (mode === "light") {
+      document.body.classList.remove("dark");
+    } else {
+      document.body.classList.add("dark");
+    }
+  }, [mode]);
 
   return (
     <ThemeContext.Provider

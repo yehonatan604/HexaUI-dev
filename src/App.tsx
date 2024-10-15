@@ -25,10 +25,7 @@ import ToastExamples from "./UI/Components/Examples/Toast.example";
 import Scrollbar from "./UI/Components/Layout/Scrollbar/Scrollbar";
 
 function App() {
-  const { mode, colors } = useTheme();
-
-  const bgColor = mode === "light" ? colors.standradLight : colors.black;
-  const textColor = mode === "light" ? colors.primaryDark : colors.primaryLight;
+  const { colors } = useTheme();
 
   const cite: TCite = {
     url: "http://www.worldwildlife.org/who/index.html",
@@ -48,7 +45,7 @@ function App() {
               justify: FlexTypes.Center,
               align: FlexTypes.Start,
             }}
-            className={`min-h-screen bg-${bgColor} text-${textColor} pb-5`}
+            className={`min-h-screen bg-standard-l dark:bg-black dark:text-primary-l text-primary-d pb-5`}
           >
             <Flex
               options={{
