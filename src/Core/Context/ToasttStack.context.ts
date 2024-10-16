@@ -1,28 +1,7 @@
 import { createContext } from "react";
+import { TToastStackContext } from "../Helpers/Toast/types/Toast.types";
 
-export type AlertStackItem = {
-    id: string;
-    alert: JSX.Element;
-    isVisible: boolean;
-};
-
-export type AlertStackContextType = {
-    alerts: AlertStackItem[];
-    addAlert: (id: string, alert: JSX.Element) => void;
-    removeAlert: (id: string) => void;
-    toast: {
-        info: (message: string) => void;
-        success: (message: string) => void;
-        error: (message: string) => void;
-        warning: (message: string) => void;
-    };
-
-};
-
-const ToastStackContext = createContext<AlertStackContextType>({
-    alerts: [],
-    addAlert: () => { },
-    removeAlert: () => { },
+const ToastStackContext = createContext<TToastStackContext>({
     toast: {
         info: () => { },
         success: () => { },

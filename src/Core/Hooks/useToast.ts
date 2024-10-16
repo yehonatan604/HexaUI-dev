@@ -7,9 +7,9 @@ const useToast = () => {
         throw new Error("useTheme must be used within a ThemeProvider");
     }
     return {
-        alerts: context.alerts,
-        addAlert: context.addAlert,
-        removeAlert: context.removeAlert,
+        alerts: context.toastStackItems,
+        addAlert: context.addToast,
+        removeAlert: context.removeToast,
         toast: context.toast,
     };
 };

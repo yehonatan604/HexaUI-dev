@@ -1,20 +1,19 @@
-import { cloneElement, useState } from "react";
+import { cloneElement, useState, useEffect, useMemo } from "react";
 import generateRandomId from "../../Core/Helpers/IdHelper";
 import Toast from "../Components/Common/Toast/Toast";
-import {
-  AlertStackItem,
-  ToastStackContext,
-} from "../../Core/Context/ToasttStack.context";
+import { setToastInstance } from "../../Core/Helpers/Toast/toast";
+import { ToastStackContext } from "../../Core/Context/ToasttStack.context";
+import { TToastStackItem } from "../../Core/Helpers/Toast/types/Toast.types";
 
 const ToastProvider = ({ children }) => {
-  const [toastStack, setToastStack] = useState<AlertStackItem[]>([]);
+  const [toastStackItems, setToastStackItems] = useState<TToastStackItem[]>([]);
 
-  const addAlert = (id: string, alert: JSX.Element) => {
-    setToastStack((prevAlerts) => [
-      ...prevAlerts,
+  const addToast = (id: string, toast: JSX.Element) => {
+    setToastStackItems((prevToasts) => [
+      ...prevToasts,
       {
         id,
-        alert,
+        toast,
         isVisible: true,
       },
     ]);
@@ -30,104 +29,112 @@ const ToastProvider = ({ children }) => {
     return newTop;
   };
 
-  const alert = {
-    info: (message: string) => {
-      const id = generateRandomId();
-      addAlert(
-        id,
-        <Toast
-          top={getTop()} // Set initial top position based on stack length
-          options={{ title: "Info" }}
-          onFinished={() => {
-            removeAlert(id);
-          }}
-        >
-          {message}
-        </Toast>
-      );
-    },
-    success: (message: string) => {
-      const id = generateRandomId();
-      addAlert(
-        id,
-        <Toast
-          top={getTop()} // Set initial top position based on stack length
-          options={{ title: "Success", type: "success" }}
-          onFinished={() => {
-            removeAlert(id);
-          }}
-        >
-          {message}
-        </Toast>
-      );
-    },
-    error: (message: string) => {
-      const id = generateRandomId();
-      addAlert(
-        id,
-        <Toast
-          top={getTop()} // Set initial top position based on stack length
-          options={{ title: "Error", type: "failure" }}
-          onFinished={() => {
-            removeAlert(id);
-          }}
-        >
-          {message}
-        </Toast>
-      );
-    },
-    warning: (message: string) => {
-      const id = generateRandomId();
-      addAlert(
-        id,
-        <Toast
-          top={getTop()} // Set initial top position based on stack length
-          options={{ title: "Warning", type: "warning" }}
-          onFinished={() => {
-            removeAlert(id);
-          }}
-        >
-          {message}
-        </Toast>
-      );
-    },
-  };
+  const toast = useMemo(
+    () => ({
+      info: (message: string) => {
+        const id = generateRandomId();
+        addToast(
+          id,
+          <Toast
+            top={getTop()}
+            options={{ title: "Info" }}
+            onFinished={() => {
+              removeToast(id);
+            }}
+          >
+            {message}
+          </Toast>
+        );
+      },
+      success: (message: string) => {
+        const id = generateRandomId();
+        addToast(
+          id,
+          <Toast
+            top={getTop()}
+            options={{ title: "Success", type: "success" }}
+            onFinished={() => {
+              removeToast(id);
+            }}
+          >
+            {message}
+          </Toast>
+        );
+      },
+      error: (message: string) => {
+        const id = generateRandomId();
+        addToast(
+          id,
+          <Toast
+            top={getTop()}
+            options={{ title: "Error", type: "failure" }}
+            onFinished={() => {
+              removeToast(id);
+            }}
+          >
+            {message}
+          </Toast>
+        );
+      },
+      warning: (message: string) => {
+        const id = generateRandomId();
+        addToast(
+          id,
+          <Toast
+            top={getTop()}
+            options={{ title: "Warning", type: "warning" }}
+            onFinished={() => {
+              removeToast(id);
+            }}
+          >
+            {message}
+          </Toast>
+        );
+      },
+    }),
+    []
+  );
 
-  const removeAlert = (id: string) => {
-    // Set visibility to false to trigger the exit animation
-    setToastStack((prevAlerts) =>
-      prevAlerts.map((alert) =>
-        alert.id === id
-          ? { ...alert, isVisible: false } // Set visibility to false before removing
-          : alert
+  const removeToast = (id: string) => {
+    setToastStackItems((prevToasts) =>
+      prevToasts.map((toast) =>
+        toast.id === id ? { ...toast, isVisible: false } : toast
       )
     );
 
-    // Remove the alert after the animation is done
-    setToastStack((prevAlerts) => {
-      const updatedAlerts = prevAlerts.filter((alert) => alert.id !== id);
-      let newTop = 0;
-      return updatedAlerts.map((alert) => {
-        const updatedAlert = cloneElement(alert.alert, { top: newTop });
-        newTop += updatedAlert.props.children.clientHeight + 3;
-        return {
-          ...alert,
-          alert: updatedAlert,
-        };
+    setTimeout(() => {
+      setToastStackItems((prevToasts) => {
+        const updatedToasts = prevToasts.filter((toast) => toast.id !== id);
+        let newTop = 0;
+        return updatedToasts.map((alert) => {
+          const updatedToast = cloneElement(alert.toast, { top: newTop });
+          newTop += updatedToast.props.children.clientHeight + 3;
+          return {
+            ...alert,
+            alert: updatedToast,
+          };
+        });
       });
-    });
+    }, 1000);
   };
+
+  // Set the `toast` instance globally when the component mounts
+  useEffect(() => {
+    setToastInstance(toast);
+  }, [toast]);
 
   return (
     <ToastStackContext.Provider
-      value={{ alerts: toastStack, addAlert, removeAlert, toast: alert }}
+      value={{
+        toast,
+      }}
     >
       {children}
       <div id="alert-container">
-        {toastStack.length > 0 &&
-          toastStack.map((alert) => (
+        {toastStackItems.length > 0 &&
+          toastStackItems.map((alert) => (
             <div id={`toast-${alert.id}`} key={alert.id}>
-              {alert.alert}
+              {alert.toast}
             </div>
           ))}
       </div>
