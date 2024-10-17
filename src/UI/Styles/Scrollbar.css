@@ -9,13 +9,27 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #555; /* Color for scrollbar thumb */
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.11, rgb(60, 61, 65)),
+      color-stop(0.72, rgb(130, 131, 142)),
+      color-stop(0.86, rgb(60, 61, 65))
+    );
     border-radius: 8px;
-    border: 4px solid #1a1a1a; /* To give some padding to thumb with track */
+    border: 3px solid #1a1a1a; /* To give some padding to thumb with track */
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: #888; /* Hover color */
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.11, rgb(60, 61, 65)),
+      color-stop(0.72, #b2b3bd),
+      color-stop(0.86, rgb(60, 61, 65))
+    ); /* Hover color */
   }
 
   /* Adding arrow buttons */

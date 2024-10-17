@@ -1,7 +1,9 @@
 import { createContext } from "react";
-import { TToastStackContext } from "../Helpers/Toast/types/Toast.types";
+import { TToastStackContext } from "../../Data/Types/TToast";
 
 const ToastStackContext = createContext<TToastStackContext>({
+    removeToast: () => { },
+    addToast: () => { },
     toast: {
         info: () => { },
         success: () => { },

@@ -1,4 +1,4 @@
-import { TToast } from "./types/Toast.types";
+import { TToast } from "../../../Data/Types/TToast";
 
 let toastInstance: TToast = {};
 

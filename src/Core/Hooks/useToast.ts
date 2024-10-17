@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ToastStackContext } from "../Context/ToasttStack.context";
+import { ToastStackContext } from "../Context/Toast.context";
 
 const useToast = () => {
     const context = useContext(ToastStackContext);
@@ -7,10 +7,9 @@ const useToast = () => {
         throw new Error("useTheme must be used within a ThemeProvider");
     }
     return {
-        alerts: context.toastStackItems,
-        addAlert: context.addToast,
-        removeAlert: context.removeToast,
-        toast: context.toast,
+        addToast: context.addToast,
+        removeToast: context.removeToast,
+        toast: context.toast
     };
 };
 export default useToast;

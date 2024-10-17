@@ -1,9 +1,9 @@
 import { cloneElement, useState, useEffect, useMemo } from "react";
 import generateRandomId from "../../Core/Helpers/IdHelper";
-import Toast from "../Components/Common/Toast/Toast";
+import { TToastStackItem } from "../../Data/Types/TToast";
+import { ToastStackContext } from "../../Core/Context/Toast.context";
 import { setToastInstance } from "../../Core/Helpers/Toast/toast";
-import { ToastStackContext } from "../../Core/Context/ToasttStack.context";
-import { TToastStackItem } from "../../Core/Helpers/Toast/types/Toast.types";
+import Toast from "../Components/Common/Toast/Toast";
 
 const ToastProvider = ({ children }) => {
   const [toastStackItems, setToastStackItems] = useState<TToastStackItem[]>([]);
@@ -127,6 +127,8 @@ const ToastProvider = ({ children }) => {
     <ToastStackContext.Provider
       value={{
         toast,
+        removeToast,
+        addToast,
       }}
     >
       {children}

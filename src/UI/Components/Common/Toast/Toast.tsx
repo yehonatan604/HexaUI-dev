@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import Flex from "../../Layout/Flex/Component";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { BsCheck, BsExclamation, BsInfo } from "react-icons/bs";
 import { BiX } from "react-icons/bi";
-import Hr from "../../Typography/Hr/Component";
 import { createPortal } from "react-dom";
+import { TToastComponentProps } from "../../../../Data/Types/TToast";
 import useToast from "../../../../Core/Hooks/useToast";
-import { TToast } from "./TToast";
+import Flex from "../../Layout/Flex/Component";
+import Hr from "../../Typography/Hr/Component";
 
 const Toast = ({
   options,
@@ -17,9 +17,9 @@ const Toast = ({
   top,
   isVisible,
   ...componentProps
-}: TToast) => {
+}: TToastComponentProps) => {
   const [progress, setProgress] = useState(0);
-  const { removeAlert } = useToast();
+  const { removeToast } = useToast();
   const [show, setShow] = useState(isVisible);
 
   // Effect to start showing the toast with animation
@@ -42,11 +42,11 @@ const Toast = ({
     if (progress >= 100) {
       setShow(false); // Trigger fade-out transition
       setTimeout(() => {
-        removeAlert(id);
+        removeToast(id);
         onFinished();
       }, 1000); // Wait for the transition to complete before removing
     }
-  }, [progress, id, removeAlert, onFinished]);
+  }, [progress, id, removeToast, onFinished]);
 
   const bgColor = options?.bgVariant || "black-l";
   const progressColor = options?.type || "info";
@@ -121,7 +121,7 @@ const Toast = ({
               onClick={() => {
                 setShow(false);
                 setTimeout(() => {
-                  removeAlert(id);
+                  removeToast(id);
                 }, 1000);
               }}
             />

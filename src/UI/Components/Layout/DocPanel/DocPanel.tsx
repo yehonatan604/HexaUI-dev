@@ -3,14 +3,14 @@ import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { TDocPanel } from "../../../../Data/Types/ComponentTypes/Layout/DocPanel/TDocPanel";
 import Flex from "../Flex/Component";
 
-const DocPanel: React.FC<TDocPanel> = ({
+const DocPanel = ({
   options,
   className = "",
   innerClassName = "",
   panelWidth: initialWidth,
   children,
   ...componentProps
-}) => {
+}: TDocPanel) => {
   const [panelWidth, setPanelWidth] = useState(initialWidth || "20%");
   const panelRef = useRef<HTMLDivElement>(null);
   const borderRef = useRef<HTMLDivElement>(null);

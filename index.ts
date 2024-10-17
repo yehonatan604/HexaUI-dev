@@ -18,6 +18,8 @@ export { default as TextInput } from "./src/UI/Components/Forms/TextInput/Compon
 // Layout
 export { default as Flex } from "./src/UI/Components/Layout/Flex/Component";
 export { default as DataGrid } from "./src/UI/Components/Layout/DataGrid/Component";
+export { default as DocPanel } from "./src/UI/Components/Layout/DocPanel/DocPanel";
+export { default as Scrollbar } from "./src/UI/Components/Layout/Scrollbar/Scrollbar";
 
 // Navigation
 export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Component";
@@ -41,6 +43,9 @@ export { Variants } from "./src/Data/Constants/Variants";
 // Hooks
 export { default as useTheme } from "./src/Core/Hooks/useTheme"; export * from './src/Core/Hooks/useTheme';
 export { default as useToast } from "./src/Core/Hooks/useTheme"; export * from './src/Core/Hooks/useToast';
+
+// Helpers
+export { toast } from "./src/Core/Helpers/Toast/toast";
 
 // Providers
 export { default as HexaUI } from "./src/UI/Providers/HexaUI.provider";
