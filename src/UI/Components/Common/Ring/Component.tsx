@@ -1,5 +1,5 @@
 import useTheme from "../../../../Core/Hooks/useTheme";
-import { TRing } from "../../../../Data/Types/ComponentTypes/Common/RingBorder/TRingBorder";
+import { TRing } from "../../../../Data/Types/ComponentTypes/Common/Ring/TRing";
 
 const Ring = (props: TRing) => {
   const { children, options, className, ...componentProps } = props;
