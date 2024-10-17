@@ -1,10 +1,11 @@
 import { TComponent, ComponentOptions } from "../../TComponent";
 
-export type TRingBorder = TComponent<"div"> & {
-    options?: RingBorderOptions;
-}
+export type TRing
+    = TComponent<"div"> & {
+        options?: RingOptions;
+    }
 
-export type RingBorderOptions = ComponentOptions & {
+export type RingOptions = ComponentOptions & {
     borderThickness?: number;
     ringThickness?: number;
     borderVariant?: string;

@@ -3,8 +3,8 @@ import "./src/main.css";
 //Common
 export { default as Button } from "./src/UI/Components/Common/Button/Component";
 export { default as Accordion } from "./src/UI/Components/Common/Accordion/Component";
-export { default as RainbowBorder } from "./src/UI/Components/Common/Border/RainbowBorder/Component";
-export { default as RingBorder } from "./src/UI/Components/Common/Border/RingBorder/Component";
+export { default as RainbowBorder } from "./src/UI/Components/Common/RainbowBorder/Component";
+export { default as Ring } from "./src/UI/Components/Common/Ring/Component";
 export { default as Card } from "./src/UI/Components/Common/Card/Component";
 export { default as ThemeToggler } from "./src/UI/Components/Common/ThemeToggler/Component";
 

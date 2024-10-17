@@ -2,7 +2,7 @@ import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import { Sizes } from "../../../Data/Constants/Sizes";
-import RingBorder from "../Common/Border/RingBorder/Component";
+import Ring from "../Common/Ring/Component";
 import Flex from "../Layout/Flex/Component";
 
 const RingExamples = () => {
@@ -19,14 +19,14 @@ const RingExamples = () => {
       }}
       className="m-auto mb-10 gap-4 gap-y-1 w-3/5"
     >
-      <RingBorder className="m-auto mt-10">
+      <Ring className="m-auto mt-10">
         <img
           src="https://loremflickr.com/250/200"
           alt="Random"
           className="w-full h-32 object-cover rounded"
         />
-      </RingBorder>
-      <RingBorder
+      </Ring>
+      <Ring
         options={{
           ringVariant: colors.success,
         }}
@@ -37,8 +37,8 @@ const RingExamples = () => {
           alt="Random"
           className="w-full h-32 object-cover rounded"
         />
-      </RingBorder>
-      <RingBorder
+      </Ring>
+      <Ring
         options={{
           ringVariant: colors.primary,
           borderVariant: colors.blackLight,
@@ -50,8 +50,8 @@ const RingExamples = () => {
           alt="Random"
           className="w-full h-32 object-cover rounded"
         />
-      </RingBorder>
-      <RingBorder
+      </Ring>
+      <Ring
         options={{
           ringVariant: colors.warning,
           borderVariant: colors.select,
@@ -67,8 +67,8 @@ const RingExamples = () => {
           alt="Random"
           className="w-full h-32 object-cover rounded"
         />
-      </RingBorder>
-      <RingBorder
+      </Ring>
+      <Ring
         options={{
           ringVariant: colors.cancel,
           borderVariant: colors.standradDark,
@@ -85,8 +85,8 @@ const RingExamples = () => {
           alt="Random"
           className="w-full h-32 object-cover rounded"
         />
-      </RingBorder>
-      <RingBorder
+      </Ring>
+      <Ring
         options={{
           ringVariant: colors.blackDark,
           borderVariant: colors.approve,
@@ -100,8 +100,8 @@ const RingExamples = () => {
         className="m-auto"
       >
         Very Important Content
-      </RingBorder>
-      <RingBorder
+      </Ring>
+      <Ring
         options={{
           ringVariant: colors.cancel,
           borderVariant: colors.approve,

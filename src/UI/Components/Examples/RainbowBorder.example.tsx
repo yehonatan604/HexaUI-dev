@@ -2,7 +2,7 @@ import { GiAlliedStar } from "react-icons/gi";
 import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
-import RainbowBorder from "../Common/Border/RainbowBorder/Component";
+import RainbowBorder from "../Common/RainbowBorder/Component";
 import Flex from "../Layout/Flex/Component";
 
 const RainbowBordersExample = () => {

@@ -1,5 +1,5 @@
-import useTheme from "../../../../../Core/Hooks/useTheme";
-import { TRainbowBorder } from "../../../../../Data/Types/ComponentTypes/Common/Rainbow-border/TRainbowBorder";
+import useTheme from "../../../../Core/Hooks/useTheme";
+import { TRainbowBorder } from "../../../../Data/Types/ComponentTypes/Common/Rainbow-border/TRainbowBorder";
 
 const RainbowBorder = (props: TRainbowBorder) => {
   const { children, options, className, innerClassName, ...componentProps } = props;

@@ -1,6 +1,6 @@
 {
   "name": "react-hexa-dev",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "type": "module",
   "module": "dist/react-hexa-dev.es.js",
   "main": "dist/react-hexa-dev.cjs.js",

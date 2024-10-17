@@ -1,7 +1,7 @@
-import useTheme from "../../../../../Core/Hooks/useTheme";
-import { TRingBorder } from "../../../../../Data/Types/ComponentTypes/Common/RingBorder/TRingBorder";
+import useTheme from "../../../../Core/Hooks/useTheme";
+import { TRing } from "../../../../Data/Types/ComponentTypes/Common/RingBorder/TRingBorder";
 
-const RingBorder = (props: TRingBorder) => {
+const Ring = (props: TRing) => {
   const { children, options, className, ...componentProps } = props;
 
   // Hooks
@@ -34,4 +34,4 @@ const RingBorder = (props: TRingBorder) => {
   );
 };
 
-export default RingBorder;
+export default Ring;
