@@ -1,7 +1,7 @@
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { TTextInput } from "../../../../Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import Label from "../Label/Component";
 import generateRandomId from "../../../../Core/Helpers/IdHelper";
 

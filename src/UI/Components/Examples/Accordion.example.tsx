@@ -2,7 +2,7 @@ import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import Accordion from "../Common/Accordion/Component";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 
 const AccordionExamples = () => {
   const { colors } = useTheme();

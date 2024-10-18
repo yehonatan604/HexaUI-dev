@@ -4,7 +4,7 @@ import SidebarSeperator from "./Sidebar.Seperator/Component";
 import SidebarItem from "./Sidebar.Item/Component";
 import SidebarHeader from "./Sidebar.Header/Component";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import { TSidebar } from "../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
 import useTheme from "../../../../Core/Hooks/useTheme";
 

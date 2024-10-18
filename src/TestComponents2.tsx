@@ -1,7 +1,7 @@
 //import useTheme from "./Core/Hooks/useTheme";
 import { FlexTypes } from "./Data/Constants/FlexTypes";
 import DocPanel from "./UI/Components/Layout/DocPanel/DocPanel";
-import Flex from "./UI/Components/Layout/Flex/Component";
+import Flex from "./UI/Components/Layout/Flex/Flex";
 import Scrollbar from "./UI/Components/Layout/Scrollbar/Scrollbar";
 
 const TestComponents2 = () => {

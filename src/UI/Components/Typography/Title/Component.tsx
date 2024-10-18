@@ -2,7 +2,7 @@ import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { Sizes } from "../../../../Data/Constants/Sizes";
 import { TTitle } from "../../../../Data/Types/ComponentTypes/Typography/Title/TTitle";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 
 const Title = (props: TTitle) => {
   const { children, options, ...componentProps } = props;

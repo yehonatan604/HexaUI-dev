@@ -1,7 +1,7 @@
 import useTheme from "../../../../Core/Hooks/useTheme";
-import { TDataGrid } from "../../../../Data/Types/ComponentTypes/Layout/DataGrid/TDataGrid";
+import { TAutoGrid } from "../../../../Data/Types/ComponentTypes/Layout/AutoGrid/TAutoGrid";
 
-const AutoGrid = (props: TDataGrid) => {
+const AutoGrid = (props: TAutoGrid) => {
   const { rowsArr, cols, options, ...componentProps } = props;
 
   //Hooks

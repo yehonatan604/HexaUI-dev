@@ -1,7 +1,7 @@
 import useTheme from "../../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../../Data/Constants/FlexDirection";
 import { TComponent } from "../../../../../Data/Types/ComponentTypes/TComponent";
-import Flex from "../../../../../UI/Components/Layout/Flex/Component";
+import Flex from "../../../Layout/Flex/Flex";
 
 const CardHeader = (props: TComponent<"div">) => {
   const { children, options, ...componentProps } = props;

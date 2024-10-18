@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { TDocPanel } from "../../../../Data/Types/ComponentTypes/Layout/DocPanel/TDocPanel";
-import Flex from "../Flex/Component";
+import Flex from "../Flex/Flex";
 
 const DocPanel = ({
   options,

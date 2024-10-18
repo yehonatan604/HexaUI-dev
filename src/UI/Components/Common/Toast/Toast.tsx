@@ -5,7 +5,7 @@ import { BiX } from "react-icons/bi";
 import { createPortal } from "react-dom";
 import { TToastComponentProps } from "../../../../Data/Types/TToast";
 import useToast from "../../../../Core/Hooks/useToast";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import Hr from "../../Typography/Hr/Component";
 
 const Toast = ({

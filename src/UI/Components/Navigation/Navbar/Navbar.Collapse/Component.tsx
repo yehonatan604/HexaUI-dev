@@ -2,7 +2,7 @@ import useTheme from "../../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
 import { TNavbarCollapse } from "../../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbarCollapse";
-import Flex from "../../../../../UI/Components/Layout/Flex/Component";
+import Flex from "../../../Layout/Flex/Flex";
 
 const NavbarCollapse = (props: TNavbarCollapse) => {
   const { children, className, isMobileMenuOpen, options, ...componentProps } = props;

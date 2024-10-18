@@ -2,7 +2,7 @@ import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TQuote } from "../../../../Data/Types/ComponentTypes/Typography/Quote/TQuote";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 
 const Quote = (props: TQuote) => {
   const { children, cite, options, className, ...componenetProps } = props;

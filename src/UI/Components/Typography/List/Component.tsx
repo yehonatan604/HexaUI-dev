@@ -4,7 +4,7 @@ import { getRandomIcon } from "../../../..//Core/Helpers/Icons.helper";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { Sizes } from "../../../../Data/Constants/Sizes";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import { TList } from "../../../../Data/Types/ComponentTypes/Typography/List/TList";
 import useTheme from "../../../../Core/Hooks/useTheme";
 

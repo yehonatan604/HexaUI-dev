@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import * as colorHelper from "../../../../Core/Helpers/Color.helper";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import Label from "../Label/Component";
 import TextInput from "../TextInput/Component";
 import Saturation from "./Stauration";

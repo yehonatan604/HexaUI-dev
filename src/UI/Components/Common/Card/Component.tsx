@@ -2,7 +2,7 @@ import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TCard } from "../../../../Data/Types/ComponentTypes/Common/Card/TCard";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import CardFooter from "./Card.Footer/Component";
 import CardHeader from "./Card.Header/Component";
 

@@ -1,7 +1,7 @@
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TNavbar } from "../../../../Data/Types/ComponentTypes/Navigation/Navbar/TNavbar";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import NavbarBrand from "./Navbar.Brand/Component";
 import NavbarCollapse from "./Navbar.Collapse/Component";
 import NavbarLink from "./Navbar.Link/Component";

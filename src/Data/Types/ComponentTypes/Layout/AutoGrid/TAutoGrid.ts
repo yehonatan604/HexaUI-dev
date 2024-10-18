@@ -1,11 +1,11 @@
 import { TComponent, ComponentOptions } from "../../TComponent";
 
-export type TDataGrid = TComponent<"div"> & {
-    options?: DataGridOptions;
+export type TAutoGrid = TComponent<"div"> & {
+    options?: AutoGridOptions;
     rowsArr: React.ReactNode[];
     cols: number;
 }
 
-export type DataGridOptions = ComponentOptions & {
+export type AutoGridOptions = ComponentOptions & {
     borderVariant?: string;
 }

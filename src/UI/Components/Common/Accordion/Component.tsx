@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import { TAccordion } from "../../../../Data/Types/ComponentTypes/Common/Accordion/TAccordion";
 import useTheme from "../../../../Core/Hooks/useTheme";
 

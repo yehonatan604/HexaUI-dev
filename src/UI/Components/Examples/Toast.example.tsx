@@ -1,6 +1,6 @@
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 import Button from "../Common/Button/Component";
 import { toast } from "../../../Core/Helpers/Toast/toast";
 

@@ -14,10 +14,11 @@ export { default as Label } from "./src/UI/Components/Forms/Label/Component";
 export { default as Select } from "./src/UI/Components/Forms/Select/Component";
 export { default as RangeInput } from "./src/UI/Components/Forms/RangeInput/Component";
 export { default as TextInput } from "./src/UI/Components/Forms/TextInput/Component";
+export { default as ColorPicker } from "./src/UI/Components/Forms/ColorPicker/ColorPicker";
 
 // Layout
-export { default as Flex } from "./src/UI/Components/Layout/Flex/Component";
-export { default as DataGrid } from "./src/UI/Components/Layout/DataGrid/Component";
+export { default as Flex } from "./src/UI/Components/Layout/Flex/Flex";
+export { default as DataGrid } from "./src/UI/Components/Layout/AutoGrid/AutoGrid";
 export { default as DocPanel } from "./src/UI/Components/Layout/DocPanel/DocPanel";
 export { default as Scrollbar } from "./src/UI/Components/Layout/Scrollbar/Scrollbar";
 
@@ -92,12 +93,14 @@ export type { RangeInputOptions } from "./src/Data/Types/ComponentTypes/Forms/Ra
 export type { TTextInput } from "./src/Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
 export type { TextInputOptions } from "./src/Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
 
+export type { TColorPicker } from "./src/Data/Types/ComponentTypes/Forms/ColorPicker/TColorPicker";
+
 // Layout Component Types
 export type { TFlex } from "./src/Data/Types/ComponentTypes/Layout/Flex/TFlex";
 export type { FlexOptions } from "./src/Data/Types/ComponentTypes/Layout/Flex/TFlex";
 
-export type { TDataGrid } from "./src/Data/Types/ComponentTypes/Layout/DataGrid/TDataGrid";
-export type { DataGridOptions } from "./src/Data/Types/ComponentTypes/Layout/DataGrid/TDataGrid";
+export type { TAutoGrid } from "./src/Data/Types/ComponentTypes/Layout/AutoGrid/TAutoGrid";
+export type { AutoGridOptions } from "./src/Data/Types/ComponentTypes/Layout/AutoGrid/TAutoGrid";
 
 // Navigation Component Types
 export type { TNavbar } from "./src/Data/Types/ComponentTypes/Navigation/Navbar/TNavbar";

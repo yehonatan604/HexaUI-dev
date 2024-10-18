@@ -1,7 +1,7 @@
 import { FlexDir } from "../../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
 import { TComponent } from "../../../../../Data/Types/ComponentTypes/TComponent";
-import Flex from "../../../../../UI/Components/Layout/Flex/Component";
+import Flex from "../../../Layout/Flex/Flex";
 
 const CardFooter = (props: TComponent<"div">) => {
   return (

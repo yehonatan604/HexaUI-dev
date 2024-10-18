@@ -2,6 +2,7 @@ import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../../Data/Constants/FlexWrap";
 import { TFlex } from "../../../../Data/Types/ComponentTypes/Layout/Flex/TFlex";
+import FlexCenter from "./Flex.Center";
 
 const Flex = (props: TFlex) => {
   const { children, options, className, ...componentProps } = props;
@@ -23,4 +24,5 @@ const Flex = (props: TFlex) => {
   );
 };
 
+Flex.Center = FlexCenter;
 export default Flex;

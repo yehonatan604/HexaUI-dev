@@ -7,7 +7,7 @@ import ThemeToggler from "./UI/Components/Common/ThemeToggler/Component";
 import AccordionExamples from "./UI/Components/Examples/Accordion.example";
 import ButtonExamples from "./UI/Components/Examples/Button.example";
 import CardExamples from "./UI/Components/Examples/Card.example";
-import DataGridExample from "./UI/Components/Examples/DataGrid.example";
+import AutoGridExample from "./UI/Components/Examples/AutoGrid.example";
 import FormInputExamples from "./UI/Components/Examples/FormInput.example";
 import ListExample from "./UI/Components/Examples/List.example";
 import RainbowBordersExample from "./UI/Components/Examples/RainbowBorder.example";
@@ -16,7 +16,7 @@ import SelectExamples from "./UI/Components/Examples/Select.example";
 import SidebarExample from "./UI/Components/Examples/Sidebar.example";
 import ToastExamples from "./UI/Components/Examples/Toast.example";
 import ColorPicker from "./UI/Components/Forms/ColorPicker/ColorPicker";
-import Flex from "./UI/Components/Layout/Flex/Component";
+import Flex from "./UI/Components/Layout/Flex/Flex";
 import Scrollbar from "./UI/Components/Layout/Scrollbar/Scrollbar";
 import Hr from "./UI/Components/Typography/Hr/Component";
 import Quote from "./UI/Components/Typography/Quote/Component";
@@ -93,7 +93,7 @@ const TestComponents1 = () => {
                 width: "1/3",
               }}
             />
-            <DataGridExample />
+            <AutoGridExample />
             <Hr className="mb-4" />
             <Title
               options={{

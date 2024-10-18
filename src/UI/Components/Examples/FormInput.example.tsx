@@ -2,7 +2,7 @@ import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import Checkbox from "../Forms/Checkbox/Component";
 import RangeInput from "../Forms/RangeInput/Component";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 import Label from "../Forms/Label/Component";
 import TextInput from "../Forms/TextInput/Component";
 import useTheme from "../../../Core/Hooks/useTheme";

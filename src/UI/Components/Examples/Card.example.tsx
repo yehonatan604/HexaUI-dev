@@ -3,7 +3,7 @@ import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import Button from "../Common/Button/Component";
 import Card from "../Common/Card/Component";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 import Title from "../Typography/Title/Component";
 
 const CardExamples = () => {

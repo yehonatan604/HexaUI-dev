@@ -1,7 +1,7 @@
 import useTheme from "../../../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
 import { TSidebarHeader } from "../../../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
-import Flex from "../../../../../UI/Components/Layout/Flex/Component";
+import Flex from "../../../Layout/Flex/Flex";
 
 const SidebarHeader = (props: TSidebarHeader) => {
   const { children, options, ...componentProps } = props;

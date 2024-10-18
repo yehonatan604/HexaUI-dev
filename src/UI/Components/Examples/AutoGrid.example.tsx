@@ -1,11 +1,11 @@
 import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
-import Flex from "../Layout/Flex/Component";
-import DataGrid from "../Layout/DataGrid/Component";
+import Flex from "../Layout/Flex/Flex";
+import DataGrid from "../Layout/AutoGrid/AutoGrid";
 import { FlexDir } from "../../../Data/Constants/FlexDirection";
 import Title from "../Typography/Title/Component";
 
-const DataGridExample = () => {
+const AutoGridExample = () => {
   // Hooks
   const { mode, colors } = useTheme();
 
@@ -22,7 +22,7 @@ const DataGridExample = () => {
       }}
       className="m-auto mb-5 gap-4 w-3/5 text-2xl"
     >
-      <Title options={{ size: "xl", textVariant: colors.secondary }}>Data Grid</Title>
+      <Title options={{ size: "xl", textVariant: colors.secondary }}>Auto Grid</Title>
       <DataGrid
         cols={3}
         rowsArr={[
@@ -42,4 +42,4 @@ const DataGridExample = () => {
   );
 };
 
-export default DataGridExample;
+export default AutoGridExample;

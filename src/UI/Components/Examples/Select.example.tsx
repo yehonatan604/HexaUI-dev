@@ -2,7 +2,7 @@ import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import Select from "../Forms/Select/Component";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 
 const SelectExamples = () => {
   // Hooks

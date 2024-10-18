@@ -5,7 +5,7 @@ import { BiUserCircle } from "react-icons/bi";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import ThemeToggler from "../Common/ThemeToggler/Component";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 import Navbar from "../Navigation/Navbar/Component";
 import useTheme from "../../../Core/Hooks/useTheme";
 

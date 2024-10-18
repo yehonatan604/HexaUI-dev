@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaReddit, FaTwitter } from "react-icons/fa6";
 import useTheme from "../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 import Footer from "../Navigation/Footer/Component";
 
 const FooterExample = () => {

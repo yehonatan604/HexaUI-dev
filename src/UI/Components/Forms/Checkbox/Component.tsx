@@ -3,7 +3,7 @@ import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { Variants } from "../../../../Data/Constants/Variants";
 import { TCheckbox } from "../../../../Data/Types/ComponentTypes/Forms/Checkbox/TCheckbox";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import Label from "../Label/Component";
 
 const Checkbox = (props: TCheckbox) => {

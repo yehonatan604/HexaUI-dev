@@ -1,7 +1,7 @@
 import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { Gi3dGlasses, Gi3dMeeple, GiDaisy } from "react-icons/gi";
 import Sidebar from "../Navigation/Sidebar/Component";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 import { SidebarItemOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarItem";
 import { SidebarHeaderOptions } from "../../../Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
 import { HiArrowCircleRight } from "react-icons/hi";

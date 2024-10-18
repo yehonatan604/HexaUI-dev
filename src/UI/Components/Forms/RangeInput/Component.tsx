@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Label from "../../../../UI/Components/Forms/Label/Component";
-import Flex from "../../../../UI/Components/Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";

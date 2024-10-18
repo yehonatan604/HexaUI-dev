@@ -2,7 +2,7 @@ import useTheme from "../../../../Core/Hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TFooter } from "../../../../Data/Types/ComponentTypes/Navigation/Footer/TFooter";
-import Flex from "../../Layout/Flex/Component";
+import Flex from "../../Layout/Flex/Flex";
 import FooterBrand from "./Footer.Brand/Component";
 
 const Footer = (props: TFooter) => {

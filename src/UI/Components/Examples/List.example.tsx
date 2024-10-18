@@ -10,7 +10,7 @@ import { FlexTypes } from "../../../Data/Constants/FlexTypes";
 import { FlexWrap } from "../../../Data/Constants/FlexWrap";
 import { ListStyleTypes } from "../../../Data/Constants/ListStyleTypes";
 import { Sizes } from "../../../Data/Constants/Sizes";
-import Flex from "../Layout/Flex/Component";
+import Flex from "../Layout/Flex/Flex";
 import List from "../Typography/List/Component";
 import Title from "../Typography/Title/Component";
 
