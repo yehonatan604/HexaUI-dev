@@ -15,7 +15,7 @@ import RingExamples from "./UI/Components/Examples/Ring.example";
 import SelectExamples from "./UI/Components/Examples/Select.example";
 import SidebarExample from "./UI/Components/Examples/Sidebar.example";
 import ToastExamples from "./UI/Components/Examples/Toast.example";
-import DocPanel from "./UI/Components/Layout/DocPanel/DocPanel";
+import ColorPicker from "./UI/Components/Forms/ColorPicker/ColorPicker";
 import Flex from "./UI/Components/Layout/Flex/Component";
 import Scrollbar from "./UI/Components/Layout/Scrollbar/Scrollbar";
 import Hr from "./UI/Components/Typography/Hr/Component";
@@ -108,6 +108,8 @@ const TestComponents1 = () => {
             <Hr className="mb-4" />
             <ToastExamples />
             <Hr className="mb-4" />
+            <ColorPicker />
+            <Hr className="mb-4" />
             <Quote
               cite={cite as string & TCite}
               options={{
@@ -122,15 +124,6 @@ const TestComponents1 = () => {
             </Quote>
             <Hr className="mt-4" />
           </Flex>
-          <DocPanel
-            options={{
-              posiotion: "fixed",
-              placement: "left",
-            }}
-            className="h-full w-[20vw] dark:bg-standard-l bg-black dark:text-primary-l text-primary-d"
-          >
-            retu
-          </DocPanel>
         </Flex>
       </div>
     </Scrollbar>

@@ -1,6 +1,7 @@
 @import url("./UI/Styles/Tailwind.css");
 @import url("./UI/Styles/RangeInput.css");
 @import url("./UI/Styles/Scrollbar.css");
+@import url("./UI/Styles/NumberInput.css");
 
 * {
   margin: 0;
