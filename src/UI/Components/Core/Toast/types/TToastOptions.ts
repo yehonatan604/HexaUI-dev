@@ -1,4 +1,4 @@
-import { TComponentOptions } from "../../../../../Data/Types/TComponent";
+import { TComponentOptions } from "../../../../../Data/Types/TComponentOptions";
 
 export type TToastOptions = TComponentOptions & {
     placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';

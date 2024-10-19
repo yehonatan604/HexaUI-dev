@@ -1,6 +1,6 @@
 {
   "name": "react-hexa-dev",
-  "version": "0.2.15",
+  "version": "0.2.17",
   "type": "module",
   "module": "dist/react-hexa-dev.es.js",
   "main": "dist/react-hexa-dev.cjs.js",
@@ -17,7 +17,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "publish": "npm run build && npm publish --access public"
+    "bnp": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.9",

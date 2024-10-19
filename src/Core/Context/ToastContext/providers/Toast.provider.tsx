@@ -1,9 +1,9 @@
 import { cloneElement, useState, useEffect, useMemo } from "react";
 import generateRandomId from "../../../Helpers/IdHelper";
-import { TToastStackItem } from "../types/TToastStackContext";
 import { ToastStackContext } from "../Toast.context";
 import { setToastInstance } from "../helpers/toast";
 import Toast from "../../../../UI/Components/Core/Toast/Toast";
+import { TToastStackItem } from "../types/TToastStackItem";
 
 const ToastProvider = ({ children }) => {
   const [toastStackItems, setToastStackItems] = useState<TToastStackItem[]>([]);

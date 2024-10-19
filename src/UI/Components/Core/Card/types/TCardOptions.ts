@@ -1,4 +1,4 @@
-import { TComponentOptions } from "../../../../../Data/Types/TComponent";
+import { TComponentOptions } from "../../../../../Data/Types/TComponentOptions";
 import { TSize } from "../../../../../Data/Types/TSize";
 
 export type TCardOptions = TComponentOptions & {

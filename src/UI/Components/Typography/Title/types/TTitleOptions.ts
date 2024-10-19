@@ -1,4 +1,4 @@
-import { TComponentOptions } from "../../../../../Data/Types/TComponent";
+import { TComponentOptions } from "../../../../../Data/Types/TComponentOptions";
 
 export type TTitleOptions = TComponentOptions & {
     align?: string;

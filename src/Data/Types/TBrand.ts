@@ -1,4 +1,5 @@
-import { TComponent, TComponentOptions } from "./TComponent";
+import { TComponent } from "./TComponent";
+import { TComponentOptions } from "./TComponentOptions";
 
 export type TBrand = TComponent<"a"> & {
     options?: TComponentOptions;

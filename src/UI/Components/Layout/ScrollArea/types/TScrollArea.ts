@@ -1,4 +1,5 @@
-import { TComponent, TComponentOptions } from "../../../../../Data/Types/TComponent";
+import { TComponent } from "../../../../../Data/Types/TComponent";
+import { TComponentOptions } from "../../../../../Data/Types/TComponentOptions";
 
 export type TScrollArea = TComponent<"div"> & {
     options?: TComponentOptions;

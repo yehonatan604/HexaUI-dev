@@ -1,6 +1,6 @@
 import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { Sizes } from "../../../../Data/Constants/Sizes";
-import { TButton } from "../../../../Data/Types/ComponentTypes/Common/Button/TButton";
+import { TButton } from "./types/TButton";
 
 const Button = (props: TButton) => {
   const { options, children, className, ...componentProps } = props;

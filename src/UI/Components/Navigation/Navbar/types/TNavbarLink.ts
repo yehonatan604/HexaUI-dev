@@ -1,10 +1,7 @@
-import { TComponent, TComponentOptions } from "../../../../../Data/Types/TComponent";
+import { TComponent } from "../../../../../Data/Types/TComponent";
+import { TNavbarLinkOptions } from "./TNavbarLinkOptions";
 
 export type TNavbarLink = TComponent<"a"> & {
-    options?: NavbarLinkOptions;
+    options?: TNavbarLinkOptions;
     to: string;
-}
-
-export type NavbarLinkOptions = TComponentOptions & {
-    activeVariant?: string;
 }

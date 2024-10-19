@@ -1,4 +1,5 @@
-import { TComponentOptions, TComponent } from "../../../../../Data/Types/TComponent";
+import { TComponent } from "../../../../../Data/Types/TComponent";
+import { TComponentOptions } from "../../../../../Data/Types/TComponentOptions";
 
 export type TLabel = TComponent<"label"> & {
     options?: TComponentOptions;

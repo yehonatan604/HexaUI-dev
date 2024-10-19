@@ -1,5 +1,5 @@
 import { TComponentOptions } from "../../../../../Data/Types/TComponentOptions";
 
-export type TAutoGridOptions = TComponentOptions & {
-    borderVariant?: string;
+export type TNavbarLinkOptions = TComponentOptions & {
+    activeVariant?: string;
 }

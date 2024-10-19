@@ -1,37 +1,37 @@
 import "./src/main.css";
 
 //Common
-export { default as Button } from "./src/UI/Components/Common/Button/Component";
-export { default as Accordion } from "./src/UI/Components/Common/Accordion/Component";
-export { default as RainbowBorder } from "./src/UI/Components/Common/RainbowBorder/Component";
-export { default as Ring } from "./src/UI/Components/Common/Ring/Component";
-export { default as Card } from "./src/UI/Components/Common/Card/Component";
-export { default as ThemeToggler } from "./src/UI/Components/Common/ThemeToggler/Component";
+export { default as Button } from "./src/UI/Components/Core/Button/Button";
+export { default as Accordion } from "./src/UI/Components/Core/Accordion/Accordion";
+export { default as RainbowBorder } from "./src/UI/Components/Core/RainbowBorder/RainbowBorder";
+export { default as Ring } from "./src/UI/Components/Core/Ring/Ring";
+export { default as Card } from "./src/UI/Components/Core/Card/Card";
+export { default as ThemeToggler } from "./src/UI/Components/Core/ThemeToggler/ThemeToggler";
 
 // Forms
-export { default as Checkbox } from "./src/UI/Components/Forms/Checkbox/Component";
-export { default as Label } from "./src/UI/Components/Forms/Label/Component";
-export { default as Select } from "./src/UI/Components/Forms/Select/Component";
-export { default as RangeInput } from "./src/UI/Components/Forms/RangeInput/Component";
-export { default as TextInput } from "./src/UI/Components/Forms/TextInput/Component";
+export { default as Checkbox } from "./src/UI/Components/Forms/Checkbox/Checkbox";
+export { default as Label } from "./src/UI/Components/Forms/Label/Label";
+export { default as Select } from "./src/UI/Components/Forms/Select/Select";
+export { default as RangeInput } from "./src/UI/Components/Forms/RangeInput/RangeInput";
+export { default as TextInput } from "./src/UI/Components/Forms/TextInput/TextInput";
 export { default as ColorPicker } from "./src/UI/Components/Forms/ColorPicker/ColorPicker";
 
 // Layout
 export { default as Flex } from "./src/UI/Components/Layout/Flex/Flex";
 export { default as DataGrid } from "./src/UI/Components/Layout/AutoGrid/AutoGrid";
 export { default as DocPanel } from "./src/UI/Components/Layout/DocPanel/DocPanel";
-export { default as Scrollbar } from "./src/UI/Components/Layout/Scrollbar/Scrollbar";
+export { default as Scrollbar } from "./src/UI/Components/Layout/ScrollArea/ScrollArea";
 
 // Navigation
-export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Component";
-export { default as Footer } from "./src/UI/Components/Navigation/Footer/Component";
-export { default as Sidebar } from "./src/UI/Components/Navigation/Sidebar/Component";
+export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Navbar";
+export { default as Footer } from "./src/UI/Components/Navigation/Footer/Footer";
+export { default as Sidebar } from "./src/UI/Components/Navigation/Sidebar/Sidebar";
 
 // Typography
-export { default as Hr } from "./src/UI/Components/Typography/Hr/Component";
-export { default as List } from "./src/UI/Components/Typography/List/Component";
-export { default as Quote } from "./src/UI/Components/Typography/Quote/Component";
-export { default as Title } from "./src/UI/Components/Typography/Title/Component";
+export { default as Hr } from "./src/UI/Components/Typography/Hr/Hr";
+export { default as List } from "./src/UI/Components/Typography/List/List";
+export { default as Quote } from "./src/UI/Components/Typography/Quote/Quote";
+export { default as Title } from "./src/UI/Components/Typography/Title/Title";
 
 // Constants
 export { FlexDir } from "./src/Data/Constants/FlexDirection";
@@ -42,14 +42,14 @@ export { Sizes } from "./src/Data/Constants/Sizes";
 export { Variants } from "./src/Data/Constants/Variants";
 
 // Hooks
-export { default as useTheme } from "./src/Core/Hooks/useTheme"; export * from './src/Core/Hooks/useTheme';
-export { default as useToast } from "./src/Core/Hooks/useTheme"; export * from './src/Core/Hooks/useToast';
+export { default as useTheme } from "./src/Core/Context/ThemeContext/hooks/useTheme";
+export { default as useToast } from "./src/Core/Context/ToastContext/hooks/useToast";
 
 // Helpers
-export { toast } from "./src/Core/Helpers/Toast/toast";
+export { toast } from "./src/Core/Context/ToastContext/helpers/toast";
 
 // Providers
-export { default as HexaUI } from "./src/UI/Providers/HexaUI.provider";
+export { default as HexaUI } from "./src/Core/Providers/HexaUI.provider";
 
 // Types
 export type { TSize } from "./src/Data/Types/TSize";
@@ -58,80 +58,79 @@ export type { TColorPalette } from "./src/Data/Types/TColorPalette";
 export type { TGradientPalette } from "./src/Data/Types/TGradientPalette";
 
 // Shared Component Types
-export type { TComponent } from "./src/Data/Types/ComponentTypes/TComponent";
-export type { ComponentOptions } from "./src/Data/Types/ComponentTypes/TComponent";
-export type { TBorder } from "./src/Data/Types/ComponentTypes/TBorder";
-export type { TRing } from "./src/Data/Types/ComponentTypes/TRing";
-export type { TBrand } from "./src/Data/Types/ComponentTypes/TBrand";
-export type { TShadow } from "./src/Data/Types/ComponentTypes/TShadow";
+export type { TComponent } from "./src/Data/Types/TComponent";
+export type { TComponentOptions } from "./src/Data/Types/TComponentOptions";
+export type { TBorder } from "./src/Data/Types/TBorder";
+export type { TRingProps } from "./src/Data/Types/TRingProps";
+export type { TBrand } from "./src/Data/Types/TBrand";
+export type { TShadow } from "./src/Data/Types/TShadow";
 
-// Common Component Types
-export type { TAccordion } from "./src/Data/Types/ComponentTypes/Common/Accordion/TAccordion";
-export type { AccordionOptions } from "./src/Data/Types/ComponentTypes/Common/Accordion/TAccordion";
+// Core Component Types
+export type { TAccordion } from "./src/UI/Components/Core/Accordion/types/TAccordion";
+export type { TAccordionOptions } from "./src/UI/Components/Core/Accordion/types/TAccordionOptions";
 
-export type { TButton } from "./src/Data/Types/ComponentTypes/Common/Button/TButton";
-export type { ButtonOptions } from "./src/Data/Types/ComponentTypes/Common/Button/TButton";
+export type { TButton } from "./src/UI/Components/Core/Button/types/TButton";
+export type { TButtonOptions } from "./src/UI/Components/Core/Button/types/TButtonOptions";
 
-export type { TCard } from "./src/Data/Types/ComponentTypes/Common/Card/TCard";
-export type { CardOptions } from "./src/Data/Types/ComponentTypes/Common/Card/TCard";
+export type { TCard } from "./src/UI/Components/Core/Card/types/TCard";
+export type { TCardOptions } from "./src/UI/Components/Core/Card/types/TCardOptions";
 
-export type { TThemeToggler } from "./src/Data/Types/ComponentTypes/Common/ThemeToggler/TThemeToggler";
+export type { TThemeToggler } from "./src/UI/Components/Core/ThemeToggler/types/TThemeToggler";
 
 // Form Component Types
-export type { TCheckbox } from "./src/Data/Types/ComponentTypes/Forms/Checkbox/TCheckbox";
-export type { CheckboxOptions } from "./src/Data/Types/ComponentTypes/Forms/Checkbox/TCheckbox";
+export type { TCheckbox } from "./src/UI/Components/Forms/Checkbox/types/TCheckbox";
+export type { TCheckboxOptions } from "./src/UI/Components/Forms/Checkbox/types/TCheckboxOptions";
 
 
-export type { TLabel } from "./src/Data/Types/ComponentTypes/Forms/Label/TLabel";
+export type { TLabel } from "./src/UI/Components/Forms/Label/types/TLabel";
 
-export type { TSelect } from "./src/Data/Types/ComponentTypes/Forms/Select/TSelect";
-export type { SelectOptions } from "./src/Data/Types/ComponentTypes/Forms/Select/TSelect";
+export type { TSelect } from "./src/UI/Components/Forms/Select/types/TSelect";
+export type { TSelectOptions } from "./src/UI/Components/Forms/Select/types/TSelectOptions";
 
-export type { TRangeInput } from "./src/Data/Types/ComponentTypes/Forms/RangeInput/TRangeInput";
-export type { RangeInputOptions } from "./src/Data/Types/ComponentTypes/Forms/RangeInput/TRangeInput";
+export type { TRangeInput } from "./src/UI/Components/Forms/RangeInput/types/TRangeInput";
+export type { TRangeInputOptions } from "./src/UI/Components/Forms/RangeInput/types/TRangeInputOptions";
 
-export type { TTextInput } from "./src/Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
-export type { TextInputOptions } from "./src/Data/Types/ComponentTypes/Forms/TextInput/TTextInput";
+export type { TTextInput } from "./src/UI/Components/Forms/TextInput/types/TTextInput";
+export type { TTextInputOptions } from "./src/UI/Components/Forms/TextInput/types/TTextInputOptions";
 
-export type { TColorPicker } from "./src/Data/Types/ComponentTypes/Forms/ColorPicker/TColorPicker";
+export type { TColorPicker } from "./src/UI/Components/Forms/ColorPicker/types/TColorPicker";
 
 // Layout Component Types
-export type { TFlex } from "./src/Data/Types/ComponentTypes/Layout/Flex/TFlex";
-export type { FlexOptions } from "./src/Data/Types/ComponentTypes/Layout/Flex/TFlex";
+export type { TFlex } from "./src/UI/Components/Layout/Flex/types/TFlex";
+export type { TFlexOptions } from "./src/UI/Components/Layout/Flex/types/TFlexOptions";
 
-export type { TAutoGrid } from "./src/Data/Types/ComponentTypes/Layout/AutoGrid/TAutoGrid";
-export type { AutoGridOptions } from "./src/Data/Types/ComponentTypes/Layout/AutoGrid/TAutoGrid";
+export type { TAutoGrid } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGrid";
+export type { TAutoGridOptions } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGridOptions";
 
 // Navigation Component Types
-export type { TNavbar } from "./src/Data/Types/ComponentTypes/Navigation/Navbar/TNavbar";
-export type { TNavbarCollapse } from "./src/Data/Types/ComponentTypes/Navigation/Navbar/TNavbarCollapse";
+export type { TNavbar } from "./src/UI/Components/Navigation/Navbar/types/TNavbar";
+export type { TNavbarCollapse } from "./src/UI/Components/Navigation/Navbar/types/TNavbarCollapse";
 
-export type { TNavbarLink } from "./src/Data/Types/ComponentTypes/Navigation/Navbar/TNavbarLink";
-export type { NavbarLinkOptions } from "./src/Data/Types/ComponentTypes/Navigation/Navbar/TNavbarLink";
+export type { TNavbarLink } from "./src/UI/Components/Navigation/Navbar/types/TNavbarLink";
 
-export type { TFooter } from "./src/Data/Types/ComponentTypes/Navigation/Footer/TFooter";
-export type { FooterOptions } from "./src/Data/Types/ComponentTypes/Navigation/Footer/TFooter";
+export type { TFooter } from "./src/UI/Components/Navigation/Footer/types/TFooter";
+export type { TFooterOptions } from "./src/UI/Components/Navigation/Footer/types/TFooterOptions";
 
-export type { TSidebar } from "./src/Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
-export type { SidebarOptions } from "./src/Data/Types/ComponentTypes/Navigation/Sidebar/TSidebar";
+export type { TSidebar } from "./src/UI/Components/Navigation/Sidebar/types/TSidebar";
+export type { TSidebarOptions } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarOptions";
 
-export type { TSidebarHeader } from "./src/Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
-export type { SidebarHeaderOptions } from "./src/Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarHeader";
+export type { TSidebarHeader } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarHeader";
+export type { TSidebarHeaderOptions } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarHeaderOptions";
 
-export type { TSidebarItem } from "./src/Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarItem";
-export type { SidebarItemOptions } from "./src/Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarItem";
+export type { TSidebarItem } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarItem";
+export type { TSidebarItemOptions } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarItemOptions";
 
-export type { TSidebarSeperator } from "./src/Data/Types/ComponentTypes/Navigation/Sidebar/TSidebarSeperator";
+export type { TSidebarSeperator } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarSeperator";
 
 // Typography Component Types
-export type { THr } from "./src/Data/Types/ComponentTypes/Typography/Hr/THr";
-export type { HrOptions } from "./src/Data/Types/ComponentTypes/Typography/Hr/THr";
+export type { THr } from "./src/UI/Components/Typography/Hr/types/THr";
+export type { THrOptions } from "./src/UI/Components/Typography/Hr/types/THrOptions";
 
-export type { TList } from "./src/Data/Types/ComponentTypes/Typography/List/TList";
-export type { ListOptions } from "./src/Data/Types/ComponentTypes/Typography/List/TList";
+export type { TList } from "./src/UI/Components/Typography/List/types/TList";
+export type { TListOptions } from "./src/UI/Components/Typography/List/types/TListOptions";
 
-export type { TTitle } from "./src/Data/Types/ComponentTypes/Typography/Title/TTitle";
+export type { TTitle } from "./src/UI/Components/Typography/Title/types/TTitle";
 
-export type { TQuote } from "./src/Data/Types/ComponentTypes/Typography/Quote/TQuote";
-export type { QuoteOptions } from "./src/Data/Types/ComponentTypes/Typography/Quote/TQuote";
-export type { TCite } from "./src/Data/Types/ComponentTypes/Typography/Quote/TCite";
+export type { TQuote } from "./src/UI/Components/Typography/Quote/types/TQuote";
+export type { TQuoteOptions } from "./src/UI/Components/Typography/Quote/types/TQuoteOptions";
+export type { TCite } from "./src/UI/Components/Typography/Quote/types/TCite";
