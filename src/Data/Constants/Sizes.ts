@@ -10,4 +10,6 @@ export const Sizes = {
     "4Xl": "4xl",
 }
 
-export type Tsize = typeof Sizes;
+declare global {
+    type Sizes = typeof Sizes[keyof typeof Sizes];
+};

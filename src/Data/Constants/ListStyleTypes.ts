@@ -15,3 +15,7 @@ export const ListStyleTypes = {
     UpperAlpha: "upper-alpha",
     None: "none",
 }
+
+declare global {
+    type ListStyleTypes = typeof ListStyleTypes[keyof typeof ListStyleTypes];
+};

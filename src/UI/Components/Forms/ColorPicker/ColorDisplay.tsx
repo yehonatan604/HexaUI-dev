@@ -1,6 +1,6 @@
 import { LuPipette } from "react-icons/lu";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
-import Button from "../../Common/Button/Component";
+import Button from "../../Core/Button/Button";
 import Flex from "../../Layout/Flex/Flex";
 import { THsvColor } from "../../../../Data/Types/THsvColor";
 

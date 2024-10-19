@@ -3,3 +3,7 @@ export const FlexWrap = {
     Wrap: "wrap",
     WrapReverse: "wrap-reverse"
 }
+
+declare global {
+    type FlexWrap = typeof FlexWrap[keyof typeof FlexWrap];
+};

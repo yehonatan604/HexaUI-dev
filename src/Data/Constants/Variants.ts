@@ -11,3 +11,7 @@ export const Variants = {
     Approve: "approve",
     Danger: "danger",
 }
+
+declare global {
+    type Variants = typeof Variants[keyof typeof Variants];
+};

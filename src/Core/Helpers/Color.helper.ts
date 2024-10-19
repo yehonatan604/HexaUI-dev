@@ -113,3 +113,11 @@ export const hexToRgb = (hex: string) => {
         }
         : null;
 };
+
+export default {
+    getRandomColor,
+    rgbToHex,
+    hsvToRgb,
+    rgbToHsv,
+    hexToRgb,
+};

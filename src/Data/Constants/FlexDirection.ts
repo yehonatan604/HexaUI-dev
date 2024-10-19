@@ -4,3 +4,7 @@ export const FlexDir = {
     Col: "col",
     ColReverse: "col-reverse"
 }
+
+declare global {
+    type FlexDir = typeof FlexDir[keyof typeof FlexDir];
+};

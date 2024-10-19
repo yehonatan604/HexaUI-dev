@@ -8,3 +8,7 @@ export const FlexTypes = {
     Baseline: "baseline",
     Stretch: "stretch",
 }
+
+declare global {
+    type FlexTypes = typeof FlexTypes[keyof typeof FlexTypes];
+};
