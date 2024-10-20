@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Button from "../Button";
 import { expect, test, vi } from "vitest";
+import Button from "../Button";
 import { Sizes } from "../../../../../Data/Constants/Sizes";
 
 test("renders the button correctly", () => {

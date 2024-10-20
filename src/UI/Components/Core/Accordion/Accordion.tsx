@@ -37,7 +37,7 @@ const Accordion = (props: TAccordion) => {
         onClick={() => setIsContentOpen(!isContentOpen)}
       >
         <h1 className={`text-xl text-${titleColor}`}>{options.title}</h1>
-        <div className={`${textColor}`}>
+        <div className={`text-${textColor}`}>
           {isContentOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
         </div>
       </Flex>
