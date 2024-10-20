@@ -120,9 +120,8 @@ const Toast = ({
               className="hover:opacity-70"
               onClick={() => {
                 setShow(false);
-                setTimeout(() => {
-                  removeToast(id);
-                }, 1000);
+                removeToast(id);
+                onFinished();
               }}
             />
           </div>
