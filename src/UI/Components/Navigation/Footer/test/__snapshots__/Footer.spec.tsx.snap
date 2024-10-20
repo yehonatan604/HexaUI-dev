@@ -1,0 +1,22 @@
+// Vitest Snapshot v1
+
+exports[`Footer Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col bg- text- justify-start items-start flex-nowrap bg-blue-500 text-white undefined "
+  >
+    <div
+      class="flex flex-row bg- text- justify-start items-start flex-nowrap w-full gap-4 max-md:flex-col"
+    >
+      <div>
+        Snapshot Child
+      </div>
+    </div>
+    <p
+      class="text-center text-xs text-gray-500 max-md:my-2"
+    >
+      © 2024 Rainbow UI
+    </p>
+  </div>
+</DocumentFragment>
+`;

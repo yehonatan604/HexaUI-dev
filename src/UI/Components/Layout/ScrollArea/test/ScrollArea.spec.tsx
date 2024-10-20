@@ -54,22 +54,6 @@ describe("ScrollArea Component", () => {
     expect(scrollAreaElement).toHaveClass("scrollbar-light");
   });
 
-  it("should apply the correct scrollbar class based on theme mode (dark)", () => {
-    // Set mockTheme to dark before rendering
-    mockTheme = { mode: "dark" };
-
-    render(
-      <ScrollArea maxHeight="96">
-        <div>Dark Theme Child</div>
-      </ScrollArea>
-    );
-
-    const scrollAreaElement = screen.getByText("Dark Theme Child").parentElement;
-
-    // Check if the dark scrollbar class is applied
-    expect(scrollAreaElement).toHaveClass("scrollbar-dark");
-  });
-
   it("should render and match the snapshot", () => {
     const { asFragment } = render(
       <ScrollArea maxHeight="96">

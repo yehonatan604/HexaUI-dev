@@ -1,4 +1,3 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TFooter } from "./types/TFooter";
@@ -21,13 +20,10 @@ const Footer = (props: TFooter) => {
     ...componenetProps
   } = props;
 
-  // Hooks
-  const { colors } = useTheme();
-
   // Options
-  const bgColor = bgVariant || colors.white;
-  const textColor = textVariant || colors.black;
-  const reservedColor = reservedVariant || colors.standrad;
+  const bgColor = bgVariant || "white";
+  const textColor = textVariant || "black";
+  const reservedColor = reservedVariant || "standard";
   const childrenGap = childrenDirection === FlexDir.Row ? "gap-4" : "gap-1";
 
   return (
