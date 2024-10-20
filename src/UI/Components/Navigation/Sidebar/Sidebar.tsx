@@ -6,21 +6,19 @@ import SidebarHeader from "./Sidebar.Header";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import Flex from "../../Layout/Flex/Flex";
 import { TSidebar } from "./types/TSidebar";
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 
 const Sidebar = (props: TSidebar) => {
   const { children, options, className, chevron: icon, ...componentProps } = props;
 
   // Hooks
   const [isOpen, setIsOpen] = useState(true);
-  const { colors } = useTheme();
 
   // Options
-  const chevronColor = options?.textVariant || colors.standradLight;
+  const chevronColor = options?.textVariant || "standard-l";
   const transition = "transition-all duration-1000";
   const maxWidth = options?.maxWidth || "w-[280px]";
-  const bgColor = options?.bgVariant || colors.standradDark;
-  const borderColor = options?.border?.variant || colors.standradDark;
+  const bgColor = options?.bgVariant || "standard-d";
+  const borderColor = options?.border?.variant || "standard-d";
   const borderThickness = options?.border?.thickness || 4;
   const border = `border-r-${borderThickness} border-${borderColor}`;
 
@@ -47,6 +45,7 @@ const Sidebar = (props: TSidebar) => {
       </Flex>
       {!options?.disableClose && (
         <Chevron
+          data-testid="chevron-icon"
           onClick={toggleMenu}
           className={`text-2xl ${chevronColor} cursor-pointer ${
             isOpen && "transform rotate-180"

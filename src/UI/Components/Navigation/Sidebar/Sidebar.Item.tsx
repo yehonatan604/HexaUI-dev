@@ -1,4 +1,3 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TSidebarItem } from "./types/TSidebarItem";
 import Flex from "../../Layout/Flex/Flex";
@@ -7,15 +6,12 @@ const SidebarItem = (props: TSidebarItem) => {
   const { children, label, icon, options, className, innerClassName, ...componentProps } =
     props;
 
-  // Hooks
-  const { colors } = useTheme();
-
   // Options
-  const labelBgColor = options?.labelBgVariant || colors.standradLight;
-  const labelTextColor = options?.labelVariant || colors.standradDark;
-  const hoverBgVariant = options?.hoverBgVariant || colors.standradLight;
-  const hoverTextVariant = options?.hoverTextVariant || colors.standradLight;
-  const textColor = options?.textVariant || colors.primary;
+  const labelBgColor = options?.labelBgVariant || "standard-l";
+  const labelTextColor = options?.labelVariant || "standard-d";
+  const hoverBgVariant = options?.hoverBgVariant || "standard-l";
+  const hoverTextVariant = options?.hoverTextVariant || "standard-l";
+  const textColor = options?.textVariant || "primary";
   const hover = `hover:bg-${options?.hoverBgVariant && hoverBgVariant} hover:text-${
     options?.hoverTextVariant && hoverTextVariant
   }`;

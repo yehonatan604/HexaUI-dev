@@ -1,0 +1,74 @@
+// Vitest Snapshot v1
+
+exports[`Sidebar Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row bg- text- justify-start items-start flex-nowrap undefined"
+  >
+    <div
+      class="flex flex-col bg- text- justify-start items-start flex-nowrap w-80 max-md:w-[95vw] bg-blue-500 false transition-all duration-1000 duration-1000 overflow-hidden text-nowrap text-ellipsis gap-4 pb-4 undefined undefined"
+    >
+      <div
+        class="flex flex-row bg- text- justify-top items-center flex-nowrap p-4 w-full bg-gray-800 text-white"
+      >
+        Header
+      </div>
+      <div
+        class="flex flex-row bg- text- justify-between items-center flex-nowrap w-full undefined"
+      >
+        <div
+          class="flex flex-row bg- text- justify-start items-center flex-nowrap w-full p-1 pl-3 gap-5 text-primary hover:opacity-60 hover:bg-undefined hover:text-undefined cursor-pointer undefined"
+        >
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="13 17 18 12 13 7"
+            />
+            <polyline
+              points="6 17 11 12 6 7"
+            />
+          </svg>
+          Item Content
+          <div
+            class="flex flex-row bg- text- justify-center items-center flex-nowrap p-2 ml-auto mr-7 h-[25px] bg-standard-l text-standard-d rounded-lg"
+          >
+            Item Label
+          </div>
+        </div>
+      </div>
+      <hr
+        class="border-1 border-standard w-1/2 m-auto my-2 undefined"
+      />
+    </div>
+    <svg
+      class="text-2xl standard-l cursor-pointer transform rotate-180 transition-all duration-1000 "
+      data-testid="chevron-icon"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polyline
+        points="13 17 18 12 13 7"
+      />
+      <polyline
+        points="6 17 11 12 6 7"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;

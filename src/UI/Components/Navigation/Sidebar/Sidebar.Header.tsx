@@ -1,4 +1,3 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TSidebarHeader } from "./types/TSidebarHeader";
 import Flex from "../../Layout/Flex/Flex";
@@ -6,12 +5,9 @@ import Flex from "../../Layout/Flex/Flex";
 const SidebarHeader = (props: TSidebarHeader) => {
   const { children, options, ...componentProps } = props;
 
-  // Hooks
-  const { colors } = useTheme();
-
   // Options
-  const bgColor = options?.bgVariant || colors.standrad;
-  const textColor = options?.textVariant || colors.standradLight;
+  const bgColor = options?.bgVariant || "standard";
+  const textColor = options?.textVariant || "standard-l";
 
   // JSX
   return (
