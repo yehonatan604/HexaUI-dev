@@ -1,20 +1,17 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { TAutoGrid } from "./types/TAutoGrid";
 
 const AutoGrid = (props: TAutoGrid) => {
   const { rowsArr, cols, options, ...componentProps } = props;
 
-  //Hooks
-  const { mode, colors } = useTheme();
-
   // Options
-  const showBorder = options?.border.show || true;
-  const defaultBorderColor = mode === "dark" ? colors.standradLight : colors.standradDark;
+  const showBorder = options?.border?.show || true;
+  const defaultBorderColor = "border-dtandard-d dark:border-standard-l";
   const borderColor = options?.borderVariant || defaultBorderColor;
 
   // JSX
   return (
     <div
+      role="grid"
       {...componentProps}
       style={{
         display: "inline-grid",

@@ -1,0 +1,77 @@
+// Vitest Snapshot v1
+
+exports[`AutoGrid Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    role="grid"
+    style="display: inline-grid; grid-template-columns: repeat(2, 1fr);"
+  >
+    <div
+      class="border border-border-dtandard-d dark:border-standard-l"
+    >
+      <div>
+        Row 1
+      </div>
+    </div>
+    <div
+      class="border border-border-dtandard-d dark:border-standard-l"
+    >
+      <div>
+        Row 2
+      </div>
+    </div>
+    <div
+      class="border border-border-dtandard-d dark:border-standard-l"
+    >
+      <div>
+        Row 3
+      </div>
+    </div>
+    <div
+      class="border border-border-dtandard-d dark:border-standard-l"
+    >
+      <div>
+        Row 4
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`AutoGrid Component > should render with custom border styles and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    role="grid"
+    style="display: inline-grid; grid-template-columns: repeat(2, 1fr);"
+  >
+    <div
+      class="border border-green-500"
+    >
+      <div>
+        Row 1
+      </div>
+    </div>
+    <div
+      class="border border-green-500"
+    >
+      <div>
+        Row 2
+      </div>
+    </div>
+    <div
+      class="border border-green-500"
+    >
+      <div>
+        Row 3
+      </div>
+    </div>
+    <div
+      class="border border-green-500"
+    >
+      <div>
+        Row 4
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
