@@ -1,0 +1,13 @@
+// Vitest Snapshot v1
+
+exports[`Flex Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col bg- text- justify-center items-end flex-wrap undefined"
+  >
+    <div>
+      Snapshot Test
+    </div>
+  </div>
+</DocumentFragment>
+`;
