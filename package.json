@@ -18,7 +18,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "bnp": "npm run build && npm publish --access public",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.9",
@@ -28,19 +30,33 @@
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
     "@eslint/js": "^9.9.0",
+    "@storybook/addon-controls": "^8.3.6",
+    "@storybook/addon-essentials": "^8.3.6",
+    "@storybook/addon-interactions": "^8.3.6",
+    "@storybook/addon-links": "^8.3.6",
+    "@storybook/addon-onboarding": "^8.3.6",
+    "@storybook/blocks": "^8.3.6",
+    "@storybook/builder-vite": "^8.3.6",
+    "@storybook/react": "^8.3.6",
+    "@storybook/react-vite": "^8.3.6",
+    "@storybook/test": "^8.3.6",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
     "@types/node": "^22.7.4",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-storybook": "^0.9.0",
     "globals": "^15.9.0",
     "jsdom": "^25.0.1",
     "postcss": "^8.4.47",
+    "storybook": "^8.3.6",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
@@ -62,5 +78,10 @@
       "name": "Moshe Shoker",
       "email": "moshe@shoker.co.il"
     }
-  ]
+  ],
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
 }
