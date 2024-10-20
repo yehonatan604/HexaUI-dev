@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="m-[1px] pb-[6px] py-[2.75px] rounded px-4 py-3 text-base bg-info text-white hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:ring-gray-500 undefined"
+  >
+    Click Me
+  </button>
+</DocumentFragment>
+`;

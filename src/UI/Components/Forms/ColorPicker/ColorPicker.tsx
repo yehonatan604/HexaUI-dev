@@ -9,6 +9,7 @@ import Alpha from "./Alpha";
 import Hue from "./Hue";
 import ColorDisplay from "./ColorDisplay";
 import { THsvColor } from "../../../../Data/Types/THsvColor";
+import Hr from "../../Typography/Hr/Hr";
 
 const ColorPicker = () => {
   const [color, setColor] = useState<THsvColor>({ h: 0, s: 100, v: 100, a: 100 });
@@ -137,10 +138,12 @@ const ColorPicker = () => {
           const [r, g, b] = color.match(/\d+/g).map(Number);
           const hsv = colorHelper.rgbToHsv(r, g, b);
           setColor((prev) => ({ ...hsv, a: prev.a }));
-          //   setPipeta(false);
         }
+      } else {
+        document.body.style.cursor = "auto";
       }
     };
+
     document.addEventListener("click", handleClick);
 
     return () => {
@@ -151,19 +154,13 @@ const ColorPicker = () => {
   }, [handleCanvasMouseMove, handleMouseMove, pipeta]);
 
   return (
-    <div className="p-4 space-y-4 ring-2 ring-standard border text-black-l dark:text-white border-standard-l rounded-lg w-[320px] dark:bg-black-d bg-standard">
+    <div className="p-4 space-y-4 ring-2 ring-standard border text-black-l dark:text-white border-standard-l rounded-lg w-[280px] dark:bg-black-d bg-standard">
       <Saturation
         color={color}
         canvasRef={canvasRef}
         handleCanvasMouseDown={handleCanvasMouseDown}
       />
 
-      <Alpha
-        color={color}
-        alphaRef={alphaRef}
-        handleAlphaMouseDown={handleAlphaMouseDown}
-        hexColor={hexColor}
-      />
       <Hue
         sliderRef={sliderRef}
         thumbRef={thumbRef}
@@ -176,17 +173,12 @@ const ColorPicker = () => {
         pipeta={pipeta}
         setColorType={setColorType}
         setPipeta={setPipeta}
+        setColor={setColor}
       />
 
       {colorType === "hsv" && (
-        <Flex
-          options={{
-            justify: FlexTypes.Center,
-            align: FlexTypes.Center,
-          }}
-          className="gap-2"
-        >
-          {["h", "s", "v", "a"].map((key) => (
+        <Flex center className="gap-2">
+          {["h", "s", "v"].map((key) => (
             <Flex
               options={{
                 justify: FlexTypes.Center,
@@ -221,14 +213,8 @@ const ColorPicker = () => {
       )}
 
       {colorType === "rgb" && (
-        <Flex
-          options={{
-            justify: FlexTypes.Center,
-            align: FlexTypes.Center,
-          }}
-          className="gap-2"
-        >
-          {["r", "g", "b", "a"].map((key) => (
+        <Flex center className="gap-2">
+          {["r", "g", "b"].map((key) => (
             <>
               <Label htmlFor={key} text={`${key.toUpperCase()}:`} />
               <TextInput
@@ -262,13 +248,7 @@ const ColorPicker = () => {
       )}
 
       {colorType === "hex" && (
-        <Flex
-          className="gap-2"
-          options={{
-            justify: FlexTypes.Center,
-            align: FlexTypes.Center,
-          }}
-        >
+        <Flex center className="gap-10">
           <Label htmlFor="hex" text="HEX:" />
           <TextInput
             options={{
@@ -285,29 +265,40 @@ const ColorPicker = () => {
             }}
             style={{
               fontSize: ".8rem",
-              width: "11.5rem",
-              height: "1.5rem",
-            }}
-          />
-          <Label htmlFor="alpha" text="A:" />
-          <TextInput
-            options={{
-              bgVariant: "black-d",
-            }}
-            type="number"
-            id="alpha"
-            value={color.a}
-            onChange={(e) => setColor((prev) => ({ ...prev, a: +e.target.value }))}
-            min={0}
-            max={100}
-            style={{
-              fontSize: ".8rem",
-              width: "3rem",
+              width: "5.25rem",
               height: "1.5rem",
             }}
           />
         </Flex>
       )}
+
+      <Hr className="w-full" />
+
+      <Alpha
+        color={color}
+        alphaRef={alphaRef}
+        handleAlphaMouseDown={handleAlphaMouseDown}
+        hexColor={hexColor}
+      />
+      <Flex center className="gap-2">
+        <Label htmlFor="alpha" text="Alpha:" />
+        <TextInput
+          options={{
+            bgVariant: "black-d",
+          }}
+          type="number"
+          id="alpha"
+          value={color.a}
+          onChange={(e) => setColor((prev) => ({ ...prev, a: +e.target.value }))}
+          min={0}
+          max={100}
+          style={{
+            fontSize: ".8rem",
+            width: "3rem",
+            height: "1.5rem",
+          }}
+        />
+      </Flex>
     </div>
   );
 };

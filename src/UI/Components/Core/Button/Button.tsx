@@ -6,7 +6,7 @@ const Button = (props: TButton) => {
   const { options, children, className, ...componentProps } = props;
   const { colors } = useTheme();
   const size = options?.size;
-  const rounded = options?.rounded || false;
+  const rounded = options?.notRounded || false;
   const roundedS = options?.roundedS || false;
   const roundedE = options?.roundedE || false;
   const bgColor = options?.bgVariant || colors.info;
@@ -23,7 +23,7 @@ const Button = (props: TButton) => {
 
   let buttonRounded = "rounded";
   if (rounded) {
-    buttonRounded = "";
+    buttonRounded = "not-rounded";
   } else if (roundedS) {
     buttonRounded = "rounded-tl rounded-bl rounded-tr-0 rounded-br-0";
   } else if (roundedE) {

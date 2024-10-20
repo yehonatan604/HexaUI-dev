@@ -8,7 +8,7 @@ export type TButtonOptions = TComponentOptions & {
     iconPosition?: string;
     label?: string;
     size?: TSize | string;
-    rounded?: boolean;
+    notRounded?: boolean;
     roundedS?: boolean;
     roundedE?: boolean;
     ring?: TRingProps;
