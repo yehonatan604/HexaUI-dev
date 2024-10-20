@@ -1,4 +1,3 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { Sizes } from "../../../../Data/Constants/Sizes";
 import { TTitle } from "./types/TTitle";
@@ -7,13 +6,10 @@ import Flex from "../../Layout/Flex/Flex";
 const Title = (props: TTitle) => {
   const { children, options, ...componentProps } = props;
 
-  // Hooks
-  const { colors } = useTheme();
-
   // Options
   const size = options?.size || Sizes.Md;
-  const textColor = options?.textVariant || colors.standradLight;
-  const bgColor = options?.bgVariant || colors.standrad;
+  const textColor = options?.textVariant || "standard-l";
+  const bgColor = options?.bgVariant || "standard";
   const padding = options?.padding || "p-5";
   const align = options?.align || FlexTypes.Center;
 

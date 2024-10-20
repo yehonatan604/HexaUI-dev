@@ -1,0 +1,15 @@
+// Vitest Snapshot v1
+
+exports[`Title Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row bg- text- justify-center items-start flex-nowrap w-full standard"
+  >
+    <h1
+      class="p-5 text-5xl text-red-500"
+    >
+      Snapshot Title
+    </h1>
+  </div>
+</DocumentFragment>
+`;
