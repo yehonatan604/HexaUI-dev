@@ -5,5 +5,3 @@ export type TCheckbox = TComponent<"input"> & {
     options?: TCheckboxOptions;
     label: string;
 }
-
-
