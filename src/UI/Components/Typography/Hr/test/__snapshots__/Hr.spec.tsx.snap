@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`Hr Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <hr
+    class="border-1 border-red-500 w-full m-auto my-2 custom-class"
+  />
+</DocumentFragment>
+`;

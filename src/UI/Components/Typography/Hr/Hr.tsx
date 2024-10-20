@@ -1,12 +1,10 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { THr } from "./types/THr";
 
 const Hr = (props: THr) => {
   const { options, className, ...componenetProps } = props;
-  const { colors } = useTheme();
 
   const lineWidth = options?.width || "1/2";
-  const lineColor = options?.color || colors.standrad;
+  const lineColor = options?.color || "standard";
 
   return (
     <hr
