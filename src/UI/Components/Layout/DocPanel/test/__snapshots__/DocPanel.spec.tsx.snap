@@ -1,0 +1,19 @@
+// Vitest Snapshot v1
+
+exports[`DocPanel Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row-reverse bg- text- justify-start items-t flex-nowrap relative  w-full"
+  >
+    <div
+      class="flex flex-col bg-black-d  text-nowrap text-ellipsis overflow-hidden"
+    >
+      Panel Content
+    </div>
+    <div
+      class="bg-black-d w-1 cursor-ew-resize"
+      style="flex-shrink: 0;"
+    />
+  </div>
+</DocumentFragment>
+`;
