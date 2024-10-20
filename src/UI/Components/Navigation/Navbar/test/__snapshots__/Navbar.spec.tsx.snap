@@ -1,0 +1,30 @@
+// Vitest Snapshot v1
+
+exports[`Navbar Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row bg- text- justify-between items-center flex-nowrap bg-blue-500 text-white p-4 max-md:flex-col max-md:gap-4 md:flex-row undefined"
+  >
+    <a
+      class="text-xl font-bold text-secondary bg-transparent"
+      href="/"
+      to="/"
+    >
+      Brand
+    </a>
+    <a
+      class="text-lg text-secondary font-semibold hover:opacity-70"
+      href="/home"
+    >
+      Home
+    </a>
+    <div
+      class="flex flex-row bg- text- justify-start items-center flex-nowrap text-secondary flex max-md:hidden gap-4 undefined"
+    >
+      <div>
+        Menu Content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
