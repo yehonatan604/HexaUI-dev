@@ -2,6 +2,13 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { expect, test } from "vitest";
 import Accordion from "../Accordion";
 
+test("matches snapshot", () => {
+  const { asFragment } = render(
+    <Accordion options={{ title: "Accordion Header" }}>Accordion Content</Accordion>
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
 test("renders Accordion header correctly", () => {
   render(
     <Accordion options={{ title: "Accordion Header" }}>Accordion Content</Accordion>

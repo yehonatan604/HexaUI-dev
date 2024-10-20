@@ -3,14 +3,14 @@ import { expect, test, vi } from "vitest";
 import Button from "../Button";
 import { Sizes } from "../../../../../Data/Constants/Sizes";
 
-test("renders the button correctly", () => {
-  render(<Button>Click Me</Button>);
-  expect(screen.getByText("Click Me")).toBeInTheDocument();
-});
-
 test("matches snapshot", () => {
   const { asFragment } = render(<Button>Click Me</Button>);
   expect(asFragment()).toMatchSnapshot();
+});
+
+test("renders the button correctly", () => {
+  render(<Button>Click Me</Button>);
+  expect(screen.getByText("Click Me")).toBeInTheDocument();
 });
 
 test("applies background color variant", () => {
