@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Label from "../Label/Label";
 import Flex from "../../Layout/Flex/Flex";
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
 import { FlexTypes } from "../../../../Data/Constants/FlexTypes";
 import { TRangeInput } from "./types/TRangeInput";
@@ -12,12 +11,11 @@ const RangeInput = (props: TRangeInput) => {
 
   // Hooks
   const [val, setVal] = useState(0);
-  const { mode, colors } = useTheme();
 
   // Options
-  const textColor =
-    options?.textVariant ||
-    (mode === "dark" ? colors.standradLight : colors.standradDark);
+  const textColor = options?.textVariant
+    ? `text-${options.textVariant}`
+    : "dark:text-standard-l text-standard-d";
 
   // Constants
   const randomId = generateRandomId();
@@ -27,32 +25,11 @@ const RangeInput = (props: TRangeInput) => {
     setVal(parseInt(e.target.value));
   };
 
-  const rangeColor =
-    options?.rangeVariant === colors.info
-      ? "info"
-      : options?.rangeVariant === colors.success
-      ? "success"
-      : options?.rangeVariant === colors.warning
-      ? "warning"
-      : options?.rangeVariant === colors.failure
-      ? "failure"
-      : options?.rangeVariant === colors.info
-      ? "cyan"
-      : options?.rangeVariant === colors.select
-      ? "purple"
-      : options?.rangeVariant === colors.cancel
-      ? "pink"
-      : options?.rangeVariant === colors.primary
-      ? "primary"
-      : options?.rangeVariant === colors.secondary
-      ? "secondary"
-      : "standard";
-
   return (
     <Flex options={{ direction: FlexDir.Col }} className="gap-1">
       <Label text={label} htmlFor={randomId} />
       <Flex
-        className={`range ${rangeColor} gap-2`}
+        className={`range ${options?.rangeVariant || "info"} gap-2`}
         options={{
           align: FlexTypes.Center,
         }}
