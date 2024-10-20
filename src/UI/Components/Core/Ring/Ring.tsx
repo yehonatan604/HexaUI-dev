@@ -12,8 +12,8 @@ const Ring = (props: TRing) => {
   const ringColor = options?.ringVariant || colors.standradDark;
   const bgColor = options?.bgVariant || colors.standradLight;
   const borderWidth = options?.borderThickness || 2;
-  const ringWidth = options?.ringThickness || 4;
-  const textColor = options?.textVariant || colors.standradDark;
+  //const ringWidth = options?.ringThickness || 4;
+  const textColor = options?.textVariant || colors.black;
   const padding = options?.padding || 0;
   const rounded = options?.rounded || "md";
   const shadow =
@@ -25,7 +25,7 @@ const Ring = (props: TRing) => {
   // JSX
   return (
     <div
-      className={`text-${textColor} p-${padding} rounded-${rounded} border-${borderWidth} border-${borerColor} ring-${ringWidth} ring-${ringColor} bg-${bgColor} ${className} 
+      className={`text-${textColor} p-${padding} rounded-${rounded} border-${borderWidth} border-${borerColor} ring-4 ring-${ringColor} bg-${bgColor} ${className} 
       ${shadow}`}
       {...componentProps}
     >
