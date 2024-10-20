@@ -1,0 +1,21 @@
+// Vitest Snapshot v1
+
+exports[`ThemeToggler Component > matches the snapshot for dark mode 1`] = `
+<DocumentFragment>
+  <button>
+    <span>
+      🌞
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`ThemeToggler Component > matches the snapshot for light mode 1`] = `
+<DocumentFragment>
+  <button>
+    <span>
+      🌑
+    </span>
+  </button>
+</DocumentFragment>
+`;
