@@ -1,23 +1,14 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { TSelect } from "./types/TSelect";
 
 const Select = (props: TSelect) => {
   const { options, items, ...componentProps } = props;
-  // Hooks
-  const { colors, mode } = useTheme();
 
   // Options
-  const textColor =
-    options?.textVariant ||
-    (mode === "light" ? colors.standradDark : colors.standradLight);
-  const borderColor = options?.border?.variant || colors.standrad;
-  const listItemColor =
-    options?.listItemsVariant ||
-    (mode === "light" ? colors.standradDark : colors.standradLight);
-  const listItemsBgColor =
-    options?.listItemsBgVariant ||
-    (mode === "light" ? colors.backgroundLight : colors.backgroundDark);
-  const bgColor = options?.bgVariant || "transparent";
+  const textColor = options?.textVariant || "text-gray-800 dark:text-gray-200";
+  const borderColor = options?.border?.variant || "border-gray-300 dark:border-gray-600";
+  const listItemColor = options?.listItemsVariant || "text-gray-800 dark:text-gray-200";
+  const listItemsBgColor = options?.listItemsBgVariant || "bg-white dark:bg-gray-800";
+  const bgColor = options?.bgVariant || "bg-transparent";
 
   // JSX
   return (
