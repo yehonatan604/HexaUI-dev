@@ -1,0 +1,25 @@
+// Vitest Snapshot v1
+
+exports[`RainbowBorder Component > matches snapshot 1`] = `
+<div
+  class="p-[1.5px] rounded bg-gradient-to-br from-blue-400 via-blue-600 via-blue-800 via-green-500 via-green-800 to-cyan-400 undefined"
+>
+  <div
+    class="text-white bg-black rounded undefined"
+  >
+    Content
+  </div>
+</div>
+`;
+
+exports[`matches snapshot 1`] = `
+<div
+  class="p-[1.5px] rounded bg-gradient-to-br from-blue-400 via-blue-600 via-blue-800 via-green-500 via-green-800 to-cyan-400 undefined"
+>
+  <div
+    class="text-white bg-black rounded undefined"
+  >
+    Content
+  </div>
+</div>
+`;

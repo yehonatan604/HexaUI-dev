@@ -1,5 +1,12 @@
 // Vitest Snapshot v1
 
+exports[`Card Component > matches snapshot 1`] = `
+<div
+  class="flex flex-col bg- text- justify-start items-start flex-nowrap gap-4 text-standard-d p-2 rounded-md bg-standard-l undefined  undefined"
+  data-testid="Card"
+/>
+`;
+
 exports[`matches snapshot 1`] = `
 <div
   class="flex flex-col bg- text- justify-start items-start flex-nowrap gap-4 text-standard-d p-2 rounded-md bg-standard-l undefined  undefined"
