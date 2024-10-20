@@ -1,20 +1,16 @@
-import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { TLabel } from "./types/TLabel";
 
 const Label = (props: TLabel) => {
   const { text, options, ...componentProps } = props;
 
-  // Hooks
-  const { mode, colors } = useTheme();
-
   // Options
-  const textColor =
-    options?.textVariant ||
-    (mode === "dark" ? colors.standradLight : colors.standradDark);
+  const textColor = options?.textVariant
+    ? `text-${options.textVariant}`
+    : "dark:text-standard-l text-standard-d";
 
   // JSX
   return (
-    <label className={`block text-sm font-medium text-${textColor}`} {...componentProps}>
+    <label className={`block text-sm font-medium ${textColor}`} {...componentProps}>
       {text}
     </label>
   );

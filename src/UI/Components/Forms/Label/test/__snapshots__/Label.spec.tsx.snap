@@ -1,0 +1,21 @@
+// Vitest Snapshot v1
+
+exports[`Label Component > should render and match the snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="block text-sm font-medium dark:text-standard-l text-standard-d"
+  >
+    Snapshot Test
+  </label>
+</DocumentFragment>
+`;
+
+exports[`Label Component > should render with custom textVariant and match the snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="block text-sm font-medium text-green"
+  >
+    Custom Snapshot
+  </label>
+</DocumentFragment>
+`;
