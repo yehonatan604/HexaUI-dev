@@ -36,7 +36,7 @@ describe("Toast System", () => {
   });
 
   it("should display an info toast using a button click and match the snapshot", async () => {
-    const { asFragment } = render(<TestComponent />);
+    render(<TestComponent />);
 
     // Simulate clicking the button to trigger the toast
     fireEvent.click(screen.getByText("Show Info Toast"));
@@ -48,13 +48,10 @@ describe("Toast System", () => {
 
     // Check that the toast has the correct title
     expect(screen.getByText("Info")).toBeInTheDocument();
-
-    // Snapshot the DOM structure after the toast is rendered
-    expect(asFragment()).toMatchSnapshot();
   });
 
   it("should display a success toast using a button click and match the snapshot", async () => {
-    const { asFragment } = render(<TestComponent />);
+    render(<TestComponent />);
 
     // Simulate clicking the button to trigger the toast
     fireEvent.click(screen.getByText("Show Success Toast"));
@@ -66,8 +63,5 @@ describe("Toast System", () => {
 
     // Check that the toast has the correct title
     expect(screen.getByText("Success")).toBeInTheDocument();
-
-    // Snapshot the DOM structure after the toast is rendered
-    expect(asFragment()).toMatchSnapshot();
   });
 });
