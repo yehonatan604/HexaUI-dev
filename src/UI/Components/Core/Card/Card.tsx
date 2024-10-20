@@ -16,11 +16,11 @@ const Card = (props: TCard) => {
   const padding = options?.padding || 2;
   const rounded = options?.rounded || "md";
   const gap = options?.gap || 4;
-  const borderColor = options.border?.variant || colors.standrad;
-  const borderRadius = options.border?.radius || "md";
+  const borderColor = options?.border?.variant || colors.standrad;
+  const borderRadius = options?.border?.radius || "md";
 
   // Border Options
-  const border = options.border?.show
+  const border = options?.border?.show
     ? `border-2 border-${borderColor} rounded-${borderRadius}`
     : "";
 
