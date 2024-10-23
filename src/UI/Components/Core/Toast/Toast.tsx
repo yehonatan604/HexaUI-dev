@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 import Flex from "../../Layout/Flex/Flex";
 import Hr from "../../Typography/Hr/Hr";
 import { TToast } from "./types/TToast";
-import useToast from "../../../../Core/Context/ToastContext/hooks/useToast";
+import useToast from "./hooks/useToast";
 
 const Toast = ({
   options,

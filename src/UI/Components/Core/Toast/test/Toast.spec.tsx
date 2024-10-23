@@ -1,6 +1,6 @@
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
-import { toast } from "../../../../../Core/Context/ToastContext/helpers/toast";
-import ToastProvider from "../../../../../Core/Context/ToastContext/providers/Toast.provider";
+import { toast } from "../helpers/toast";
+import ToastProvider from "../providers/Toast.provider";
 import { describe, beforeEach, afterEach, it, expect, vi } from "vitest";
 
 // Mock the Toast component

@@ -1,4 +1,4 @@
-import { TToastVariants } from "../../../../UI/Components/Core/Toast/types/TToastVariants";
+import { TToastVariants } from "./TToastVariants";
 
 export type TToastStackContext = {
     addToast: (id: string, toast: JSX.Element) => void;

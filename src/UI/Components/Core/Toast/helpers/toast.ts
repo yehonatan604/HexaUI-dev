@@ -1,4 +1,4 @@
-import { TToastVariants } from "../../../../UI/Components/Core/Toast/types/TToastVariants";
+import { TToastVariants } from "../types/TToastVariants";
 
 let toastInstance: TToastVariants = {};
 

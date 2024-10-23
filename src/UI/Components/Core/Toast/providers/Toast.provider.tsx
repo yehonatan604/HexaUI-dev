@@ -1,8 +1,8 @@
 import { cloneElement, useState, useEffect, useMemo } from "react";
-import generateRandomId from "../../../Helpers/IdHelper";
-import { ToastStackContext } from "../Toast.context";
+import generateRandomId from "../../../../../Core/Helpers/IdHelper";
+import { ToastStackContext } from "../context/Toast.context";
 import { setToastInstance } from "../helpers/toast";
-import Toast from "../../../../UI/Components/Core/Toast/Toast";
+import Toast from "../Toast";
 import { TToastStackItem } from "../types/TToastStackItem";
 
 const ToastProvider = ({ children }) => {

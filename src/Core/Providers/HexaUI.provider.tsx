@@ -2,7 +2,7 @@ import { TColorPalette } from "../../Data/Types/TColorPalette";
 import defaultColorPalette from "../../UI/Themes/DefaultColorPalettes";
 import defaultGradientPalette from "../../UI/Themes/DefaultGradients";
 import ThemeProvider from "../Context/ThemeContext/providers/Theme.provider";
-import ToastProvider from "../Context/ToastContext/providers/Toast.provider";
+import ToastProvider from "../../UI/Components/Core/Toast/providers/Toast.provider";
 
 export type HexaUIProps = {
   children: React.ReactNode;
