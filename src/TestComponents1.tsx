@@ -18,6 +18,7 @@ import AutoGridExample from "./UI/Components/Layout/AutoGrid/examples/AutoGrid.e
 import ScrollArea from "./UI/Components/Layout/ScrollArea/ScrollArea";
 import ListExample from "./UI/Components/Typography/List/examples/List.example";
 import QuoteExamples from "./UI/Components/Typography/Quote/examples/Quote.example";
+import DropMenuExamples from "./UI/Components/Navigation/DropDown/examples/DropMenu.example";
 
 const TestComponents1 = () => {
   const { colors } = useTheme();
@@ -94,6 +95,8 @@ const TestComponents1 = () => {
               Sidebar
             </Title>
             <SidebarExample />
+            <Hr className="mb-4" />
+            <DropMenuExamples />
             <Hr className="mb-4" />
             <ToastExamples />
             <Hr className="mb-4" />
