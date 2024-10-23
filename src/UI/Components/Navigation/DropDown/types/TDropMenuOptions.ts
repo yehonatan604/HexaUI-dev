@@ -5,11 +5,6 @@ export type TDropMenuOptions = TComponentOptions & {
     titlePadding?: string;
     titleVariant?: string;
     titleSize?: string | Sizes;
-    contentPadding?: string;
-    chevronVariant?: string;
-    chevronSize?: string;
-    chevronDirection?: string;
-    icon?: JSX.Element;
     gap?: string;
     titleDivGap?: string;
 }

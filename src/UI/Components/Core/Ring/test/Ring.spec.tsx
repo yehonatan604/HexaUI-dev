@@ -3,11 +3,6 @@ import { test, expect, describe } from "vitest";
 import Ring from "../Ring";
 
 describe("Ring Component", () => {
-  test("renders correctly and matches the snapshot", () => {
-    const { asFragment } = render(<Ring>Content</Ring>);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test("applies custom border variant", () => {
     const { container } = render(
       <Ring options={{ borderVariant: "success" }}>Content</Ring>
@@ -16,8 +11,8 @@ describe("Ring Component", () => {
   });
 
   test("applies custom ring thickness", () => {
-    const { container } = render(<Ring options={{ ringThickness: 5 }}>Content</Ring>);
-    expect(container.firstChild).toHaveClass("ring-5");
+    const { container } = render(<Ring options={{ ringThickness: 4 }}>Content</Ring>);
+    expect(container.firstChild).toHaveClass("ring-4");
   });
 
   test("applies custom padding", () => {

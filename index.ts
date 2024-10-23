@@ -26,6 +26,7 @@ export { default as Scrollbar } from "./src/UI/Components/Layout/ScrollArea/Scro
 export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Navbar";
 export { default as Footer } from "./src/UI/Components/Navigation/Footer/Footer";
 export { default as Sidebar } from "./src/UI/Components/Navigation/Sidebar/Sidebar";
+export { default as DropMenu } from "./src/UI/Components/Navigation/DropDown/DropMenu";
 
 // Typography
 export { default as Hr } from "./src/UI/Components/Typography/Hr/Hr";
@@ -43,10 +44,10 @@ export { Variants } from "./src/Data/Constants/Variants";
 
 // Hooks
 export { default as useTheme } from "./src/Core/Context/ThemeContext/hooks/useTheme";
-export { default as useToast } from "./src/Core/Context/ToastContext/hooks/useToast";
+export { default as useToast } from "./src/UI/Components/Core/Toast/hooks/useToast";
 
 // Helpers
-export { toast } from "./src/Core/Context/ToastContext/helpers/toast";
+export { toast } from "./src/UI/Components/Core/Toast/helpers/toast";
 
 // Providers
 export { default as HexaUI } from "./src/Core/Providers/HexaUI.provider";
@@ -121,6 +122,9 @@ export type { TSidebarItem } from "./src/UI/Components/Navigation/Sidebar/types/
 export type { TSidebarItemOptions } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarItemOptions";
 
 export type { TSidebarSeperator } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarSeperator";
+
+export type { TDropMenu } from "./src/UI/Components/Navigation/DropDown/types/TDropMenu";
+export type { TDropMenuOptions } from "./src/UI/Components/Navigation/DropDown/types/TDropMenuOptions";
 
 // Typography Component Types
 export type { THr } from "./src/UI/Components/Typography/Hr/types/THr";

@@ -25,7 +25,7 @@ const DropMenu = ({
 
   const getPositionClasses = () => {
     if (type === "horizontal") {
-      return "left-full top-0 ml-4 m-2";
+      return "left-full top-0 m-2";
     }
     return "top-full left-0 mt-1";
   };
