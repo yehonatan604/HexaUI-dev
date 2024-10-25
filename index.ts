@@ -26,7 +26,7 @@ export { default as Scrollbar } from "./src/UI/Components/Layout/ScrollArea/Scro
 export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Navbar";
 export { default as Footer } from "./src/UI/Components/Navigation/Footer/Footer";
 export { default as Sidebar } from "./src/UI/Components/Navigation/Sidebar/Sidebar";
-export { default as DropMenu } from "./src/UI/Components/Navigation/DropDown/DropMenu";
+export { default as DropMenu } from "./src/UI/Components/Navigation/DropMenu/DropMenu";
 
 // Typography
 export { default as Hr } from "./src/UI/Components/Typography/Hr/Hr";
@@ -123,8 +123,8 @@ export type { TSidebarItemOptions } from "./src/UI/Components/Navigation/Sidebar
 
 export type { TSidebarSeperator } from "./src/UI/Components/Navigation/Sidebar/types/TSidebarSeperator";
 
-export type { TDropMenu } from "./src/UI/Components/Navigation/DropDown/types/TDropMenu";
-export type { TDropMenuOptions } from "./src/UI/Components/Navigation/DropDown/types/TDropMenuOptions";
+export type { TDropMenu } from "./src/UI/Components/Navigation/DropMenu/types/TDropMenu";
+export type { TDropMenuOptions } from "./src/UI/Components/Navigation/DropMenu/types/TDropMenuOptions";
 
 // Typography Component Types
 export type { THr } from "./src/UI/Components/Typography/Hr/types/THr";

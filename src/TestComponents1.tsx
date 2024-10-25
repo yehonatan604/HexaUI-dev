@@ -18,7 +18,8 @@ import AutoGridExample from "./UI/Components/Layout/AutoGrid/examples/AutoGrid.e
 import ScrollArea from "./UI/Components/Layout/ScrollArea/ScrollArea";
 import ListExample from "./UI/Components/Typography/List/examples/List.example";
 import QuoteExamples from "./UI/Components/Typography/Quote/examples/Quote.example";
-import DropMenuExamples from "./UI/Components/Navigation/DropDown/examples/DropMenu.example";
+import DropMenuExamples from "./UI/Components/Navigation/DropMenu/examples/DropMenu.example";
+import DataGridExamples from "./UI/Components/Layout/DataGrid/examples/DataGrid.example";
 
 const TestComponents1 = () => {
   const { colors } = useTheme();
@@ -84,6 +85,8 @@ const TestComponents1 = () => {
               }}
             />
             <AutoGridExample />
+            <Hr className="mb-4" />
+            <DataGridExamples />
             <Hr className="mb-4" />
             <Title
               options={{
