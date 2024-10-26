@@ -97,7 +97,13 @@ export default {
     },
     {
       pattern: /^(to|from)-/,
-    }
+    },
+    {
+      pattern: /^space-(x|y)-/,
+    },
+    {
+      pattern: /^gap-/,
+    },
   ],
   plugins: [require("@tailwindcss/forms")],
 }

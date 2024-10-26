@@ -19,9 +19,13 @@ export { default as ColorPicker } from "./src/UI/Components/Forms/ColorPicker/Co
 // Layout
 export { default as Flex } from "./src/UI/Components/Layout/Flex/Flex";
 export { default as AutoGrid } from "./src/UI/Components/Layout/AutoGrid/AutoGrid";
-export { default as DataGrid } from "./src/UI/Components/DataDisplay/DataGrid/DataGrid";
 export { default as DocPanel } from "./src/UI/Components/Layout/DocPanel/DocPanel";
 export { default as ScrollArea } from "./src/UI/Components/Layout/ScrollArea/ScrollArea";
+export { default as Block } from "./src/UI/Components/Layout/Block/Block";
+
+// Data Display
+export { default as DataGrid } from "./src/UI/Components/DataDisplay/DataGrid/DataGrid";
+export { default as List } from "./src/UI/Components/DataDisplay/List/List";
 
 // Navigation
 export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Navbar";
@@ -31,7 +35,6 @@ export { default as DropMenu } from "./src/UI/Components/Navigation/DropMenu/Dro
 
 // Typography
 export { default as Hr } from "./src/UI/Components/Typography/Hr/Hr";
-export { default as List } from "./src/UI/Components/DataDisplay/List/List";
 export { default as Quote } from "./src/UI/Components/Typography/Quote/Quote";
 export { default as Title } from "./src/UI/Components/Typography/Title/Title";
 
@@ -103,6 +106,14 @@ export type { TFlexOptions } from "./src/UI/Components/Layout/Flex/types/TFlexOp
 
 export type { TAutoGrid } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGrid";
 export type { TAutoGridOptions } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGridOptions";
+
+export type { TDocPanel } from "./src/UI/Components/Layout/DocPanel/types/TDocPanel";
+export type { TDocPanelOptions } from "./src/UI/Components/Layout/DocPanel/types/TDocPanelOptions";
+
+export type { TScrollArea } from "./src/UI/Components/Layout/ScrollArea/types/TScrollArea";
+
+export type { TBlock } from "./src/UI/Components/Layout/Block/types/TBlock";
+export type { TBlockOptions } from "./src/UI/Components/Layout/Block/types/TBlockOptions";
 
 // Navigation Component Types
 export type { TNavbar } from "./src/UI/Components/Navigation/Navbar/types/TNavbar";

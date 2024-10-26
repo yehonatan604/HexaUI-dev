@@ -1,0 +1,15 @@
+// Vitest Snapshot v1
+
+exports[`Block Component > should render with default props 1`] = `
+<div>
+  <div
+    class="block p-4 bg-transparent text-black-l border-transparent border rounded undefined"
+  >
+    <div
+      class="block text-black-l p-4 space-y-4 gap-undefined undefined"
+    >
+      Default Block
+    </div>
+  </div>
+</div>
+`;

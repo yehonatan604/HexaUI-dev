@@ -20,6 +20,7 @@ import QuoteExamples from "./UI/Components/Typography/Quote/examples/Quote.examp
 import DropMenuExamples from "./UI/Components/Navigation/DropMenu/examples/DropMenu.example";
 import ListExample from "./UI/Components/DataDisplay/List/examples/List.example";
 import DataGridExamples from "./UI/Components/DataDisplay/DataGrid/examples/DataGrid.example";
+import BlockExamples from "./UI/Components/Layout/Block/examples/Block.examples";
 
 const TestComponents1 = () => {
   const { colors } = useTheme();
@@ -100,6 +101,8 @@ const TestComponents1 = () => {
             <SidebarExample />
             <Hr className="mb-4" />
             <DropMenuExamples />
+            <Hr className="mb-4" />
+            <BlockExamples />
             <Hr className="mb-4" />
             <ToastExamples />
             <Hr className="mb-4" />
