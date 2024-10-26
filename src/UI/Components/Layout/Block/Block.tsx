@@ -20,7 +20,7 @@ const Block = (props: TBlock) => {
   console.log("Block -> options", options);
   console.log(textColor);
 
-  // JSXf
+  // JSX
   return (
     <div
       className={`${block} p-${padding} bg-${bgColor} text-${textColor} border-${borderColor} ${borderWidth} ${borderRadius} ${className}`}
