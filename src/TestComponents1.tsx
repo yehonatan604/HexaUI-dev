@@ -16,10 +16,10 @@ import ToastExamples from "./UI/Components/Core/Toast/examples/Toast.example";
 import FormInputExamples from "./UI/Components/Forms/Form.example";
 import AutoGridExample from "./UI/Components/Layout/AutoGrid/examples/AutoGrid.example";
 import ScrollArea from "./UI/Components/Layout/ScrollArea/ScrollArea";
-import ListExample from "./UI/Components/Typography/List/examples/List.example";
 import QuoteExamples from "./UI/Components/Typography/Quote/examples/Quote.example";
 import DropMenuExamples from "./UI/Components/Navigation/DropMenu/examples/DropMenu.example";
-import DataGridExamples from "./UI/Components/Layout/DataGrid/examples/DataGrid.example";
+import ListExample from "./UI/Components/DataDisplay/List/examples/List.example";
+import DataGridExamples from "./UI/Components/DataDisplay/DataGrid/examples/DataGrid.example";
 
 const TestComponents1 = () => {
   const { colors } = useTheme();

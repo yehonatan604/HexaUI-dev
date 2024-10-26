@@ -1,6 +1,6 @@
 import React from "react";
 import { TDataGrid } from "./types/TDataGrid";
-import Flex from "../Flex/Flex";
+import Flex from "../../Layout/Flex/Flex";
 import DataGridHeader from "./components/DataGridHeader";
 import useDataGrid from "./hooks/useDataGrid";
 import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";

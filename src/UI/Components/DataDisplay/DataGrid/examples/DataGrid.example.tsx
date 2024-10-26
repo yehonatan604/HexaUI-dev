@@ -1,6 +1,6 @@
 import { FlexDir } from "../../../../../Data/Constants/FlexDirection";
-import Flex from "../../Flex/Flex";
-import DataGrid from "../DataGrid";
+import DataGrid from "../../../DataDisplay/DataGrid/DataGrid";
+import Flex from "../../../Layout/Flex/Flex";
 
 const DataGridExamples = () => {
   const rows = [

@@ -75,8 +75,8 @@ const List = (props: TList) => {
                   {options?.icons.length === 1
                     ? options?.icons[0]
                     : isByOrder
-                    ? options?.icons[index]
-                    : getRandomIcon(options?.icons)}
+                      ? options?.icons[index]
+                      : getRandomIcon(options?.icons)}
                 </>
               )}
               <div className="overflow-hidden">{item}</div>

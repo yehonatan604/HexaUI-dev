@@ -3,7 +3,7 @@ import DataGrid from "../DataGrid";
 import { TDataGrid } from "../types/TDataGrid";
 
 export default {
-  title: "Components/Layout/DataGrid",
+  title: "Components/DataDisplay/DataGrid",
   component: DataGrid,
   argTypes: {
     options: {

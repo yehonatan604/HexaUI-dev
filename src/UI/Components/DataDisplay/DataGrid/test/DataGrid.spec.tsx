@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import DataGrid from "../DataGrid";
 import { describe, it, expect } from "vitest";
+import DataGrid from "../DataGrid";
 
 describe("DataGrid Component", () => {
   const mockRowsArr = [

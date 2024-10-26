@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "../../../Forms/Select/Select";
 import TextInput from "../../../Forms/TextInput/TextInput";
-import Flex from "../../Flex/Flex";
+import Flex from "../../../Layout/Flex/Flex";
 import { TFilterOperator } from "../types/TFilterOperator";
 import { FaArrowsUpDown, FaArrowUp, FaArrowDown } from "react-icons/fa6";
 import { TSortDirection } from "../types/TSortDirection";

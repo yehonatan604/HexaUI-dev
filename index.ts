@@ -19,7 +19,7 @@ export { default as ColorPicker } from "./src/UI/Components/Forms/ColorPicker/Co
 // Layout
 export { default as Flex } from "./src/UI/Components/Layout/Flex/Flex";
 export { default as AutoGrid } from "./src/UI/Components/Layout/AutoGrid/AutoGrid";
-export { default as DataGrid } from "./src/UI/Components/Layout/DataGrid/DataGrid";
+export { default as DataGrid } from "./src/UI/Components/DataDisplay/DataGrid/DataGrid";
 export { default as DocPanel } from "./src/UI/Components/Layout/DocPanel/DocPanel";
 export { default as ScrollArea } from "./src/UI/Components/Layout/ScrollArea/ScrollArea";
 
@@ -31,7 +31,7 @@ export { default as DropMenu } from "./src/UI/Components/Navigation/DropMenu/Dro
 
 // Typography
 export { default as Hr } from "./src/UI/Components/Typography/Hr/Hr";
-export { default as List } from "./src/UI/Components/Typography/List/List";
+export { default as List } from "./src/UI/Components/DataDisplay/List/List";
 export { default as Quote } from "./src/UI/Components/Typography/Quote/Quote";
 export { default as Title } from "./src/UI/Components/Typography/Title/Title";
 
@@ -104,9 +104,6 @@ export type { TFlexOptions } from "./src/UI/Components/Layout/Flex/types/TFlexOp
 export type { TAutoGrid } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGrid";
 export type { TAutoGridOptions } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGridOptions";
 
-export type { TDataGrid } from "./src/UI/Components/Layout/DataGrid/types/TDataGrid";
-export type { TDataGridOptions } from "./src/UI/Components/Layout/DataGrid/types/TDataGridOptions";
-
 // Navigation Component Types
 export type { TNavbar } from "./src/UI/Components/Navigation/Navbar/types/TNavbar";
 export type { TNavbarCollapse } from "./src/UI/Components/Navigation/Navbar/types/TNavbarCollapse";
@@ -134,11 +131,15 @@ export type { TDropMenuOptions } from "./src/UI/Components/Navigation/DropMenu/t
 export type { THr } from "./src/UI/Components/Typography/Hr/types/THr";
 export type { THrOptions } from "./src/UI/Components/Typography/Hr/types/THrOptions";
 
-export type { TList } from "./src/UI/Components/Typography/List/types/TList";
-export type { TListOptions } from "./src/UI/Components/Typography/List/types/TListOptions";
-
 export type { TTitle } from "./src/UI/Components/Typography/Title/types/TTitle";
 
 export type { TQuote } from "./src/UI/Components/Typography/Quote/types/TQuote";
 export type { TQuoteOptions } from "./src/UI/Components/Typography/Quote/types/TQuoteOptions";
 export type { TCite } from "./src/UI/Components/Typography/Quote/types/TCite";
+
+// Data Display Component Types
+export type { TList } from "./src/UI/Components/DataDisplay/List/types/TList";
+export type { TListOptions } from "./src/UI/Components/DataDisplay/List/types/TListOptions";
+
+export type { TDataGrid } from "./src/UI/Components/DataDisplay/DataGrid/types/TDataGrid";
+export type { TDataGridOptions } from "./src/UI/Components/DataDisplay/DataGrid/types/TDataGridOptions";

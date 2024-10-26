@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import List from "../List"; // Adjust the import path
 import { describe, it, expect, vi } from "vitest";
 import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
+import List from "../List";
 
 describe("List Component", () => {
   it("should render list items correctly", () => {
