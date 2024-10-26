@@ -3,7 +3,7 @@
 exports[`Select Component > should render and match the snapshot 1`] = `
 <DocumentFragment>
   <select
-    class="rounded border border-border-gray-300 dark:border-gray-600 bg-bg-transparent text-text-gray-800 dark:text-gray-200"
+    class="rounded border border-border-gray-300 dark:border-standard bg-bg-transparent text-text-gray-800 dark:text-gray-200 mb-1"
   >
     <option
       class="text-text-gray-800 dark:text-gray-200 bg-bg-white dark:bg-gray-800"
@@ -30,7 +30,7 @@ exports[`Select Component > should render and match the snapshot 1`] = `
 exports[`Select Component > should render with custom styles and match the snapshot 1`] = `
 <DocumentFragment>
   <select
-    class="rounded border border-red-500 bg-blue-100 text-green-500"
+    class="rounded border border-red-500 bg-blue-100 text-green-500 mb-1"
   >
     <option
       class="text-yellow-500 bg-gray-300"

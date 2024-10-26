@@ -4,5 +4,4 @@ import { TDataGridOptions } from "./TDataGridOptions";
 export type TDataGrid = TComponent<"div"> & {
     options?: TDataGridOptions;
     rowsArr: React.ReactNode[];
-    title: string;
 }

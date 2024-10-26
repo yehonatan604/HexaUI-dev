@@ -64,7 +64,7 @@ export default {
   },
   safelist: [
     {
-      pattern: /^(bg|text|border|shadow|ring)-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white)(-[ld])?$/,
+      pattern: /^(bg|text|border|shadow|ring)-(primary|secondary|standard|info|select|cancel|approve|success|warning|failure|black|white|zinc|gray|stone|blue|red|teal|slate|amber|green|sky)(-[ld])?(-[1-9][0][0]?)?$/,
       variants: ["hover", "focus", "active", "disabled", "checked", "dark"],
     },
     {

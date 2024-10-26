@@ -21,11 +21,7 @@ const DataGridExamples = () => {
       options={{ direction: FlexDir.Col }}
       className="m-auto mb-5 gap-4 w-3/5 text-2xl"
     >
-      <DataGrid
-        title="A Test DataGrid"
-        rowsArr={rows}
-        className={`dark:text-info-l text-info-d text-sm`}
-      />
+      <DataGrid rowsArr={rows} />
     </Flex>
   );
 };

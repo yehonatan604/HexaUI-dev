@@ -18,9 +18,10 @@ export { default as ColorPicker } from "./src/UI/Components/Forms/ColorPicker/Co
 
 // Layout
 export { default as Flex } from "./src/UI/Components/Layout/Flex/Flex";
-export { default as DataGrid } from "./src/UI/Components/Layout/AutoGrid/AutoGrid";
+export { default as AutoGrid } from "./src/UI/Components/Layout/AutoGrid/AutoGrid";
+export { default as DataGrid } from "./src/UI/Components/Layout/DataGrid/DataGrid";
 export { default as DocPanel } from "./src/UI/Components/Layout/DocPanel/DocPanel";
-export { default as Scrollbar } from "./src/UI/Components/Layout/ScrollArea/ScrollArea";
+export { default as ScrollArea } from "./src/UI/Components/Layout/ScrollArea/ScrollArea";
 
 // Navigation
 export { default as Navbar } from "./src/UI/Components/Navigation/Navbar/Navbar";
@@ -102,6 +103,9 @@ export type { TFlexOptions } from "./src/UI/Components/Layout/Flex/types/TFlexOp
 
 export type { TAutoGrid } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGrid";
 export type { TAutoGridOptions } from "./src/UI/Components/Layout/AutoGrid/types/TAutoGridOptions";
+
+export type { TDataGrid } from "./src/UI/Components/Layout/DataGrid/types/TDataGrid";
+export type { TDataGridOptions } from "./src/UI/Components/Layout/DataGrid/types/TDataGridOptions";
 
 // Navigation Component Types
 export type { TNavbar } from "./src/UI/Components/Navigation/Navbar/types/TNavbar";
