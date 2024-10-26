@@ -1,6 +1,6 @@
 {
   "name": "react-hexa-dev",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "type": "module",
   "module": "dist/react-hexa-dev.es.js",
   "main": "dist/react-hexa-dev.cjs.js",
@@ -45,6 +45,7 @@
     "@storybook/test": "^8.3.6",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.7.4",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
