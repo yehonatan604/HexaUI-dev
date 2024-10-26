@@ -1,11 +1,11 @@
 import { FlexDir } from "../../../../Data/Constants/FlexDirection";
-import { TTextInput } from "./types/TTextInput";
+import { TFloatingLabel } from "./types/TTextInput";
 import Flex from "../../Layout/Flex/Flex";
 import Label from "../Label/Label";
 import generateRandomId from "../../../../Core/Helpers/IdHelper";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
-const TextInput = (props: TTextInput) => {
+const TextInput = (props: TFloatingLabel) => {
   const { label, options, className, innerClassName, searchIcon, ...componentProps } =
     props;
 

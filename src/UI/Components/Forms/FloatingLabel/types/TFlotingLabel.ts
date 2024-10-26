@@ -1,9 +1,8 @@
 import { TComponent } from "../../../../../Data/Types/TComponent";
-import { TTextInputOptions } from "./TTextInputOptions";
+import { TFloatingLabelOptions } from "./TFloatingLabelOptions";
 
 export type TFloatingLabel = TComponent<"input"> & {
-    options?: TTextInputOptions;
-    label?: string;
+    options?: TFloatingLabelOptions;
+    label: string;
     innerClassName?: string;
-    searchIcon?: boolean;
 }
