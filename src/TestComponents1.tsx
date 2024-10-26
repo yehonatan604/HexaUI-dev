@@ -21,6 +21,7 @@ import DropMenuExamples from "./UI/Components/Navigation/DropMenu/examples/DropM
 import ListExample from "./UI/Components/DataDisplay/List/examples/List.example";
 import DataGridExamples from "./UI/Components/DataDisplay/DataGrid/examples/DataGrid.example";
 import BlockExamples from "./UI/Components/Layout/Block/examples/Block.examples";
+import TableExamples from "./UI/Components/DataDisplay/Table/examples/Table.example";
 
 const TestComponents1 = () => {
   const { colors } = useTheme();
@@ -88,6 +89,8 @@ const TestComponents1 = () => {
             <AutoGridExample />
             <Hr className="mb-4" />
             <DataGridExamples />
+            <Hr className="mb-4" />
+            <TableExamples />
             <Hr className="mb-4" />
             <Title
               options={{
