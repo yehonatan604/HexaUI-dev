@@ -5,17 +5,33 @@ import { TSortDirection } from "./types/TSortDirection";
 import Flex from "../Flex/Flex";
 import { FaArrowDown, FaArrowsUpDown, FaArrowUp } from "react-icons/fa6";
 import TextInput from "../../Forms/TextInput/TextInput";
+import Select from "../../Forms/Select/Select";
+import { TFilterConfig } from "./types/TFilterConfig";
+import { TFilterOperator } from "./types/TFilterOperator";
 
 const DataGrid = (props: TDataGrid) => {
-  const { rowsArr, options, title, className, style } = props;
+  const { rowsArr, options, className, style } = props;
   const [sortConfig, setSortConfig] = useState<TSortConfig>({
     key: -1,
     direction: null,
   });
   const [searchTerm, setSearchTerm] = useState("");
+  const [filterConfig, setFilterConfig] = useState<TFilterConfig>({
+    column: 0,
+    operator: "equals",
+    value: "",
+  });
 
   const headerRow = rowsArr[0];
   const dataRows = rowsArr.slice(1);
+
+  const operators = [
+    { value: "equals", label: "Equals" },
+    { value: "contains", label: "Contains" },
+    { value: "greater", label: "Greater Than" },
+    { value: "less", label: "Less Than" },
+    { value: "regex", label: "Regex" },
+  ];
 
   // Add original indices to data rows
   const indexedDataRows = useMemo(() => {
@@ -26,10 +42,37 @@ const DataGrid = (props: TDataGrid) => {
 
   // Filter and sort the data rows
   const filteredAndSortedRows = useMemo(() => {
-    // First filter
+    const applyFilter = (row: { data: React.ReactNode[] }) => {
+      const cellValue = React.Children.toArray(row.data)[filterConfig.column];
+      const cellText = React.isValidElement(cellValue)
+        ? (cellValue.props.children?.toString() || "").toLowerCase()
+        : String(cellValue).toLowerCase();
+      const filterValue = filterConfig.value.toLowerCase();
+
+      switch (filterConfig.operator) {
+        case "equals":
+          return cellText === filterValue;
+        case "contains":
+          return cellText.includes(filterValue);
+        case "greater":
+          return Number(cellText) > Number(filterValue);
+        case "less":
+          return Number(cellText) < Number(filterValue);
+        case "regex":
+          try {
+            const regex = new RegExp(filterConfig.value, "i");
+            return regex.test(cellText);
+          } catch {
+            return true;
+          }
+        default:
+          return true;
+      }
+    };
+    // First apply search filter
     let filteredRows = indexedDataRows;
     if (searchTerm) {
-      filteredRows = indexedDataRows.filter((row) => {
+      filteredRows = filteredRows.filter((row) => {
         return React.Children.toArray(row.data).some((cell) => {
           const cellText = React.isValidElement(cell)
             ? (cell.props.children?.toString() || "").toLowerCase()
@@ -37,6 +80,11 @@ const DataGrid = (props: TDataGrid) => {
           return cellText.includes(searchTerm.toLowerCase());
         });
       });
+    }
+
+    // Then apply column filter
+    if (filterConfig.value) {
+      filteredRows = filteredRows.filter(applyFilter);
     }
 
     // Then sort
@@ -66,7 +114,15 @@ const DataGrid = (props: TDataGrid) => {
         ? aText.localeCompare(bText)
         : bText.localeCompare(aText);
     });
-  }, [indexedDataRows, sortConfig, searchTerm]);
+  }, [
+    indexedDataRows,
+    searchTerm,
+    filterConfig.value,
+    filterConfig.column,
+    filterConfig.operator,
+    sortConfig.direction,
+    sortConfig.key,
+  ]);
 
   const handleSort = (columnIndex: number) => {
     setSortConfig((prevSort) => {
@@ -116,18 +172,70 @@ const DataGrid = (props: TDataGrid) => {
             justify: "between",
             align: "center",
           }}
-          className="dark:text-white-d dark:bg-black rounded-t-lg"
+          className="dark:text-white-d rounded-t-lg"
         >
-          {/* Search Input */}
+          {/* Title and Search */}
           <Flex
             options={{
               direction: "row",
               justify: "between",
               align: "center",
             }}
-            className="bg-gray-100 dark:bg-black-d p-2 rounded-t-lg w-full"
+            className="bg-gray-100 dark:bg-stone-800 p-2 rounded-t-lg w-full"
           >
-            <h3 className="text-xl">{title}</h3>
+            {/* Filter Controls */}
+            <Flex
+              options={{
+                direction: "row",
+                justify: "start",
+                align: "center",
+              }}
+              className=" gap-2"
+            >
+              <h2 className="text-lg font-semibold">Query:</h2>
+              <Select
+                value={filterConfig.column}
+                onChange={(e) =>
+                  setFilterConfig((prev) => ({
+                    ...prev,
+                    column: Number(e.target.value),
+                  }))
+                }
+                items={React.Children.map(headerRow, (cell, index) => ({
+                  value: index.toString(),
+                  label: React.isValidElement(cell)
+                    ? cell.props.children?.toString()
+                    : String(cell),
+                }))}
+                options={{
+                  bgVariant: "transparent",
+                }}
+              />
+
+              <Select
+                value={filterConfig.operator}
+                onChange={(e) =>
+                  setFilterConfig((prev) => ({
+                    ...prev,
+                    operator: e.target.value as TFilterOperator,
+                  }))
+                }
+                items={operators.map((op) => ({ value: op.value, label: op.label }))}
+                options={{
+                  bgVariant: "transparent",
+                }}
+              />
+
+              <TextInput
+                type="text"
+                placeholder="Filter value..."
+                value={filterConfig.value}
+                onChange={(e) =>
+                  setFilterConfig((prev) => ({ ...prev, value: e.target.value }))
+                }
+                className="w-32"
+              />
+            </Flex>
             <TextInput
               type="text"
               placeholder="Search..."
@@ -136,11 +244,12 @@ const DataGrid = (props: TDataGrid) => {
               searchIcon
             />
           </Flex>
+
           {/* Column Headers */}
           <Flex className="w-full">
             {/* Row Number Header */}
             <Flex
-              className="ring-1 ring-white-d w-10 min-w-10 p-3 pl-2 cursor-pointer"
+              className="ring-1 dark:text-white-d dark:bg-neutral-800 ring-white-d w-10 min-w-10 p-3 pl-2 cursor-pointer"
               onClick={() => handleSort(-1)}
             >
               #
@@ -149,7 +258,7 @@ const DataGrid = (props: TDataGrid) => {
             {React.Children.map(headerRow, (cell, index) => (
               <Flex
                 key={index}
-                className="p-2 ring-1 ring-white-d w-full cursor-pointer"
+                className="p-2 ring-1 dark:text-white-d dark:bg-neutral-800 ring-white-d w-full cursor-pointer"
                 onClick={() => handleSort(index)}
               >
                 <Flex
@@ -157,7 +266,7 @@ const DataGrid = (props: TDataGrid) => {
                     justify: "between",
                     align: "center",
                   }}
-                  className="w-full text-xl"
+                  className="w-full text-lg"
                 >
                   {cell}
                   {renderSortIcon(index)}
@@ -173,8 +282,7 @@ const DataGrid = (props: TDataGrid) => {
             <Flex
               center
               key={rowIndex}
-              className={`data-grid-row dark:text-white-d dark:bg-black-l hover:bg-gray-50 dark:hover:bg-black transition-colors duration-700  
-              `}
+              className="data-grid-row dark:text-white-d dark:bg-zinc-800 hover:bg-gray-50 dark:hover:bg-zinc-600 transition-colors duration-700"
             >
               {/* Row Number */}
               <div className="w-10 min-w-10 text-gray-500 dark:text-gray-400 font-medium ring-1 ring-white-d p-2">
