@@ -1,7 +1,7 @@
 import FloatingLabel from "../FloatingLabel";
 
 export default {
-  title: "Components/FloatingLabel",
+  title: "Components/Forms/FloatingLabel",
   component: FloatingLabel,
   parameters: {
     backgrounds: {
