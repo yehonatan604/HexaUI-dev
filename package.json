@@ -13,7 +13,7 @@
   },
   "types": "dist/index.d.ts",
   "scripts": {
-    "bump-version": "node -e \"let fs = require('fs'), pkg = require('./package.json'); let [major, minor, patch] = pkg.version.split('.').map(Number); if (patch === 99) { if (minor === 99) { major += 1; minor = 0; patch = 0; } else { minor += 1; patch = 0; } } else { patch += 1; } pkg.version = `${major}.${minor}.${patch}`; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));\"",
+    "bump-version": "node scripts/bump-version.mjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
