@@ -3,7 +3,7 @@ import useTheme from "../../../../Core/Context/ThemeContext/hooks/useTheme";
 import { TThemeToggler } from "./types/TThemeToggler";
 
 const ThemeToggler = (props: TThemeToggler) => {
-  const { darkIcon, lightIcon, ...componentProps } = props;
+  const { darkIcon, lightIcon, className, ...componentProps } = props;
   const [icon, setIcon] = useState<React.ReactNode>(darkIcon);
   const { mode, toggleTheme } = useTheme();
 
@@ -17,7 +17,7 @@ const ThemeToggler = (props: TThemeToggler) => {
   }, [mode, darkIcon, lightIcon]);
 
   return (
-    <button onClick={toggleTheme} {...componentProps}>
+    <button onClick={toggleTheme} {...componentProps} className={`${className}`}>
       {icon}
     </button>
   );

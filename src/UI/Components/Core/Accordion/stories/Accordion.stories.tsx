@@ -1,80 +1,55 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import Accordion from "../Accordion";
 import "../../../../../main.css";
+import { defaultStory } from "../../../../../Core/Helpers/StoriesHelper";
 
-// Default export, this configures the story in Storybook
-const meta: Meta<typeof Accordion> = {
+export default {
   title: "Components/Core/Accordion",
   component: Accordion,
-  argTypes: {
-    options: {
-      control: {
-        type: "object",
-      },
-    },
-  },
-};
+  ...defaultStory,
+} as Meta<typeof Accordion>;
 
-export default meta;
+export const Default = () => (
+  <div className="w-1/4">
+    <Accordion
+      options={{
+        title: "Accordion Title",
+        textVariant: "gray-200",
+      }}
+    >
+      This is the content of the accordion.
+    </Accordion>
+  </div>
+);
 
-type Story = StoryObj<typeof Accordion>;
+export const Bordered = () => (
+  <div className="w-1/4">
+    <Accordion
+      options={{
+        title: "Accordion Title",
+        textVariant: "gray-200",
+        border: { variant: "gray-300", radius: "md" },
+      }}
+    >
+      This is the content of the accordion.
+    </Accordion>
+  </div>
+);
 
-// Example of a default Accordion story
-export const Default: Story = {
-  args: {
-    options: {
-      title: "Accordion Title",
-      bgVariant: "white",
-      textVariant: "gray-800",
-      border: {
-        variant: "gray-300",
-        radius: "md",
-      },
-      titleVariant: "blue-500",
-    },
-    children: "This is the content of the accordion.",
-  },
-};
-
-// Example of an Accordion story with custom content
-export const CustomContent: Story = {
-  args: {
-    options: {
-      title: "Custom Accordion Title",
-      bgVariant: "white",
-      textVariant: "gray-800",
-      border: {
-        variant: "blue-500",
-        radius: "lg",
-      },
-      titleVariant: "red-500",
-    },
-    children: (
+export const CustomContent = () => (
+  <div className="w-1/4">
+    <Accordion
+      options={{
+        title: "Custom Content",
+        textVariant: "warning",
+        border: { variant: "gray-300", radius: "md" },
+        titleVariant: "blue-500",
+      }}
+    >
       <div>
-        <p>This is custom content for the accordion.</p>
-        <p>You can add anything here!</p>
+        <p>This is a custom content for the accordion.</p>
+        <p>It can contain any HTML element.</p>
       </div>
-    ),
-  },
-};
-
-// Another variant of the Accordion
-export const WithIcons: Story = {
-  args: {
-    options: {
-      title: "Accordion with Icons",
-      bgVariant: "blue-100",
-      textVariant: "blue-900",
-      border: {
-        variant: "blue-500",
-        radius: "lg",
-      },
-      titleVariant: "blue-700",
-    },
-    children: (
-      <div>
-        <p>This accordion shows icons for up/down arrow.</p>
-      </div>
-    ),
-  },
-};
+    </Accordion>
+  </div>
+);

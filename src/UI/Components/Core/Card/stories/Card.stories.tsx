@@ -1,111 +1,58 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import Card from "../Card";
-import CardHeader from "../Card.Header";
-import CardFooter from "../Card.Footer";
 import Button from "../../Button/Button"; // Assuming you have a Button component
-import { FlexTypes } from "../../../../../Data/Constants/FlexTypes";
-import Title from "../../../Typography/Title/Title";
 import "../../../../../main.css";
+import { defaultStory } from "../../../../../Core/Helpers/StoriesHelper";
+import Flex from "../../../Layout/Flex/Flex";
 
-const meta: Meta<typeof Card> = {
+export default {
   title: "Components/Core/Card",
   component: Card,
-  subcomponents: { CardHeader, CardFooter },
+  subcomponents: { ["Card.Header"]: Card.Header, ["Card.Footer"]: Card.Footer },
+  ...defaultStory,
   argTypes: {
-    options: {
-      control: "object",
-    },
     children: {
       control: "text",
     },
   },
-};
+} as Meta<typeof Card>;
 
-export default meta;
-type Story = StoryObj<typeof Card>;
+export const Default = () => (
+  <Flex center className="h-96">
+    <div className="w-1/4">
+      <Card className="h-48">
+        <p className="m-auto">This is a default card with no extra content.</p>
+      </Card>
+    </div>
+  </Flex>
+);
 
-export const Default: Story = {
-  args: {
-    children: "This is a simple card with default styles.",
-    options: {
-      bgVariant: "gray-200",
-      textVariant: "gray-800",
-      rounded: "md",
-    },
-  },
-};
+export const WithHeaderAndFooter = () => (
+  <Flex center className="h-96">
+    <div className="w-1/4">
+      <Card options={{ bgVariant: "gray-200", textVariant: "primary-d", rounded: "md" }}>
+        <Card.Header options={{ textVariant: "primary" }}>Card Header</Card.Header>
+        <p>This card has a header and a footer.</p>
+        <Card.Footer>Card Footer</Card.Footer>
+      </Card>
+    </div>
+  </Flex>
+);
 
-export const WithHeaderAndFooter: Story = {
-  args: {
-    options: {
-      bgVariant: "standard-d",
-      textVariant: "standard-l",
-      shadow: {
-        color: "standard",
-        size: "xl",
-      },
-    },
-    className: "w-[250px]",
-    children: (
-      <>
-        <Card.Header>
-          <img
-            src="https://loremflickr.com/250/200"
-            alt="Random"
-            className="w-[250px] h-32 object-cover m-auto rounded"
-          />
+export const CustomCard = () => (
+  <Flex center className="h-96">
+    <div className="w-1/4">
+      <Card
+        options={{
+          bgVariant: "gray-200",
+          textVariant: "primary-d",
+          border: { show: true, variant: "success", radius: "md" },
+          shadow: { size: "lg", color: "failure-l" },
+        }}
+      >
+        <Card.Header options={{ textVariant: "approve" }}>
+          Complex Card Example
         </Card.Header>
-
-        <Title options={{ padding: "p-1", size: "sm", align: FlexTypes.Start }}>
-          Card 1
-        </Title>
-        <p className="px-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, expedita
-          uptates. Vect eviet maiores assumend.
-        </p>
-        <Card.Footer>
-          <Button
-            options={{
-              bgVariant: "approve",
-              textVariant: "standard-l",
-            }}
-          >
-            Click Me
-          </Button>
-        </Card.Footer>
-      </>
-    ),
-  },
-};
-
-export const CustomShadowAndBorder: Story = {
-  args: {
-    options: {
-      bgVariant: "white",
-      textVariant: "black",
-      border: { show: true, variant: "blue-500", radius: "lg" },
-      shadow: { size: "lg", color: "blue-500" },
-    },
-    children: (
-      <>
-        <Card.Header>Custom Shadow and Border</Card.Header>
-        <p>This card has custom shadow and border styling.</p>
-      </>
-    ),
-  },
-};
-
-export const ComplexCard: Story = {
-  args: {
-    options: {
-      bgVariant: "green-100",
-      textVariant: "green-900",
-      border: { show: true, variant: "green-300" },
-      shadow: { size: "xl", color: "green-500" },
-    },
-    children: (
-      <>
-        <Card.Header>Complex Card Example</Card.Header>
         <p>This is a complex card with various content inside.</p>
         <ul>
           <li>Feature 1</li>
@@ -120,7 +67,7 @@ export const ComplexCard: Story = {
             Cancel
           </Button>
         </Card.Footer>
-      </>
-    ),
-  },
-};
+      </Card>
+    </div>
+  </Flex>
+);
