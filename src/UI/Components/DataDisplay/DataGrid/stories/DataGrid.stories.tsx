@@ -1,53 +1,33 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import DataGrid from "../DataGrid";
-import { TDataGrid } from "../types/TDataGrid";
+import { defaultStory } from "../../../../../Core/Helpers/StoriesHelper";
+import Flex from "../../../Layout/Flex/Flex";
+import ThemeProvider from "../../../../../Core/Context/ThemeContext/providers/Theme.provider";
+import ThemeToggler from "../../../Core/ThemeToggler/ThemeToggler";
 
 export default {
   title: "Components/DataDisplay/DataGrid",
   component: DataGrid,
+  ...defaultStory,
   argTypes: {
-    options: {
-      control: {
-        type: "object", // Allows the options prop to be edited as an object
-      },
-    },
-    className: {
-      control: "text", // Allows className to be edited
-    },
     rowsArr: { control: "object" },
   },
-} as Meta;
+} as Meta<typeof DataGrid>;
 
-const Template: StoryFn<TDataGrid> = (args) => <DataGrid {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  rowsArr: [
-    ["ID", "Name", "Age"], // Header row
-    [1, "John Doe", 30],
-    [2, "Jane Smith", 25],
-    [3, "Alice Johnson", 35],
-  ],
-  className: "text-2xl",
-};
-
-export const DarkMode = Template.bind({});
-DarkMode.args = {
-  rowsArr: [
-    ["ID", "Name", "Age"], // Header row
-    [1, "John Doe", 30],
-    [2, "Jane Smith", 25],
-    [3, "Alice Johnson", 35],
-  ],
-  className: "text-2xl",
-  options: {
-    headerBgColor: "stone-800",
-    headerTextColor: "white",
-    rowBgColor: "zinc-800",
-    rowTextColor: "white",
-    rowHoverBgColor: "zinc-600",
-    rowHoverTextColor: "white",
-    borderVariant: "white",
-    headerControls: "all",
-  },
-};
+export const Default = () => (
+  <ThemeProvider>
+    <Flex options={{ direction: "col" }} center className="h-96 gap-10">
+      <ThemeToggler className="text-4xl" />
+      <div className="w-3/4">
+        <DataGrid
+          rowsArr={[
+            ["ID", "Name", "Age", "Country", "Salary"],
+            ["654-RYH-943", "John Doe", 30, "USA", 2000],
+            ["173-FUI-725", "Jane Smith", 25, "Canada", 1500],
+            ["965-YUR-798", "Alice Johnson", 35, "UK", 2500],
+          ]}
+        />
+      </div>
+    </Flex>
+  </ThemeProvider>
+);

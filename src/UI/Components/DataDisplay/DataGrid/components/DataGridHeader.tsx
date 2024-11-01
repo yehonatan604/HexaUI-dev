@@ -149,7 +149,7 @@ const DataGridHeader = (props: TDataGridHeader) => {
       <Flex className={`w-full bg-${headerBgColor}`}>
         {/* Row Number Header */}
         <Flex
-          className={`ring-1 text-${headerTextColor} ring-${borderColor} w-10 min-w-10 px-2 cursor-pointer pb-1`}
+          className={`ring-1 text-${headerTextColor} ring-${borderColor} w-10 min-w-10 p-2 cursor-pointer pb-1`}
           onClick={() => handleSort(-1)}
         >
           #

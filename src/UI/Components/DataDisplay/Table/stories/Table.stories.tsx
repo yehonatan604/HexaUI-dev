@@ -1,65 +1,55 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import Table from "../Table";
+import Flex from "../../../Layout/Flex/Flex";
 
-const meta: Meta<typeof Table> = {
+export default {
   title: "Components/DataDisplay/Table",
   component: Table,
   argTypes: {
-    options: {
-      control: "object",
-      description: "Table styling options such as colors, border, padding, etc.",
-    },
     rowsArr: {
       control: "object",
       description: "Array of rows containing cells for the table.",
     },
-    className: {
-      control: "text",
-      description: "Additional classnames to apply to the table.",
-    },
   },
+} as Meta<typeof Table>;
+
+export const Default = () => {
+  return (
+    <Flex center className="m-auto w-3/5">
+      <Table
+        rowsArr={[
+          // Header row
+          ["Name", "Age", "email", "Location"],
+          // Data rows
+          ["John Doe", 25, "john@email.com", "New York"],
+          ["Jane Smith", 30, "jane@email.com", "London"],
+          ["Bob Johnson", 28, "bob@email.com", "Paris"],
+          ["Alice Brown", 28, "alice@email.com", "Tokyo"],
+          ["Eve White", 35, "eve@email.com", "Berlin"],
+          ["Sam Black", 40, "sam@email.com", "Sydney"],
+        ].map((row) => row.map((cell) => <div>{cell}</div>))}
+      />
+    </Flex>
+  );
 };
 
-export default meta;
-
-type Story = StoryObj<typeof Table>;
-
-const mockArray = [
-  ["Header 1", "Header 2", "Header 3"],
-  ["Row 1 Cell 1", "Row 1 Cell 2", "Row 1 Cell 3"],
-  ["Row 2 Cell 1", "Row 2 Cell 2", "Row 2 Cell 3"],
-  ["Row 3 Cell 1", "Row 3 Cell 2", "Row 3 Cell 3"],
-];
-
-export const Default: Story = {
-  args: {
-    options: {
-      borderVariant: "gray-700",
-      headerBgColor: "gray-800",
-      headerTextColor: "white",
-      rowBgColor: "gray-900",
-      rowTextColor: "gray-100",
-      rowHoverBgColor: "gray-700",
-      rowHoverTextColor: "white",
-      stripedBgColor: "gray-800/50",
-      stripedTextColor: "gray-100",
-      padding: "4",
-      striped: true,
-      border: {
-        thickness: "border",
-        radius: "rounded-xl",
-      },
-    },
-    rowsArr: mockArray,
-  },
-};
-
-export const NotStriped: Story = {
-  args: {
-    ...Default.args,
-    options: {
-      ...Default.args.options,
-      striped: false,
-    },
-  },
+export const UnstripedTable = () => {
+  return (
+    <Flex center className="m-auto w-3/5">
+      <Table
+        rowsArr={[
+          // Header row
+          ["Name", "Age", "email", "Location"],
+          // Data rows
+          ["John Doe", 25, "john@email.com", "New York"],
+          ["Jane Smith", 30, "jane@email.com", "London"],
+          ["Bob Johnson", 28, "bob@email.com", "Paris"],
+          ["Alice Brown", 28, "alice@email.com", "Tokyo"],
+          ["Eve White", 35, "eve@email.com", "Berlin"],
+          ["Sam Black", 40, "sam@email.com", "Sydney"],
+        ].map((row) => row.map((cell) => <div>{cell}</div>))}
+        options={{ striped: false }}
+      />
+    </Flex>
+  );
 };
