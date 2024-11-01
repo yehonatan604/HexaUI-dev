@@ -26,10 +26,10 @@ const RangeInput = (props: TRangeInput) => {
   };
 
   return (
-    <Flex options={{ direction: FlexDir.Col }} className="gap-1">
-      <Label text={label} htmlFor={randomId} />
+    <Flex options={{ direction: FlexDir.Col }} className="gap-1 w-2/12">
+      {label && <Label text={label} htmlFor={randomId} />}
       <Flex
-        className={`range ${options?.rangeVariant || "info"} gap-2`}
+        className={`range ${options?.rangeVariant || "info"} gap-6`}
         options={{
           align: FlexTypes.Center,
         }}
@@ -37,7 +37,7 @@ const RangeInput = (props: TRangeInput) => {
         <input
           type="range"
           id={randomId}
-          className="border-0 rounded-md p-2"
+          className="border-0"
           {...componentProps}
           defaultValue={val}
         />

@@ -14,7 +14,9 @@ export default {
   },
 };
 
-export const Default = () => <FloatingLabel label="Email" type="email" />;
+export const Default = () => (
+  <FloatingLabel label="Email" type="email" className="max-w-md" />
+);
 
 export const Custom = () => (
   <FloatingLabel

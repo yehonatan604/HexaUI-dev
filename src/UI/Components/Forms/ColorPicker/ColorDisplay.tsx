@@ -97,6 +97,9 @@ const ColorDisplay = (props: ColorDisplayProps) => {
             { value: "hex", label: "hex" },
           ]}
           onChange={(e) => setColorType(e.target.value)}
+          options={{
+            textVariant: "standard",
+          }}
         />
       </Flex>
     </Flex>
