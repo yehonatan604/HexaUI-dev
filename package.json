@@ -1,6 +1,6 @@
 {
   "name": "react-hexa-dev",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "type": "module",
   "module": "dist/react-hexa-dev.es.js",
   "main": "dist/react-hexa-dev.cjs.js",
@@ -13,12 +13,12 @@
   },
   "types": "dist/index.d.ts",
   "scripts": {
-    "bump-version": "node scripts/bump-version.mjs",
+    "bump": "node scripts/bump-version.mjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "bnp": "npm run test && npm run bump-version && npm run build && npm publish --access public",
+    "bnp": "npm run test && npm run bump && npm run build && npm publish --access public",
     "test": "vitest --run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

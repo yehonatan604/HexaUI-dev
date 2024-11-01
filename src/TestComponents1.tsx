@@ -22,6 +22,7 @@ import ListExample from "./UI/Components/DataDisplay/List/examples/List.example"
 import DataGridExamples from "./UI/Components/DataDisplay/DataGrid/examples/DataGrid.example";
 import BlockExamples from "./UI/Components/Layout/Block/examples/Block.examples";
 import TableExamples from "./UI/Components/DataDisplay/Table/examples/Table.example";
+import ModalExamples from "./UI/Components/Core/Modal/examples/Modal.example";
 
 const TestComponents1 = () => {
   const { colors } = useTheme();
@@ -108,6 +109,8 @@ const TestComponents1 = () => {
             <BlockExamples />
             <Hr className="mb-4" />
             <ToastExamples />
+            <Hr className="mb-4" />
+            <ModalExamples />
             <Hr className="mb-4" />
             <QuoteExamples />
             <Hr className="mt-4" />

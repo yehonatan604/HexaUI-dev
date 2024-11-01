@@ -2,7 +2,9 @@
 
 exports[`ThemeToggler Component > matches the snapshot for dark mode 1`] = `
 <DocumentFragment>
-  <button>
+  <button
+    class="undefined"
+  >
     <span>
       🌞
     </span>
@@ -12,7 +14,9 @@ exports[`ThemeToggler Component > matches the snapshot for dark mode 1`] = `
 
 exports[`ThemeToggler Component > matches the snapshot for light mode 1`] = `
 <DocumentFragment>
-  <button>
+  <button
+    class="undefined"
+  >
     <span>
       🌑
     </span>
