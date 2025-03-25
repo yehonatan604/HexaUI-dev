@@ -14,7 +14,6 @@ export { default as Label } from "./src/UI/Components/Forms/Label/Label";
 export { default as Select } from "./src/UI/Components/Forms/Select/Select";
 export { default as RangeInput } from "./src/UI/Components/Forms/RangeInput/RangeInput";
 export { default as TextInput } from "./src/UI/Components/Forms/TextInput/TextInput";
-export { default as ColorPicker } from "./src/UI/Components/Forms/ColorPicker/ColorPicker";
 
 // Layout
 export { default as Flex } from "./src/UI/Components/Layout/Flex/Flex";
@@ -95,11 +94,8 @@ export type { TSelectOptions } from "./src/UI/Components/Forms/Select/types/TSel
 export type { TRangeInput } from "./src/UI/Components/Forms/RangeInput/types/TRangeInput";
 export type { TRangeInputOptions } from "./src/UI/Components/Forms/RangeInput/types/TRangeInputOptions";
 
-export type { TTextInput } from "./src/UI/Components/Forms/TextInput/types/TTextInput";
 export type { TTextInputOptions } from "./src/UI/Components/Forms/TextInput/types/TTextInputOptions";
-
-export type { TColorPicker } from "./src/UI/Components/Forms/ColorPicker/types/TColorPicker";
-
+export type { TFloatingLabel } from "./src/UI/Components/Forms/TextInput/types/TTextInput";
 // Layout Component Types
 export type { TFlex } from "./src/UI/Components/Layout/Flex/types/TFlex";
 export type { TFlexOptions } from "./src/UI/Components/Layout/Flex/types/TFlexOptions";

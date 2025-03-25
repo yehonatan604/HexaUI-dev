@@ -15,7 +15,7 @@ exports[`Footer Component > should render and match the snapshot 1`] = `
     <p
       class="text-center text-xs text-gray-500 max-md:my-2"
     >
-      © 2024 Rainbow UI
+      © 2025 Rainbow UI
     </p>
   </div>
 </DocumentFragment>
